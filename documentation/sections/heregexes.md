@@ -1,6 +1,6 @@
-## Block Regular Expressions
+## 正規表達式區塊
 
-Similar to block strings and comments, CoffeeScript supports block regexes — extended regular expressions that ignore internal whitespace and can contain comments and interpolation. Modeled after Perl’s `/x` modifier, CoffeeScript’s block regexes are delimited by `///` and go a long way towards making complex regular expressions readable. To quote from the CoffeeScript source:
+和字串、註釋區塊相同的是，CoffeeScript 支援正規表達式區塊－這能夠忽略部分的空白並且讓你可以在正規表達式的規則中安插註釋。這個功能的靈感來自於 Perl 的 `/x` 修飾子，但 CoffeeScript 的正規表達式區塊是以 `///` 作為開頭與結尾，這樣令正規表達式比較好閱讀。讓我們來實際在 CoffeeScript 操演一遍：
 
 ```
 codeFor('heregexes')

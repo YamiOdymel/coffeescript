@@ -1,15 +1,15 @@
-## Array Slicing and Splicing with Ranges
+## 陣列切片與範圍
 
-Ranges can also be used to extract slices of arrays. With two dots (`3..6`), the range is inclusive (`3, 4, 5, 6`); with three dots (`3...6`), the range excludes the end (`3, 4, 5`). Slices indices have useful defaults. An omitted first index defaults to zero and an omitted second index defaults to the size of the array.
+你能夠在陣列索引中指定一個範圍。主要透過兩個點符號（像是：`3..6`），而其範圍會是（`3, 4, 5, 6`）；然而用上三個點符號的時候（`3...6`）其範圍則會排除最後一個元素而結果會是（`3, 4, 5`）。若切片沒有指定起始範圍，預設會是從零開始，而沒有結束範圍則是會以陣列的長度為主。
 
 ```
 codeFor('slices', 'middle')
 ```
 
-The same syntax can be used with assignment to replace a segment of an array with new values, splicing it.
+相同的手法可以用在陣列賦值中，以新的值來取代陣列中的特定範圍值。
 
 ```
 codeFor('splices', 'numbers')
 ```
 
-Note that JavaScript strings are immutable, and can’t be spliced.
+注意的是 JavaScript 的字串是不可更改且無法被切片的。

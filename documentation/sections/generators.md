@@ -1,16 +1,16 @@
-## Generator Functions
+## 產生器函式
 
-CoffeeScript supports ES2015 [generator functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) through the `yield` keyword. There's no `function*(){}` nonsense — a generator in CoffeeScript is simply a function that yields.
+CoffeeScript 能夠以 `yield` 關鍵字使用 ES2015 的 [產生器函式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)，而不是使用 `function*(){}` 這種沒意義的東西－因為在 CoffeeScript 裡，有產生（`yield`）關鍵字的函式就是產生器函式。
 
 ```
 codeFor('generators', 'ps.next().value')
 ```
 
-`yield*` is called `yield from`, and `yield return` may be used if you need to force a generator that doesn’t yield.
+`yield*` 被稱為 `yield from`，而當你想建立一個不會產生的產生器函式時，用上 `yield return` 就可以了。
 
 <div id="generator-iteration" class="bookmark"></div>
 
-You can iterate over a generator function using `for…from`.
+你可以透過 `for...from`方法來遍歷一個產生器函式。
 
 ```
 codeFor('generator_iteration', 'getFibonacciNumbers(10)')

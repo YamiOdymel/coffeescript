@@ -1,17 +1,17 @@
-## Lexical Scoping and Variable Safety
+## 有效範圍和變數安全性
 
-The CoffeeScript compiler takes care to make sure that all of your variables are properly declared within lexical scope — you never need to write `var` yourself.
+CoffeeScript 編譯器能夠依照期望的方式自動宣告變數的有效範圍─這讓你不需要手動撰寫 `var` 來宣告變數。
 
 ```
 codeFor('scope', 'inner')
 ```
 
-Notice how all of the variable declarations have been pushed up to the top of the closest scope, the first time they appear. `outer` is not redeclared within the inner function, because it’s already in scope; `inner` within the function, on the other hand, should not be able to change the value of the external variable of the same name, and therefore has a declaration of its own.
+可以意識到的是：在範例中任何第一次出現的變數都會盡可能地在該範圍宣告，之後因為 `outer` 已經在父範圍被宣告過了，因此並不會在內部函式又重新宣告一次；而 `inner` 是在函式內宣告的，因此不會變更到函式外所宣告的變數。
 
-Because you don’t have direct access to the `var` keyword, it’s impossible to shadow an outer variable on purpose, you may only refer to it. So be careful that you’re not reusing the name of an external variable accidentally, if you’re writing a deeply nested function.
+由於你沒有辦法直接使用 `var` 語法，因此在巢狀函式結構中需要額外注意你不是正在修改外部所宣告的變數。
 
-Although suppressed within this documentation for clarity, all CoffeeScript output (except in files with `import` or `export` statements) is wrapped in an anonymous function: `(function(){ … })();`. This safety wrapper, combined with the automatic generation of the `var` keyword, make it exceedingly difficult to pollute the global namespace by accident. (The safety wrapper can be disabled with the [`bare` option](#usage), and is unnecessary and automatically disabled when using modules.)
+所有 CoffeeScript 所輸出的程式碼都會被一個匿名函式包覆著（除了 `import` 和 `export` 語法）：`(function(){ … })();`。我們稱其為「有效範圍保護函式」，這個做法能夠讓你的每個檔案都有自己的有效範圍，而不會直接暴露到全域範圍導致不同檔案都在更改同個變數。（如果你不希望有這層保護的話，可以透過 [`bare` 選項](#usage)進行關閉。與模組系統使用時則不需要特別指定也會啟用這個選項。）
 
-If you’d like to create top-level variables for other scripts to use, attach them as properties on `window`; attach them as properties on the `exports` object in CommonJS; or use an [`export` statement](#modules). If you’re targeting both CommonJS and the browser, the [existential operator](#existential-operator) (covered below), gives you a reliable way to figure out where to add them: `exports ? this`.
+如果你希望能夠建立一個全域變數供其他檔案或腳本使用的話，請試圖將其變數建立於 `window` 屬性底下；或是 CommonJS 的 `exports` 物件底下；甚至是使用 [`export` 語法](#modules)。如果希望腳本可以用於 CommonJS 和瀏覽器兩者的話，請參閱[存在運算子](#existential-operator)章節，這讓你能夠得知目前執行的環境可用何種方法輸出：`exports ? this`。
 
-Since CoffeeScript takes care of all variable declaration, it is not possible to declare variables with ES2015’s `let` or `const`. [This is intentional](#unsupported-let-const); we feel that the simplicity gained by not having to think about variable declaration outweighs the benefit of having three separate ways to declare variables.
+理所當然地，因為 CoffeeScript 接管了所有變數的宣告，這也讓你沒辦法手動以 ES2015 的 `let` 或 `const` 來宣告片段變數。其實這早在[我們的預料中](#unsupported-let-const)；因為我們希望能夠透過較簡單的方式來設計程式，否則就會過度思考整個有效範圍。

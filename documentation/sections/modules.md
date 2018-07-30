@@ -1,6 +1,6 @@
-## Modules
+## 模組系統
 
-ES2015 modules are supported in CoffeeScript, with very similar `import` and `export` syntax:
+CoffeeScript 支援 ES2015 的模塊，其 `import` 和 `export` 的使用方法都非常相似：
 
 ```
 codeFor('modules')
@@ -8,6 +8,6 @@ codeFor('modules')
 
 <div id="modules-note" class="bookmark"></div>
 
-Note that the CoffeeScript compiler **does not resolve modules**; writing an `import` or `export` statement in CoffeeScript will produce an `import` or `export` statement in the resulting output. It is your responsibility to [transpile](#transpilation) this ES2015 syntax into code that will work in your target runtimes.
+不過要注意的是 CoffeeScript 編譯器並不會幫你**解析相關模組**；在 CoffeeScript 裡撰寫 `import` 或 `export` 只會產生有關 `import` 和 `export` 的結果。你需要自行結合相關的轉譯介面或建置工具，例如 [Traceur Compiler](https://github.com/google/traceur-compiler)、[Babel](http://babeljs.io/) 或 [Rollup](https://github.com/rollup/rollup) 來將 ES2015 的模塊用法轉譯成真的引用相關模塊的程式碼。
 
-Also note that any file with an `import` or `export` statement will be output without a [top-level function safety wrapper](#lexical-scope); in other words, importing or exporting modules will automatically trigger [bare](#usage) mode for that file. This is because per the ES2015 spec, `import` or `export` statements must occur at the topmost scope.
+還有一點，那就是任何有使用到 `import` 或 `export` 的檔案都會自動移除[安全作用域](#lexical-scope)，這原本能確保每個檔案擁有自己的作用域而不會和其他檔案相衝；換句話說，只要在程式碼裡有輸入或輸出的用法，就會觸發[暴露](#usage)模式。因為 ES2015 的規範強迫 `import` 或 `export` 必須在最頂域中宣告。

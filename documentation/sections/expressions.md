@@ -1,29 +1,29 @@
-## Everything is an Expression (at least, as much as possible)
+## 所有東西都是表達式（差不多啦）
 
-You might have noticed how even though we don’t add return statements to CoffeeScript functions, they nonetheless return their final value. The CoffeeScript compiler tries to make sure that all statements in the language can be used as expressions. Watch how the `return` gets pushed down into each possible branch of execution in the function below.
+你也許會注意到為什麼 CoffeeScript 的函式最終都不用加個回傳陳述式，但函式卻還是會有回傳值。其實 CoffeeScript 會試圖將所有語句視為表達式。看好下面的範例，其函式的任何一項內容都會盡可能地加上回傳陳述式。
 
 ```
 codeFor('expressions', 'eldest')
 ```
 
-Even though functions will always return their final value, it’s both possible and encouraged to return early from a function body writing out the explicit return (`return value`), when you know that you’re done.
+雖然說函式最終都會自動回傳其值，但我們還是鼓勵你：當函式該結束的時候就自己直接手動加上回傳（`return value`）陳述式來結束函式。
 
-Because variable declarations occur at the top of scope, assignment can be used within expressions, even for variables that haven’t been seen before:
+對了，連沒有定義過的變數也可以直接當成表達式邊宣告邊使用。
 
 ```
 codeFor('expressions_assignment', 'six')
 ```
 
-Things that would otherwise be statements in JavaScript, when used as part of an expression in CoffeeScript, are converted into expressions by wrapping them in a closure. This lets you do useful things, like assign the result of a comprehension to a variable:
+在 JavaScript 必須是陳述式的東西，CoffeeScript 能夠將其以閉包函式包覆著並且當成表達式使用並賦值給某個變數：
 
 ```
 codeFor('expressions_comprehension', 'globals')
 ```
 
-As well as silly things, like passing a `try`/`catch` statement directly into a function call:
+還有個很有趣的是：像 `try` 和 `catch` 可以直接被塞進一個函式呼叫中進行使用。
 
 ```
 codeFor('expressions_try', true)
 ```
 
-There are a handful of statements in JavaScript that can’t be meaningfully converted into expressions, namely `break`, `continue`, and `return`. If you make use of them within a block of code, CoffeeScript won’t try to perform the conversion.
+不過仍有許多無法轉換成表達式的 JavaScript 陳述式（例如：`break`、`continue`、`return`）。所以當你要用上他們當作表達式的時候，CoffeeScript 可沒辦法幫你。

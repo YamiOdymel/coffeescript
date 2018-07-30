@@ -1,12 +1,12 @@
-## Functions
+## 函式
 
-Functions are defined by an optional list of parameters in parentheses, an arrow, and the function body. The empty function looks like this: `->`
+一個基本的函式由括號與可選的參數、箭頭、函式內容定義。一個空的函式看起來像這樣：`->`
 
 ```
 codeFor('functions', 'cube(5)')
 ```
 
-Functions may also have default values for arguments, which will be used if the incoming argument is missing (`undefined`).
+函式的接收參數也能夠有預設值，當沒有接收到其參數（`undefined`）的話就會使用預設值，這很好用。
 
 ```
 codeFor('default_args', 'fill("cup")')

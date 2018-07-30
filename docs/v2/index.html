@@ -691,84 +691,84 @@ textarea {
         </p>
       </header>
       <section id="introduction">
-        <p><strong>CoffeeScript is a little language that compiles into JavaScript.</strong> Underneath that awkward Java-esque patina, JavaScript has always had a gorgeous heart. CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</p>
-<p>The golden rule of CoffeeScript is: <em>“It’s just JavaScript.”</em> The code compiles one-to-one into the equivalent JS, and there is no interpretation at runtime. You can use any existing JavaScript library seamlessly from CoffeeScript (and vice-versa). The compiled output is readable, pretty-printed, and tends to run as fast or faster than the equivalent handwritten JavaScript.</p>
-<p><strong>Latest Version:</strong> <a href="https://github.com/jashkenas/coffeescript/tarball/2.3.1">2.3.1</a></p>
-<blockquote class="uneditable-code-block"><pre><code class="language-bash"><span class="comment"># Install locally for a project:</span>
+        <p><strong>CoffeeScript 是個能夠編譯成 JavaScript 的簡易語言。</strong> 在那 Java-什麼鳥的深處中能夠探索到的是：JavaScript 最純潔且高尚的心靈。而 CoffeeScript 的存在正是將這完美的一面以最簡單的方式呈現。</p>
+<p>CoffeeScript 的黃金守則是：<em>「這就只是 JavaScript 而已」</em>。程式碼能夠一對一地標準編譯成相對應的 JavaScript 程式碼，而且不需要任何的 Runtime 執行時態輔助。你可以無縫地在 CoffeeScript 中直接使用任何現有的 JavaScript 函式庫（反之亦然）。編譯出來的結果非常符合人體工學、且經過美觀縮排，甚至執行效率能夠比起手工撰寫的原始 JavaScript 程式碼還要來的迅速。</p>
+<p><strong>最新版本：</strong> <a href="https://github.com/jashkenas/coffeescript/tarball/2.3.1">2.3.1</a></p>
+<blockquote class="uneditable-code-block"><pre><code class="language-bash"><span class="comment"># 替本地專案安裝：</span>
 npm install --save-dev coffeescript
 
-<span class="comment"># Install globally to execute .coffee files anywhere:</span>
+<span class="comment"># 以全域的方式安裝來在任何地方執行 .coffee 檔案：</span>
 npm install --global coffeescript
 </code></pre>
 </blockquote>
       </section>
       <section id="overview">
-        <h2>Overview</h2>
-<p><em>CoffeeScript on the <span class="d-md-none">top</span><span class="d-none d-md-inline">left</span>, compiled JavaScript output on the <span class="d-md-none">bottom</span><span class="d-none d-md-inline">right</span>. The CoffeeScript is editable!</em></p>
+        <h2>概觀</h2>
+<p><em>CoffeeScript 的程式碼區塊在<span class="d-md-none">上方</span><span class="d-none d-md-inline">左側</span>，而編譯後的 JavaScript 結果則是在<span class="d-md-none">下方</span><span class="d-none d-md-inline">右側</span>。最棒的是 CoffeeScript 程式碼區塊是可以即時編輯的！</em></p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="overview">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
-      <textarea class="coffeescript-input" id="overview-coffee"># Assignment:
+      <textarea class="coffeescript-input" id="overview-coffee"># 賦值：
 number   = 42
 opposite = true
 
-# Conditions:
+# 條件式：
 number = -42 if opposite
 
-# Functions:
+# 函式：
 square = (x) -> x * x
 
-# Arrays:
+# 陣列：
 list = [1, 2, 3, 4, 5]
 
-# Objects:
+# 物件：
 math =
   root:   Math.sqrt
   square: square
   cube:   (x) -> x * square x
 
-# Splats:
+# 變參：
 race = (winner, runners...) ->
   print winner, runners
 
-# Existence:
+# 空值偵測：
 alert "I knew it!" if elvis?
 
-# Array comprehensions:
+# 陣列推導：
 cubes = (math.cube num for num in list)
 </textarea>
-      <pre class="placeholder-code"><span class="cm-comment"># Assignment:</span>
+      <pre class="placeholder-code"><span class="cm-comment"># 賦值：</span>
 <span class="cm-variable">number</span>   <span class="cm-punctuation">=</span> <span class="cm-number">42</span>
 <span class="cm-variable">opposite</span> <span class="cm-punctuation">=</span> <span class="cm-atom">true</span>
 
-<span class="cm-comment"># Conditions:</span>
+<span class="cm-comment"># 條件式：</span>
 <span class="cm-variable">number</span> <span class="cm-punctuation">=</span> <span class="cm-number">-42</span> <span class="cm-keyword">if</span> <span class="cm-variable">opposite</span>
 
-<span class="cm-comment"># Functions:</span>
+<span class="cm-comment"># 函式：</span>
 <span class="cm-variable">square</span> <span class="cm-punctuation">=</span> <span class="cm-punctuation">(</span><span class="cm-variable">x</span><span class="cm-punctuation">)</span> <span class="cm-operator">-></span> <span class="cm-variable">x</span> <span class="cm-operator">*</span> <span class="cm-variable">x</span>
 
-<span class="cm-comment"># Arrays:</span>
+<span class="cm-comment"># 陣列：</span>
 <span class="cm-variable">list</span> <span class="cm-punctuation">=</span> <span class="cm-punctuation">[</span><span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">2</span><span class="cm-punctuation">,</span> <span class="cm-number">3</span><span class="cm-punctuation">,</span> <span class="cm-number">4</span><span class="cm-punctuation">,</span> <span class="cm-number">5</span><span class="cm-punctuation">]</span>
 
-<span class="cm-comment"># Objects:</span>
+<span class="cm-comment"># 物件：</span>
 <span class="cm-variable">math</span> <span class="cm-punctuation">=</span>
 <span class="cm-indent">  </span><span class="cm-variable">root</span><span class="cm-punctuation">:</span>   <span class="cm-variable">Math</span><span class="cm-punctuation">.</span><span class="cm-property">sqrt</span>
   <span class="cm-variable">square</span><span class="cm-punctuation">:</span> <span class="cm-variable">square</span>
   <span class="cm-variable">cube</span><span class="cm-punctuation">:</span>   <span class="cm-punctuation">(</span><span class="cm-variable">x</span><span class="cm-punctuation">)</span> <span class="cm-operator">-></span> <span class="cm-variable">x</span> <span class="cm-operator">*</span> <span class="cm-variable">square</span> <span class="cm-variable">x</span>
 
-<span class="cm-comment"># Splats:</span>
+<span class="cm-comment"># 變參：</span>
 <span class="cm-variable">race</span> <span class="cm-punctuation">=</span> <span class="cm-punctuation">(</span><span class="cm-variable">winner</span><span class="cm-punctuation">,</span> <span class="cm-variable">runners</span><span class="cm-punctuation">...)</span> <span class="cm-operator">-></span>
   <span class="cm-variable">print</span> <span class="cm-variable">winner</span><span class="cm-punctuation">,</span> <span class="cm-variable">runners</span>
 
-<span class="cm-comment"># Existence:</span>
+<span class="cm-comment"># 空值偵測：</span>
 <span class="cm-variable">alert</span> <span class="cm-string">"I knew it!"</span> <span class="cm-keyword">if</span> <span class="cm-variable">elvis</span><span class="cm-operator">?</span>
 
-<span class="cm-comment"># Array comprehensions:</span>
+<span class="cm-comment"># 陣列推導：</span>
 <span class="cm-variable">cubes</span> <span class="cm-punctuation">=</span> <span class="cm-punctuation">(</span><span class="cm-variable">math</span><span class="cm-punctuation">.</span><span class="cm-property">cube</span> <span class="cm-variable">num</span> <span class="cm-keyword">for</span> <span class="cm-variable">num</span> <span class="cm-operator">in</span> <span class="cm-variable">list</span><span class="cm-punctuation">)</span>
 </pre>
     </div>
     <div class="col-md-6 javascript-output-column">
-      <textarea class="javascript-output" id="overview-js">// Assignment:
+      <textarea class="javascript-output" id="overview-js">// 賦值：
 var cubes, list, math, num, number, opposite, race, square;
 
 number = 42;
@@ -776,19 +776,19 @@ number = 42;
 opposite = true;
 
 if (opposite) {
-  // Conditions:
+  // 條件式：
   number = -42;
 }
 
-// Functions:
+// 函式：
 square = function(x) {
   return x * x;
 };
 
-// Arrays:
+// 陣列：
 list = [1, 2, 3, 4, 5];
 
-// Objects:
+// 物件：
 math = {
   root: Math.sqrt,
   square: square,
@@ -797,17 +797,17 @@ math = {
   }
 };
 
-// Splats:
+// 變參：
 race = function(winner, ...runners) {
   return print(winner, runners);
 };
 
 if (typeof elvis !== "undefined" && elvis !== null) {
-  // Existence:
+  // 空值偵測：
   alert("I knew it!");
 }
 
-// Array comprehensions:
+// 陣列推導：
 cubes = (function() {
   var i, len, results;
   results = [];
@@ -818,7 +818,7 @@ cubes = (function() {
   return results;
 })();
 </textarea>
-      <pre class="placeholder-code"><span class="cm-comment">// Assignment:</span>
+      <pre class="placeholder-code"><span class="cm-comment">// 賦值：</span>
 <span class="cm-keyword">var</span> <span class="cm-def">cubes</span>, <span class="cm-def">list</span>, <span class="cm-def">math</span>, <span class="cm-def">num</span>, <span class="cm-def">number</span>, <span class="cm-def">opposite</span>, <span class="cm-def">race</span>, <span class="cm-def">square</span>;
 
 <span class="cm-variable">number</span> <span class="cm-operator">=</span> <span class="cm-number">42</span>;
@@ -826,19 +826,19 @@ cubes = (function() {
 <span class="cm-variable">opposite</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;
 
 <span class="cm-keyword">if</span> (<span class="cm-variable">opposite</span>) {
-  <span class="cm-comment">// Conditions:</span>
+  <span class="cm-comment">// 條件式：</span>
   <span class="cm-variable">number</span> <span class="cm-operator">=</span> <span class="cm-operator">-</span><span class="cm-number">42</span>;
 }
 
-<span class="cm-comment">// Functions:</span>
+<span class="cm-comment">// 函式：</span>
 <span class="cm-variable">square</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">x</span>) {
   <span class="cm-keyword">return</span> <span class="cm-variable-2">x</span> <span class="cm-operator">*</span> <span class="cm-variable-2">x</span>;
 };
 
-<span class="cm-comment">// Arrays:</span>
+<span class="cm-comment">// 陣列：</span>
 <span class="cm-variable">list</span> <span class="cm-operator">=</span> [<span class="cm-number">1</span>, <span class="cm-number">2</span>, <span class="cm-number">3</span>, <span class="cm-number">4</span>, <span class="cm-number">5</span>];
 
-<span class="cm-comment">// Objects:</span>
+<span class="cm-comment">// 物件：</span>
 <span class="cm-variable">math</span> <span class="cm-operator">=</span> {
   <span class="cm-property">root</span>: <span class="cm-variable">Math</span>.<span class="cm-property">sqrt</span>,
   <span class="cm-property">square</span>: <span class="cm-variable">square</span>,
@@ -847,17 +847,17 @@ cubes = (function() {
   }
 };
 
-<span class="cm-comment">// Splats:</span>
+<span class="cm-comment">// 變參：</span>
 <span class="cm-variable">race</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">winner</span>, <span class="cm-meta">...</span><span class="cm-def">runners</span>) {
   <span class="cm-keyword">return</span> <span class="cm-variable">print</span>(<span class="cm-variable-2">winner</span>, <span class="cm-variable-2">runners</span>);
 };
 
 <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable">elvis</span> <span class="cm-operator">!==</span> <span class="cm-string">"undefined"</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">elvis</span> <span class="cm-operator">!==</span> <span class="cm-atom">null</span>) {
-  <span class="cm-comment">// Existence:</span>
+  <span class="cm-comment">// 空值偵測：</span>
   <span class="cm-variable">alert</span>(<span class="cm-string">"I knew it!"</span>);
 }
 
-<span class="cm-comment">// Array comprehensions:</span>
+<span class="cm-comment">// 陣列推導：</span>
 <span class="cm-variable">cubes</span> <span class="cm-operator">=</span> (<span class="cm-keyword">function</span>() {
   <span class="cm-keyword">var</span> <span class="cm-def">i</span>, <span class="cm-def">len</span>, <span class="cm-def">results</span>;
   <span class="cm-variable-2">results</span> <span class="cm-operator">=</span> [];
@@ -887,204 +887,204 @@ cubes = (function() {
         <h2>CoffeeScript 2</h2>
 
         <section id="whats-new-in-coffeescript-2">
-          <h3>What’s New In CoffeeScript 2?</h3>
-<p>The biggest change in CoffeeScript 2 is that now the CoffeeScript compiler produces modern JavaScript syntax (ES6, or ES2015 and later). A CoffeeScript <code>=&gt;</code> becomes a JS <code>=&gt;</code>, a CoffeeScript <code>class</code> becomes a JS <code>class</code> and so on. Major new features in CoffeeScript 2 include <a href="#async-functions">async functions</a> and <a href="#jsx">JSX</a>. You can read more in the <a href="announcing-coffeescript-2/">announcement</a>.</p>
-<p>There are very few <a href="#breaking-changes">breaking changes from CoffeeScript 1.x to 2</a>; we hope the upgrade process is smooth for most projects.</p>
+          <h3>CoffeeScript 2 有什麼新玩意？</h3>
+<p>在 CoffeeScript 2 中，最大的改變莫過於輸出的 JavaScript 程式碼格式了（現在會輸出成較新的 ES6 或 ES2015 風格）。而 CoffeeScript 中的 <code>=&gt;</code> 亦會變成 JS 中的 <code>=&gt;</code>，且 CoffeeScript 的 <code>class</code> 也會等同於 JS 的 <code>class</code> 類別標籤…等。還有主要追加的新功能，像是：<a href="#async-functions">非同步函式</a>和<a href="#jsx">JSX</a>。你能夠在<a href="announcing-coffeescript-2/">公告</a>中暸解更多。</p>
+<p>當然也有一些<a href="#breaking-changes">從 CoffeeScript 1.x 升級到 2 時的不相容差異</a>；我們希望更新所造成的破壞能夠減輕量到最低。</p>
 
         </section>
         <section id="compatibility">
-          <h3>Compatibility</h3>
-<p>Most modern JavaScript features that CoffeeScript supports can run natively in Node 7.6+, meaning that Node can run CoffeeScript’s output without any further processing required. Here are some notable exceptions:</p>
+          <h3>相容性</h3>
+<p>CoffeeScript 所支援的 JavaScript 功能近乎都可以直接在 Node 7.6+ 執行，這意味著 Node 可以直接執行 CoffeeScript 所輸出的程式碼且不需要任何其他動作。話雖如此，這裡還是有幾點需要注意的事項：</p>
 <ul>
-<li><a href="#modules">Modules</a> and <a href="#jsx">JSX</a> always require transpilation.</li>
-<li><a href="https://coffeescript.org/#splats">Splats, a.k.a. object rest/spread syntax, for objects</a> are supported by Node 8.6+.</li>
-<li>The <a href="https://github.com/tc39/proposal-regexp-dotall-flag">regular expression <code>s</code> (dotall) flag</a> is supported by Node 9+.</li>
-<li><a href="https://github.com/tc39/proposal-async-iteration">Async generator functions</a> are supported by Node 10+.</li>
+<li><a href="#modules">模組系統</a>和 <a href="#jsx">JSX</a> 需要有轉譯介面（Transpilation）。</li>
+<li><a href="https://coffeescript.org/#splats">變參、物件展開符號</a> 需要 Node 8.6+ 版本。</li>
+<li><a href="https://github.com/tc39/proposal-regexp-dotall-flag">正規表達式的 <code>s</code> 標記</a> 則需要 Node 9+ 版本。</li>
+<li><a href="https://github.com/tc39/proposal-async-iteration">異步產生器函式</a> 需要 Node 10+ 版本。</li>
 </ul>
-<p>This list may be incomplete, and excludes versions of Node that support newer features behind flags; please refer to <a href="http://node.green/">node.green</a> for full details. You can <a href="test.html">run the tests in your browser</a> to see what your browser supports. It is your responsibility to ensure that your runtime supports the modern features you use; or that you <a href="#transpilation">transpile</a> your code. When in doubt, transpile.</p>
+<p>這份清單可能不是很完整，有關更詳細的功能支援度請參閱 <a href="http://node.green/">node.green</a> 網站。你可以在<a href="test.html">瀏覽器中執行這些測試</a>來得知你的瀏覽器支援哪些功能。畢竟確保瀏覽器可以執行哪些東西是你的重責大任；或者你也能用上<a href="#transpilation">轉譯介面</a>。如果你有疑問找上轉譯介面準沒錯。</p>
 
         </section>
       </section>
       <section id="installation">
-        <h2>Installation</h2>
-<p>The command-line version of <code>coffee</code> is available as a <a href="https://nodejs.org/">Node.js</a> utility, requiring Node 6 or later. The <a href="/v2/browser-compiler/coffeescript.js">core compiler</a> however, does not depend on Node, and can be run in any JavaScript environment, or in the browser (see <a href="#try">Try CoffeeScript</a>).</p>
-<p>To install, first make sure you have a working copy of the latest stable version of <a href="https://nodejs.org/">Node.js</a>. You can then install CoffeeScript globally with <a href="https://www.npmjs.com/">npm</a>:</p>
+        <h2>安裝方法</h2>
+<p>終端機版本的 <code>coffee</code> 指令現在需要 <a href="https://nodejs.org/">Node.js</a> 為輔助工具，且版本需要是 Node 6 或更新的版本。不過<a href="/v2/browser-compiler/coffeescript.js">核心編譯器</a>則不仰賴 Node。核心可以在任何的 JavaScript 環境中執行，或是直接在網頁瀏覽器中運作（請查看<a href="#try">嘗試 CoffeeScript</a>）。</p>
+<p>欲要進行安裝，須先確保你有安裝最新版的 <a href="https://nodejs.org/">Node.js</a>。然後你就能夠透過 <a href="https://www.npmjs.com/">npm</a> 來安裝 CoffeeScript：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-bash">npm install --global coffeescript
 </code></pre>
-</blockquote><p>This will make the <code>coffee</code> and <code>cake</code> commands available globally.</p>
-<p>If you are using CoffeeScript in a project, you should install it locally for that project so that the version of CoffeeScript is tracked as one of your project’s dependencies. Within that project’s folder:</p>
+</blockquote><p>這讓你能夠在全域終端機中使用 <code>coffee</code> 和 <code>cake</code> 指令。</p>
+<p>如果你正打算在專案中使用 CoffeeScript，那麼你應該以下列方式來安裝、並令 CoffeeScript 成為專案中的相依性套件。請在專案資料夾中輸入指令：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-bash">npm install --save-dev coffeescript
 </code></pre>
-</blockquote><p>The <code>coffee</code> and <code>cake</code> commands will first look in the current folder to see if CoffeeScript is installed locally, and use that version if so. This allows different versions of CoffeeScript to be installed globally and locally.</p>
-<p>If you plan to use the <code>--transpile</code> option (see <a href="#transpilation">Transpilation</a>) you will need to also install <code>babel-core</code> either globally or locally, depending on whether you are running a globally or locally installed version of CoffeeScript.</p>
+</blockquote><p>使用 <code>coffee</code> 和 <code>cake</code> 指令時，會先自動檢查目前資料夾中是否有安裝 CoffeeScript，若有，則使用目前資料夾的版本（若無，則使用全域安裝的版本）。這允許你在不同的專案上使用不同版本的 CoffeeScript 以避免相依性問題。</p>
+<p>如果你打算使用 <code>--transpile</code> 選項（請查看<a href="#transpilation">轉譯介面</a>章節），你將需要以全域、本地方式安裝 <code>babel-core</code>，這取決於你使用的 CoffeeScript 是全域還是目前資料夾中的版本。</p>
 
       </section>
       <section id="usage">
-        <h2>Usage</h2>
+        <h2>使用方式</h2>
 
         <section id="cli">
-          <h3>Command Line</h3>
-<p>Once installed, you should have access to the <code>coffee</code> command, which can execute scripts, compile <code>.coffee</code> files into <code>.js</code>, and provide an interactive REPL. The <code>coffee</code> command takes the following options:</p>
+          <h3>指令列</h3>
+<p>當安裝完成之後，你就應該能夠使用 <code>coffee</code> 指令了。這能夠執行腳本、將 <code>.coffee</code> 檔案編譯成 <code>.js</code>，並且有一個互動式的 REPL 介面。<code>coffee</code> 指令有下列選項可供使用：</p>
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Description</th>
+<th>選項</th>
+<th>說明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-c, --compile</code></td>
-<td>Compile a <code>.coffee</code> script into a <code>.js</code> JavaScript file of the same name.</td>
+<td>以同檔案名稱將 <code>.coffee</code> 編譯成 <code>.js</code> JavaScript 程式碼。</td>
 </tr>
 <tr>
 <td><code>-t, --transpile</code></td>
-<td>Pipe the CoffeeScript compiler’s output through Babel before saving or running the generated JavaScript. Requires <code>babel-core</code> to be installed, and options to pass to Babel in a <code>.babelrc</code> file or a <code>package.json</code> with a <code>babel</code> key in the path of the file or folder to be compiled. See <a href="#transpilation">Transpilation</a>.</td>
+<td>在儲存或執行成 JavaScript 檔案之前，先將 CoffeeScript 的編譯器輸出銜接至 Babel。這需要是先安裝 <code>babel-core</code>，且需要一個 <code>.babelrc</code> 檔案或者帶有 <code>babel</code> 設置的 <code>package.json</code> 於相同路徑中。請參閱<a href="#transpilation">轉譯介面</a>。</td>
 </tr>
 <tr>
 <td><code>-m, --map</code></td>
-<td>Generate source maps alongside the compiled JavaScript files. Adds <code>sourceMappingURL</code> directives to the JavaScript as well.</td>
+<td>與編譯後的 JavaScript 結果一同產生原始碼映射表。這會在 JavaScript 檔案中追加 <code>sourceMappingURL</code>。</td>
 </tr>
 <tr>
 <td><code>-M, --inline-map</code></td>
-<td>Just like <code>--map</code>, but include the source map directly in the compiled JavaScript files, rather than in a separate file.</td>
+<td>和 <code>--map</code> 作用近乎相同，但是會將原始碼映射表直接寫入編譯後的 JavaScript 檔案中，而不是另外儲存為獨立的檔案。</td>
 </tr>
 <tr>
 <td><code>-i, --interactive</code></td>
-<td>Launch an interactive CoffeeScript session to try short snippets. Identical to calling <code>coffee</code> with no arguments.</td>
+<td>啟動一個可互動的 CoffeeScript 階段，這讓你能夠嘗試較短的程式碼。基本上與直接呼叫無選項的 <code>coffee</code> 指令沒有差異。</td>
 </tr>
 <tr>
-<td><code>-o, --output [DIR]</code></td>
-<td>Write out all compiled JavaScript files into the specified directory. Use in conjunction with <code>--compile</code> or <code>--watch</code>.</td>
+<td><code>-o, --output [目錄]</code></td>
+<td>將所有編譯的 JavaScript 檔案輸出到指定的資料夾。通常會和 <code>--compile</code> 或 <code>--watch</code> 一起使用。</td>
 </tr>
 <tr>
 <td><code>-w, --watch</code></td>
-<td>Watch files for changes, rerunning the specified command when any file is updated.</td>
+<td>監聽檔案的變動，當檔案變動時重新執行某個動作。</td>
 </tr>
 <tr>
 <td><code>-p, --print</code></td>
-<td>Instead of writing out the JavaScript as a file, print it directly to <strong>stdout</strong>.</td>
+<td>將編譯結果直接輸出到 <strong>stdout</strong> 而不是一個檔案。</td>
 </tr>
 <tr>
 <td><code>-s, --stdio</code></td>
-<td>Pipe in CoffeeScript to STDIN and get back JavaScript over STDOUT. Good for use with processes written in other languages. An example:<br><code>cat src/cake.coffee | coffee -sc</code></td>
+<td>從 STDIN 接收 CoffeeScript 程式碼並且將編譯結果的JavaScript 輸出至 STDOUT。適合用於和其他程式語言串接的時機。例如：<br><code>cat src/cake.coffee | coffee -sc</code></td>
 </tr>
 <tr>
 <td><code>-l, --literate</code></td>
-<td>Parses the code as Literate CoffeeScript. You only need to specify this when passing in code directly over <strong>stdio</strong>, or using some sort of extension-less file name.</td>
+<td>將程式碼視為文學式 CoffeeScript。你只需要在使用 <strong>stdio</strong> 或者編譯無副檔名的檔案時才需要特別指定此選項。</td>
 </tr>
 <tr>
 <td><code>-e, --eval</code></td>
-<td>Compile and print a little snippet of CoffeeScript directly from the command line. For example:<br><code>coffee -e &quot;console.log num for num in [10..1]&quot;</code></td>
+<td>直接從指令列編譯並且輸出一小段 CoffeeScript 程式碼。例如：<br><code>coffee -e &quot;console.log num for num in [10..1]&quot;</code></td>
 </tr>
 <tr>
-<td><code>-r, --require [MODULE]</code> </td>
-<td><code>require()</code> the given module before starting the REPL or evaluating the code given with the <code>--eval</code> flag.</td>
+<td><code>-r, --require [模組名稱]</code> </td>
+<td>在 REPL 或執行帶有 <code>--eval</code> 的 CoffeeScript 指令之前，以 <code>require()</code> 先載入指定的模組。</td>
 </tr>
 <tr>
 <td><code>-b, --bare</code></td>
-<td>Compile the JavaScript without the <a href="#lexical-scope">top-level function safety wrapper</a>.</td>
+<td>在省去<a href="#lexical-scope">有效範圍保護函式</a>的情況下編譯 CoffeeScript 程式碼。</td>
 </tr>
 <tr>
 <td><code>--no-header</code></td>
-<td>Suppress the “Generated by CoffeeScript” header.</td>
+<td>在輸出結果中移除「Generated by CoffeeScript」的標頭。</td>
 </tr>
 <tr>
 <td><code>--nodejs</code></td>
-<td>The <code>node</code> executable has some useful options you can set, such as <code>--debug</code>, <code>--debug-brk</code>, <code>--max-stack-size</code>, and <code>--expose-gc</code>. Use this flag to forward options directly to Node.js. To pass multiple flags, use <code>--nodejs</code> multiple times.</td>
+<td><code>node</code> 執行指令有不少好用的選項，例如：<code>--debug</code>、<code>--debug-brk</code>、<code>--max-stack-size</code> 和 <code>--expose-gc</code>。透過這個指令選項可以將部分選項導向至 Node.js。若要傳入多個選項，則重複使用 <code>--nodejs</code> 選項即可。</td>
 </tr>
 <tr>
 <td><code>--tokens</code></td>
-<td>Instead of parsing the CoffeeScript, just lex it, and print out the token stream. Used for debugging the compiler.</td>
+<td>輸出詞法分析器的結果，而不是以 CoffeeScript 來編譯檔案。這適用於替編譯器除錯的環境。</td>
 </tr>
 <tr>
 <td><code>-n, --nodes</code></td>
-<td>Instead of compiling the CoffeeScript, just lex and parse it, and print out the parse tree. Used for debugging the compiler.</td>
+<td>輸出詞法分析器與解析器的結果，而不是以 CoffeeScript 來編譯檔案。這適用於替編譯器除錯的環境。</td>
 </tr>
 </tbody>
 </table>
-<h4>Examples:</h4>
+<h4>範例：</h4>
 <ul>
-<li>Compile a directory tree of <code>.coffee</code> files in <code>src</code> into a parallel tree of <code>.js</code> files in <code>lib</code>:<br>
+<li>將 <code>src</code> 目錄中的所有 <code>.coffee</code> 檔案編譯成 <code>.js</code> 並且儲存到 <code>lib</code> 目錄下：<br>
 <code>coffee --compile --output lib/ src/</code></li>
-<li>Watch a file for changes, and recompile it every time the file is saved:<br>
+<li>監聽一個檔案的變動，每當該檔案有儲存異動時就自動重新編譯：<br>
 <code>coffee --watch --compile experimental.coffee</code></li>
-<li>Concatenate a list of files into a single script:<br>
+<li>將指定清單的所有檔案編譯成單個檔案：<br>
 <code>coffee --join project.js --compile src/*.coffee</code></li>
-<li>Print out the compiled JS from a one-liner:<br>
+<li>輸出單行程式碼的編譯結果：<br>
 <code>coffee -bpe &quot;alert i for i in [0..10]&quot;</code></li>
-<li>All together now, watch and recompile an entire project as you work on it:<br>
+<li>差不多了，監聽並且自動重新編譯整個專案的檔案：<br>
 <code>coffee -o lib/ -cw src/</code></li>
-<li>Start the CoffeeScript REPL (<code>Ctrl-D</code> to exit, <code>Ctrl-V</code>for multi-line):<br>
+<li>啟動 CoffeeScript 的 REPL 介面（<code>Ctrl-D</code> 結束，而 <code>Ctrl-V</code> 是多行模式）：<br>
 <code>coffee</code></li>
 </ul>
-<p>To use <code>--transpile</code>, see <a href="#transpilation">Transpilation</a>.</p>
+<p>若要使用 <code>--transpile</code> 選項，請參閱<a href="#transpilation">轉譯介面</a>。</p>
 
         </section>
         <section id="nodejs-usage">
           <h3>Node.js</h3>
-<p>If you’d like to use Node.js’ CommonJS to <code>require</code> CoffeeScript files, e.g. <code>require './app.coffee'</code>, you must first “register” CoffeeScript as an extension:</p>
+<p>如果你希望能夠透過 Node.js 的 CommonJS 來 <code>require</code> 引用 CoffeeScript 檔案，例如：<code>require './app.coffee'</code> 的話，你就必須先將 CoffeeScript「註冊」成為一個擴充功能：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-coffee"><span class="built_in">require</span> <span class="string">'coffeescript/register'</span>
 
-App = <span class="built_in">require</span> <span class="string">'./app'</span> <span class="comment"># The .coffee extension is optional</span>
+App = <span class="built_in">require</span> <span class="string">'./app'</span> <span class="comment"># .coffee 的副檔名是選擇性的</span>
 </code></pre>
-</blockquote><p>If you want to use the compiler’s API, for example to make an app that compiles strings of CoffeeScript on the fly, you can <code>require</code> the full module:</p>
+</blockquote><p>如果你希望用上編譯器的 API，例如：直接編譯 CoffeeScript 程式碼字串，那麼就需要 <code>require</code> 整個模組：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-coffee">CoffeeScript = <span class="built_in">require</span> <span class="string">'coffeescript'</span>
 
-eval CoffeeScript.compile <span class="string">'console.log "Mmmmm, I could really go for some #{Math.pi}"'</span>
+eval CoffeeScript.compile <span class="string">'console.log "嗯……也許我該來吃塊 #{Math.pi}"'</span>
 </code></pre>
-</blockquote><p>The <code>compile</code> method has the signature <code>compile(code, options)</code> where <code>code</code> is a string of CoffeeScript code, and the optional <code>options</code> is an object with some or all of the following properties:</p>
+</blockquote><p><code>compile</code> 方法有個非常基本的 <code>compile(code, options)</code> 用法，理所當然地 <code>code</code> 就是 CoffeeScript 的程式碼字串，而 <code>options</code> 就是選擇性的物件用以設置部分設定，其屬性如下：</p>
 <ul>
-<li><code>options.sourceMap</code>, boolean: if true, a source map will be generated; and instead of returning a string, <code>compile</code> will return an object of the form <code>{js, v3SourceMap, sourceMap}</code>.</li>
-<li><code>options.inlineMap</code>, boolean: if true, output the source map as a base64-encoded string in a comment at the bottom.</li>
-<li><code>options.filename</code>, string: the filename to use for the source map. It can include a path (relative or absolute).</li>
-<li><code>options.bare</code>, boolean: if true, output without the <a href="#lexical-scope">top-level function safety wrapper</a>.</li>
-<li><code>options.header</code>, boolean: if true, output the <code>Generated by CoffeeScript</code> header.</li>
-<li><code>options.transpile</code>, <strong>object</strong>: if set, this must be an object with the <a href="http://babeljs.io/docs/usage/api/#options">options to pass to Babel</a>. See <a href="#transpilation">Transpilation</a>.</li>
+<li><code>options.sourceMap</code>，布林值：如果為真，將會產生原始碼映射表而不是返回字串。<code>compile</code> 將會回傳一個基於 <code>{js, v3SourceMap, sourceMap}</code> 格式的物件。</li>
+<li><code>options.inlineMap</code>，布林值：如果為真，原始碼映射表會以 Base64 的格式輸出在最底部的註釋。</li>
+<li><code>options.filename</code>，字串：作為原始碼映射表的檔案名稱。可以是個路徑（無論相對或絕對路徑）。</li>
+<li><code>options.bare</code>，布林值：如果為真，輸出的結果會省去<a href="#lexical-scope">有效範圍保護函式</a>。</li>
+<li><code>options.header</code>，布林值：如果為真，會輸出帶有 <code>Generated by CoffeeScript</code> 標頭的內容。</li>
+<li><code>options.transpile</code>，<strong>物件</strong>：如果有設置的話，這必須是基於 <a href="http://babeljs.io/docs/usage/api/#options">Babel 選項的物件格式</a>。請參閱<a href="#transpilation">轉譯介面</a>。</li>
 </ul>
 
         </section>
         <section id="transpilation">
-          <h3>Transpilation</h3>
-<p>CoffeeScript 2 generates JavaScript that uses the latest, modern syntax. The runtime or browsers where you want your code to run <a href="#compatibility">might not support all of that syntax</a>. In that case, we want to convert modern JavaScript into older JavaScript that will run in older versions of Node or older browsers; for example, <code>{ a } = obj</code> into <code>a = obj.a</code>. This is done via transpilers like <a href="http://babeljs.io/">Babel</a>, <a href="https://buble.surge.sh/">Bublé</a> or <a href="https://github.com/google/traceur-compiler">Traceur Compiler</a>.</p>
-<h4>Quickstart</h4>
-<p>From the root of your project:</p>
+          <h3>轉譯介面</h3>
+<p>CoffeeScript 2 會輸出最新的 JavaScript 語法，但執行緒或瀏覽器<a href="#compatibility">不一定會支援這些用法</a>。在這種時候我們會希望將現代 JavaScript 程式碼轉譯成較舊的語法，這樣才能夠在過時的 Node 或瀏覽器上執行；例如說：<code>{ a } = obj</code> 轉譯成 <code>a = obj.a</code>。而這可以透過 <a href="http://babeljs.io/">Babel</a>、<a href="https://buble.surge.sh/">Bublé</a> 或 <a href="https://github.com/google/traceur-compiler">Traceur Compiler</a> 轉譯器達成。</p>
+<h4>快速開始</h4>
+<p>先從專案的根目錄開始下手：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-bash">npm install --save-dev babel-core babel-preset-env
 <span class="built_in">echo</span> <span class="string">'{ "presets": ["env"] }'</span> &gt; .babelrc
 coffee --compile --transpile --inline-map some-file.coffee
 </code></pre>
-</blockquote><h4>Transpiling with the CoffeeScript compiler</h4>
-<p>To make things easy, CoffeeScript has built-in support for the popular <a href="http://babeljs.io/">Babel</a> transpiler. You can use it via the <code>--transpile</code> command-line option or the <code>transpile</code> Node API option. To use either, <code>babel-core</code> must be installed in your project:</p>
+</blockquote><h4>CoffeeScript 編譯器搭配轉譯介面</h4>
+<p>為了讓事情更簡單點，CoffeeScript 內建了能夠支援 <a href="http://babeljs.io/">Babel</a> 轉譯器的功能。你可以透過 <code>--transpile</code> 指令列選項或者 Node API 的 <code>transpile</code> 選項來使用。要使用這項功能，專案中必須先要有安裝 <code>babel-core</code>：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-bash">npm install --save-dev babel-core
 </code></pre>
-</blockquote><p>Or if you’re running the <code>coffee</code> command outside of a project folder, using a globally-installed <code>coffeescript</code> module, <code>babel-core</code> needs to be installed globally:</p>
+</blockquote><p>如果你是在專案資料夾外執行 <code>coffee</code> 指令的話，可以使用全域安裝的 <code>coffeescript</code> 模組。這個時候也就需要全域安裝的 <code>babel-core</code> 模組：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-bash">npm install --global babel-core
 </code></pre>
-</blockquote><p>By default, Babel doesn’t do anything—it doesn’t make assumptions about what you want to transpile to. You need to provide it with a configuration so that it knows what to do. One way to do this is by creating a <a href="https://babeljs.io/docs/usage/babelrc/"><code>.babelrc</code> file</a> in the folder containing the files you’re compiling, or in any parent folder up the path above those files. (Babel supports <a href="https://babeljs.io/docs/usage/babelrc/">other ways</a>, too.) A minimal <code>.babelrc</code> file would be just <code>{ &quot;presets&quot;: [&quot;env&quot;] }</code>. This implies that you have installed <a href="https://babeljs.io/docs/plugins/preset-env/"><code>babel-preset-env</code></a>:</p>
-<blockquote class="uneditable-code-block"><pre><code class="language-bash">npm install --save-dev babel-preset-env  <span class="comment"># Or --global for non-project-based usage</span>
+</blockquote><p>預設來說，Babel 本身什麼事情也不會做，他也不會鳥你想轉譯成什麼格式的程式碼。為了解決這傲嬌的問題，你必須提供一個設定檔讓他正常運作，而主要的方式就是在欲編譯的檔案資料夾裡建立一個 <a href="https://babeljs.io/docs/usage/babelrc/"><code>.babelrc</code> 檔案</a>（或者父資料夾也行），Babel 也支援<a href="https://babeljs.io/docs/usage/babelrc/">其他方式</a>就是了。一個最基本的 <code>.babelrc</code> 檔案會有 <code>{ &quot;presets&quot;: [&quot;env&quot;] }</code> 內容。在這之前你必須先安裝最基本的 <a href="https://babeljs.io/docs/plugins/preset-env/"><code>babel-preset-env</code></a> 配置環境檔案：</p>
+<blockquote class="uneditable-code-block"><pre><code class="language-bash">npm install --save-dev babel-preset-env  <span class="comment"># 在沒有明顯區分專案的情況下可以用上 --global 選項</span>
 </code></pre>
-</blockquote><p>See <a href="https://babeljs.io/docs/plugins/">Babel’s website to learn about presets and plugins</a> and the multitude of options you have. Another preset you might need is <a href="https://babeljs.io/docs/plugins/transform-react-jsx/"><code>transform-react-jsx</code></a> if you’re using JSX with React (JSX can also be used with other frameworks).</p>
-<p>Once you have <code>babel-core</code> and <code>babel-preset-env</code> (or other presets or plugins) installed, and a <code>.babelrc</code> file (or other equivalent) in place, you can use <code>coffee --transpile</code> to pipe CoffeeScript’s output through Babel using the options you’ve saved.</p>
-<p>If you’re using CoffeeScript via the <a href="nodejs_usage">Node API</a>, where you call <code>CoffeeScript.compile</code> with a string to be compiled and an <code>options</code> object, the <code>transpile</code> key of the <code>options</code> object should be the Babel options:</p>
+</blockquote><p>拜訪 <a href="https://babeljs.io/docs/plugins/">Babel 的網站能夠讓你學到關於配置環境檔案和擴充插件</a>的相關知識。當你需要用上 JSX 和 React 時，你會需要 <a href="https://babeljs.io/docs/plugins/transform-react-jsx/"><code>transform-react-jsx</code></a> 配置環境檔案（雖然 JSX 也可以和其他框架一同使用啦）。</p>
+<p>當你有安裝 <code>babel-core</code> 和 <code>babel-preset-env</code>（或其他配置環境檔案）且已經設定好 <code>.babelrc</code>（相關的設置）時，就可以開始使用 <code>coffee --transpile</code> 指令來將 CoffeeScript 的輸出結果銜接到 Babel 並以你所設置的選項來進行轉譯。</p>
+<p>如果你是透過 <a href="nodejs_usage">Node API</a> 使用 CoffeeScript 的話，則需要在呼叫 <code>CoffeeScript.compile</code> 的時候在 <code>options</code> 選項物件部分的 <code>transpile</code> 屬性設置 Babel 的選項：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-js">CoffeeScript.compile(code, {<span class="attr">transpile</span>: {<span class="attr">presets</span>: [<span class="string">'env'</span>]}})
 </code></pre>
-</blockquote><p>You can also transpile CoffeeScript’s output without using the <code>transpile</code> option, for example as part of a build chain. This lets you use transpilers other than Babel, and it gives you greater control over the process. There are many great task runners for setting up JavaScript build chains, such as <a href="http://gulpjs.com/">Gulp</a>, <a href="https://webpack.github.io/">Webpack</a>, <a href="https://gruntjs.com/">Grunt</a> and <a href="http://broccolijs.com/">Broccoli</a>.</p>
-<h4>Polyfills</h4>
-<p>Note that transpiling doesn’t automatically supply <a href="https://developer.mozilla.org/en-US/docs/Glossary/Polyfill">polyfills</a> for your code. CoffeeScript itself will output <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf"><code>Array.indexOf</code></a> if you use the <code>in</code> operator, or destructuring or spread/rest syntax; and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"><code>Function.bind</code></a> if you use a bound (<code>=&gt;</code>) method in a class. Both are supported in Internet Explorer 9+ and all more recent browsers, but you will need to supply polyfills if you need to support Internet Explorer 8 or below and are using features that would cause these methods to be output. You’ll also need to supply polyfills if your own code uses these methods or another method added in recent versions of JavaScript. One polyfill option is <a href="https://babeljs.io/docs/usage/polyfill/"><code>babel-polyfill</code></a>, though there are many <a href="https://hackernoon.com/polyfills-everything-you-ever-wanted-to-know-or-maybe-a-bit-less-7c8de164e423">other</a> <a href="https://philipwalton.com/articles/loading-polyfills-only-when-needed/">strategies</a>.</p>
+</blockquote><p>將 CoffeeScript 納入建置鏈就能夠不需要用上 <code>transpile</code> 設置來轉譯 CoffeeScript 的輸出內容。這讓你能夠使用 Babel 以外的轉譯器，通常要達到這樣的效果可以使用現有的 JavaScript 建置鏈工具。例如：<a href="http://gulpjs.com/">Gulp</a>、<a href="https://webpack.github.io/">Webpack</a>、<a href="https://gruntjs.com/">Grunt</a> 或 <a href="http://broccolijs.com/">Broccoli</a>。</p>
+<h4>Polyfill</h4>
+<p>該注意的是轉譯並不會自動幫妳解決某些最根本的 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Polyfill">Polyfills</a> 相容性問題。CoffeeScript 會在你使用 <code>in</code> 語法時自動輸出成 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf"><code>Array.indexOf</code></a> 或者解構和展開運算符；而在類別中用上胖箭頭（<code>=&gt;</code>）時則會輸出成 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"><code>Function.bind</code></a>。兩者都在 Internet Explorer 9+ 和多數瀏覽器上獲得支援，但是如果你要讓他們在 Internet Explorer 8 或是更舊的瀏覽器中能夠正常執行，就會需要透過 Polyfills 解決這些問題。當你自己在程式中用上類似的語法時，也依然需要這麼做。而有個能解決 Polyfill 的方法就是安裝 <a href="https://babeljs.io/docs/usage/polyfill/"><code>babel-polyfill</code></a>（雖然還有<a href="https://hackernoon.com/polyfills-everything-you-ever-wanted-to-know-or-maybe-a-bit-less-7c8de164e423">其他</a>、<a href="https://philipwalton.com/articles/loading-polyfills-only-when-needed/">不同</a>的方式就是了）。</p>
 
         </section>
       </section>
       <section id="language">
-        <h2>Language Reference</h2>
-<p><em>This reference is structured so that it can be read from top to bottom, if you like. Later sections use ideas and syntax previously introduced. Familiarity with JavaScript is assumed. In all of the following examples, the source CoffeeScript is provided on the left, and the direct compilation into JavaScript is on the right.</em></p>
-<p><em>Many of the examples can be run (where it makes sense) by pressing the</em> <small>▶</small> <em>button on the right. The CoffeeScript on the left is editable, and the JavaScript will update as you edit.</em></p>
-<p>First, the basics: CoffeeScript uses significant whitespace to delimit blocks of code. You don’t need to use semicolons <code>;</code> to terminate expressions, ending the line will do just as well (although semicolons can still be used to fit multiple expressions onto a single line). Instead of using curly braces <code>{ }</code> to surround blocks of code in <a href="#literals">functions</a>, <a href="#conditionals">if-statements</a>, <a href="#switch">switch</a>, and <a href="#try">try/catch</a>, use indentation.</p>
-<p>You don’t need to use parentheses to invoke a function if you’re passing arguments. The implicit call wraps forward to the end of the line or block expression.<br>
+        <h2>語言概要</h2>
+<p><em>這份概要的組成結構讓你能夠從上閱讀至下逐一學習，而後續的章節都會基於先前所提到的觀念。在接下來的範例中，左側的區塊是 CoffeeScript 原始碼，而右側則是編譯後的 JavaScript 程式碼。</em></p>
+<p><em>多數的範例都可以透過按下右方的</em> <small>▶</small> <em>按鈕來執行。左側的 CoffeeScript 都是可以即時編輯的。當然，右側的 JavaScript 也會依照你的編輯做即時更新。</em></p>
+<p>首先你要知道的是：CoffeeScript 使用空格來作為判斷程式碼區塊的依據。你不需要透過 <code>;</code> 分號來結束表達式或斷句（雖然有時候要將多行表達式縮成一行時會用上）。比起用上 <code>{ }</code> 花括號來包覆<a href="#literals">函式</a>、<a href="#conditionals">條件式</a>、<a href="#switch">選擇</a>、<a href="#try">嘗試／捕捉</a>區塊，你真正該用的是空白縮排。</p>
+<p>當你正要傳遞參數到函式的時候不一定需要括號，下面這個寫法會不斷地幫你自動包覆變數。<br>
 <code>console.log sys.inspect object</code> → <code>console.log(sys.inspect(object));</code></p>
 
         <section id="functions">
-          <h2>Functions</h2>
-<p>Functions are defined by an optional list of parameters in parentheses, an arrow, and the function body. The empty function looks like this: <code>-&gt;</code></p>
+          <h2>函式</h2>
+<p>一個基本的函式由括號與可選的參數、箭頭、函式內容定義。一個空的函式看起來像這樣：<code>-&gt;</code></p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="functions">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1129,7 +1129,7 @@ cube = function(x) {
   </div>
   
 </aside>
-<p>Functions may also have default values for arguments, which will be used if the incoming argument is missing (<code>undefined</code>).</p>
+<p>函式的接收參數也能夠有預設值，當沒有接收到其參數（<code>undefined</code>）的話就會使用預設值，這很好用。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="default_args">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1169,8 +1169,8 @@ fill = function(container, liquid = "coffee") {
 
         </section>
         <section id="strings">
-          <h2>Strings</h2>
-<p>Like JavaScript and many other languages, CoffeeScript supports strings as delimited by the <code>&quot;</code> or <code>'</code> characters. CoffeeScript also supports string interpolation within <code>&quot;</code>-quoted strings, using <code>#{ … }</code>. Single-quoted strings are literal. You may even use interpolation in object keys.</p>
+          <h2>字串</h2>
+<p>就像 JavaScript 還有其他語言那樣，CoffeeScript 支援以 <code>&quot;</code> 或 <code>'</code> 符號來定義字串。CoffeeScript 中，你能夠用 <code>#{ … }</code> 來在 <code>&quot;</code>（雙引號）定義的字串中進行插值。而單引號定義的字串就僅僅是普通的字串而已。在物件的鍵名中你仍可以使用雙引號進行字串插值。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="interpolation">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1215,7 +1215,7 @@ sentence = `${22 / 7} is a decent approximation of π`;
   </div>
   
 </aside>
-<p>Multiline strings are allowed in CoffeeScript. Lines are joined by a single space unless they end with a backslash. Indentation is ignored.</p>
+<p>多行字串也能夠在 CoffeeScript 中使用。在文字中插入反斜線（<code>/</code>）會移除與下一行銜接的空白間隔。文字的開頭與結尾空白對齊在這個時候會被忽略。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="strings">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1256,7 +1256,7 @@ mobyDick = "Call me Ishmael. Some years ago -- never mind how long precisely -- 
   </div>
   
 </aside>
-<p>Block strings, delimited by <code>&quot;&quot;&quot;</code> or <code>'''</code>, can be used to hold formatted or indentation-sensitive text (or, if you just don’t feel like escaping quotes and apostrophes). The indentation level that begins the block is maintained throughout, so you can keep it all aligned with the body of your code.</p>
+<p>透過 <code>&quot;&quot;&quot;</code> 或 <code>'''</code> 建立區塊字串，這很適合用來存放已經格式化過（美化）或者很講究對齊的文字內容（或者你不想整天脫逸雙、單引號）。內容的對齊由區塊字串開始的地方為主。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="heredocs">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1295,12 +1295,12 @@ html = "<strong>\n  cup of coffeescript\n</strong>";
   </div>
   
 </aside>
-<p>Double-quoted block strings, like other double-quoted strings, allow interpolation.</p>
+<p>雙引號區塊字串就像上面的所有雙引號字串那樣，允許字串插值。</p>
 
         </section>
         <section id="objects-and-arrays">
-          <h2>Objects and Arrays</h2>
-<p>The CoffeeScript literals for objects and arrays look very similar to their JavaScript cousins. When each property is listed on its own line, the commas are optional. Objects may be created using indentation instead of explicit braces, similar to <a href="http://yaml.org">YAML</a>.</p>
+          <h2>物件與陣列</h2>
+<p>CoffeeScript 對於物件還有陣列的使用方式就像 JavaScript 的表兄弟姐妹那樣親近。當每個屬性都自己有一行的時候，後面的逗點可以省去。物件可以由對齊而非花括號進行建立，類似 <a href="http://yaml.org">YAML</a>。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="objects_and_arrays">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1399,7 +1399,7 @@ kids = {
   </div>
   
 </aside>
-<p>CoffeeScript has a shortcut for creating objects when you want the key to be set with a variable of the same name.</p>
+<p>當你要建立一個鍵名與變數名稱相同的物件時，CoffeeScript 提供了你一個簡單的用法。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="objects_shorthand">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1448,8 +1448,8 @@ output = `${turtle.name} wears an ${turtle.mask} mask. Watch out for his ${turtl
 
         </section>
         <section id="comments">
-          <h2>Comments</h2>
-<p>In CoffeeScript, comments are denoted by the <code>#</code> character to the end of a line, or from <code>###</code> to the next appearance of <code>###</code>. Comments are ignored by the compiler, though the compiler makes its best effort at reinserting your comments into the output JavaScript after compilation.</p>
+          <h2>註釋</h2>
+<p>在 CoffeeScript 中，註釋以 <code>#</code> 符號起首，或者 <code>###</code> 到下一個 <code>###</code> 符號。註釋會被編譯器忽略，不過要是可以的話，編譯器也會自動幫你把註釋安插到輸出的 JavaScript 並找尋最適合的位置放入。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="comment">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1495,12 +1495,12 @@ sayFortune = function(fortune) {
   </div>
   
 </aside>
-<p>Inline <code>###</code> comments make <a href="#type-annotations">type annotations</a> possible.</p>
+<p>單行的 <code>###</code> 註釋讓你能夠使用<a href="#type-annotations">型態註解</a>功能。</p>
 
         </section>
         <section id="lexical-scope">
-          <h2>Lexical Scoping and Variable Safety</h2>
-<p>The CoffeeScript compiler takes care to make sure that all of your variables are properly declared within lexical scope — you never need to write <code>var</code> yourself.</p>
+          <h2>有效範圍和變數安全性</h2>
+<p>CoffeeScript 編譯器能夠依照期望的方式自動宣告變數的有效範圍─這讓你不需要手動撰寫 <code>var</code> 來宣告變數。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="scope">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1555,17 +1555,17 @@ inner = changeNumbers();
   </div>
   
 </aside>
-<p>Notice how all of the variable declarations have been pushed up to the top of the closest scope, the first time they appear. <code>outer</code> is not redeclared within the inner function, because it’s already in scope; <code>inner</code> within the function, on the other hand, should not be able to change the value of the external variable of the same name, and therefore has a declaration of its own.</p>
-<p>Because you don’t have direct access to the <code>var</code> keyword, it’s impossible to shadow an outer variable on purpose, you may only refer to it. So be careful that you’re not reusing the name of an external variable accidentally, if you’re writing a deeply nested function.</p>
-<p>Although suppressed within this documentation for clarity, all CoffeeScript output (except in files with <code>import</code> or <code>export</code> statements) is wrapped in an anonymous function: <code>(function(){ … })();</code>. This safety wrapper, combined with the automatic generation of the <code>var</code> keyword, make it exceedingly difficult to pollute the global namespace by accident. (The safety wrapper can be disabled with the <a href="#usage"><code>bare</code> option</a>, and is unnecessary and automatically disabled when using modules.)</p>
-<p>If you’d like to create top-level variables for other scripts to use, attach them as properties on <code>window</code>; attach them as properties on the <code>exports</code> object in CommonJS; or use an <a href="#modules"><code>export</code> statement</a>. If you’re targeting both CommonJS and the browser, the <a href="#existential-operator">existential operator</a> (covered below), gives you a reliable way to figure out where to add them: <code>exports ? this</code>.</p>
-<p>Since CoffeeScript takes care of all variable declaration, it is not possible to declare variables with ES2015’s <code>let</code> or <code>const</code>. <a href="#unsupported-let-const">This is intentional</a>; we feel that the simplicity gained by not having to think about variable declaration outweighs the benefit of having three separate ways to declare variables.</p>
+<p>可以意識到的是：在範例中任何第一次出現的變數都會盡可能地在該範圍宣告，之後因為 <code>outer</code> 已經在父範圍被宣告過了，因此並不會在內部函式又重新宣告一次；而 <code>inner</code> 是在函式內宣告的，因此不會變更到函式外所宣告的變數。</p>
+<p>由於你沒有辦法直接使用 <code>var</code> 語法，因此在巢狀函式結構中需要額外注意你不是正在修改外部所宣告的變數。</p>
+<p>所有 CoffeeScript 所輸出的程式碼都會被一個匿名函式包覆著（除了 <code>import</code> 和 <code>export</code> 語法）：<code>(function(){ … })();</code>。我們稱其為「有效範圍保護函式」，這個做法能夠讓你的每個檔案都有自己的有效範圍，而不會直接暴露到全域範圍導致不同檔案都在更改同個變數。（如果你不希望有這層保護的話，可以透過 <a href="#usage"><code>bare</code> 選項</a>進行關閉。與模組系統使用時則不需要特別指定也會啟用這個選項。）</p>
+<p>如果你希望能夠建立一個全域變數供其他檔案或腳本使用的話，請試圖將其變數建立於 <code>window</code> 屬性底下；或是 CommonJS 的 <code>exports</code> 物件底下；甚至是使用 <a href="#modules"><code>export</code> 語法</a>。如果希望腳本可以用於 CommonJS 和瀏覽器兩者的話，請參閱<a href="#existential-operator">存在運算子</a>章節，這讓你能夠得知目前執行的環境可用何種方法輸出：<code>exports ? this</code>。</p>
+<p>理所當然地，因為 CoffeeScript 接管了所有變數的宣告，這也讓你沒辦法手動以 ES2015 的 <code>let</code> 或 <code>const</code> 來宣告片段變數。其實這早在<a href="#unsupported-let-const">我們的預料中</a>；因為我們希望能夠透過較簡單的方式來設計程式，否則就會過度思考整個有效範圍。</p>
 
         </section>
         <section id="conditionals">
-          <h2>If, Else, Unless, and Conditional Assignment</h2>
-<p><code>if</code>/<code>else</code> statements can be written without the use of parentheses and curly brackets. As with functions and other block expressions, multi-line conditionals are delimited by indentation. There’s also a handy postfix form, with the <code>if</code> or <code>unless</code> at the end.</p>
-<p>CoffeeScript can compile <code>if</code> statements into JavaScript expressions, using the ternary operator when possible, and closure wrapping otherwise. There is no explicit ternary statement in CoffeeScript — you simply use a regular <code>if</code> statement on a single line.</p>
+          <h2>如果、否則、除非和條件式</h2>
+<p><code>if</code>/<code>else</code> 陳述式撰寫的時候可以省略花括號和弧形括號。就像函式跟其他的區塊表達式一樣，只要是單行以上的條件式內容都是用對齊來搞定。順帶一提的是：你能夠把 <code>if</code> 跟 <code>unless</code> 放在最後面以便符合英文的文法。</p>
+<p>CoffeeScript 可以將 <code>if</code> 陳述式轉換成 JavaScript 的表達式，並在可以的時候轉換成三元運算子（Ternary），不然就以正常的花括號包覆處理。不過在 CoffeeScript 中沒有具體的三元運算子用法，使用單行的 <code>if</code> 陳述式即可。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="conditionals">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1628,8 +1628,8 @@ date = friday ? sue : jill;
 
         </section>
         <section id="splats">
-          <h2>Splats, or Rest Parameters/Spread Syntax</h2>
-<p>The JavaScript <code>arguments</code> object is a useful way to work with functions that accept variable numbers of arguments. CoffeeScript provides splats <code>...</code>, both for function definition as well as invocation, making variable numbers of arguments a little bit more palatable. ES2015 adopted this feature as their <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">rest parameters</a>.</p>
+          <h2>變參、其餘與展開運算符</h2>
+<p>JavaScript 的 <code>arguments</code> 物件在處理多個傳入參數時很方便。而 CoffeeScript 的 <code>...</code> 正因此想法而生，兩者功能皆相同。在之後的 ES2015 也有了相同的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">其餘運算符</a>。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="splats">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1737,7 +1737,7 @@ alert(`Gold: ${gold}\nSilver: ${silver}\nThe Field: ${rest.join(', ')}`);
   
 </aside>
 <div id="array-spread" class="bookmark"></div>
-<p>Splats also let us elide array elements…</p>
+<p>其餘運算符同時也能夠用來讓我們「省略」陣列元素⋯</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="array_spread">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1783,7 +1783,7 @@ all = [...popular, ...unwanted, 'mushrooms'];
   
 </aside>
 <div id="object-spread" class="bookmark"></div>
-<p>…and object properties.</p>
+<p>⋯還有物件屬性。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="object_spread">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1838,12 +1838,12 @@ currentUser = {
   </div>
   
 </aside>
-<p>In ECMAScript this is called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">spread syntax</a>, and has been supported for arrays since ES2015 and objects since ES2018.</p>
+<p>這功能在 ECMAScript 中稱之為<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">展開運算符</a>，並且在 ES2015 時就支援展開陣列、而 ES2018 時支援展開物件。</p>
 
         </section>
         <section id="loops">
-          <h2>Loops and Comprehensions</h2>
-<p>Most of the loops you’ll write in CoffeeScript will be <strong>comprehensions</strong> over arrays, objects, and ranges. Comprehensions replace (and compile into) <code>for</code> loops, with optional guard clauses and the value of the current array index. Unlike for loops, array comprehensions are expressions, and can be returned and assigned.</p>
+          <h2>迴圈與推導</h2>
+<p>在 CoffeeScript 裡，多數的迴圈寫法都是以 <strong>推導</strong> 的方式來遍歷整個陣列、物件。推導會被編譯成標準的 <code>for</code> 迴圈，且可以選擇性地取得迴圈索引和其現有值。和普通迴圈不一樣的的在於：陣列推導是表達式，這讓你能夠將其迴圈作為值回傳或賦予給某個變數。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="array_comprehensions">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1949,9 +1949,9 @@ for (l = 0, len2 = foods.length; l < len2; l++) {
   </div>
   
 </aside>
-<p>Comprehensions should be able to handle most places where you otherwise would use a loop, <code>each</code>/<code>forEach</code>, <code>map</code>, or <code>select</code>/<code>filter</code>, for example:<br>
-<code>shortNames = (name for name in list when name.length &lt; 5)</code><br>
-If you know the start and end of your loop, or would like to step through in fixed-size increments, you can use a range to specify the start and end of your comprehension.</p>
+<p>陣列推導能夠符合你通常會用上迴圈、<code>each</code> 或 <code>forEach</code>、<code>map</code> 和 <code>select</code> 與 <code>filter</code> 的地方：<br>
+<code>shortNames = (name for name in list when name.length &lt; 5)</code><br></p>
+<p>如果你知道迴圈的起始和結束點在哪裡、或者希望固定迴圈長度的話，就可以替推導來指定一個範圍。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="range_comprehensions">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -1996,12 +1996,12 @@ countdown = (function() {
   </div>
   
 </aside>
-<p>Note how because we are assigning the value of the comprehensions to a variable in the example above, CoffeeScript is collecting the result of each iteration into an array. Sometimes functions end with loops that are intended to run only for their side-effects. Be careful that you’re not accidentally returning the results of the comprehension in these cases, by adding a meaningful return value — like <code>true</code> — or <code>null</code>, to the bottom of your function.</p>
-<p>To step through a range comprehension in fixed-size chunks, use <code>by</code>, for example:
+<p>在上述範例中可以看到的是：我們正要將一個陣列推導的結果賦予到變數中，所以 CoffeeScript 會自動收集其迴圈的結果並傳到該變數。雖然說這很方便，但多數時候還是要注意推導有時候可能會因此而自動在某個函式中回傳了不必要的數值，這個時候請記得要在函式底部手動回傳一些像是 <code>true</code>、<code>null</code> 等資料來避免推導結果被回傳。</p>
+<p>如果要在固定長度的陣列推導中跨階，可以使用 <code>by</code> 關鍵字，像是：
 <code>evens = (x for x in [0..10] by 2)</code></p>
-<p>If you don’t need the current iteration value you may omit it:
+<p>如果你不需要目前遍歷的內容值，你可以直接省略它：
 <code>browser.closeCurrentTab() for [0...count]</code></p>
-<p>Comprehensions can also be used to iterate over the keys and values in an object. Use <code>of</code> to signal comprehension over the properties of an object instead of the values in an array.</p>
+<p>推導也能夠用於物件的鍵名和內容值。透過 <code>of</code> 來遍歷一個物件。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="object_comprehensions">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2066,9 +2066,9 @@ ages = (function() {
   </div>
   
 </aside>
-<p>If you would like to iterate over just the keys that are defined on the object itself, by adding a <code>hasOwnProperty</code> check to avoid properties that may be inherited from the prototype, use <code>for own key, value of object</code>.</p>
-<p>To iterate a generator function, use <code>from</code>. See <a href="#generator-iteration">Generator Functions</a>.</p>
-<p>The only low-level loop that CoffeeScript provides is the <code>while</code> loop. The main difference from JavaScript is that the <code>while</code> loop can be used as an expression, returning an array containing the result of each iteration through the loop.</p>
+<p>如果你想要透過 <code>hasOwnProperty</code> 這種方式來遍歷並檢查物件的某些屬性（用以避免取得原型鏈底層的屬性），可以用上像是 <code>for own key, value of object</code> 的方法。</p>
+<p>如果要遍歷一個產生器函式，則是使用 <code>from</code> 關鍵字。請參閱<a href="#generator-iteration">產生器函式</a>。</p>
+<p><code>while</code> 是 CoffeeScript 中最底層的迴圈。和 JavaScript 的 <code>while</code> 迴圈不太一樣的地方在於你能夠將其當作表達式使用，並且遍歷其內容且將結果作為陣列型態回傳。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="while">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2157,8 +2157,8 @@ lyrics = (function() {
   </div>
   
 </aside>
-<p>For readability, the <code>until</code> keyword is equivalent to <code>while not</code>, and the <code>loop</code> keyword is equivalent to <code>while true</code>.</p>
-<p>When using a JavaScript loop to generate functions, it’s common to insert a closure wrapper in order to ensure that loop variables are closed over, and all the generated functions don’t just share the final values. CoffeeScript provides the <code>do</code> keyword, which immediately invokes a passed function, forwarding any arguments.</p>
+<p>為了閱讀起來符合相關文法，<code>until</code> 關鍵字與 <code>while not</code> 是相同的，而 <code>loop</code> 也等同於 <code>while true</code>。</p>
+<p>若要將 JavaScript 的迴圈值傳入其迴圈中的函式，我們通常都會建立閉包函式來確保這個函式所接收到的值、參數是來自於目前的這一個迴圈，避免值被下個迴圈洗刷掉。CoffeeScript 提供了 <code>do</code> 關鍵字，這能夠直接將目前的迴圈值、變數自動以閉包的方式傳入迴圈中的函式。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="do">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2209,8 +2209,8 @@ for (i = 0, len = list.length; i < len; i++) {
 
         </section>
         <section id="slices">
-          <h2>Array Slicing and Splicing with Ranges</h2>
-<p>Ranges can also be used to extract slices of arrays. With two dots (<code>3..6</code>), the range is inclusive (<code>3, 4, 5, 6</code>); with three dots (<code>3...6</code>), the range excludes the end (<code>3, 4, 5</code>). Slices indices have useful defaults. An omitted first index defaults to zero and an omitted second index defaults to the size of the array.</p>
+          <h2>陣列切片與範圍</h2>
+<p>你能夠在陣列索引中指定一個範圍。主要透過兩個點符號（像是：<code>3..6</code>），而其範圍會是（<code>3, 4, 5, 6</code>）；然而用上三個點符號的時候（<code>3...6</code>）其範圍則會排除最後一個元素而結果會是（<code>3, 4, 5</code>）。若切片沒有指定起始範圍，預設會是從零開始，而沒有結束範圍則是會以陣列的長度為主。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="slices">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2273,7 +2273,7 @@ copy = numbers.slice(0);
   </div>
   
 </aside>
-<p>The same syntax can be used with assignment to replace a segment of an array with new values, splicing it.</p>
+<p>相同的手法可以用在陣列賦值中，以新的值來取代陣列中的特定範圍值。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="splices">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2314,12 +2314,12 @@ splice.apply(numbers, [3, 4].concat(ref = [-3, -4, -5, -6])), ref;
   </div>
   
 </aside>
-<p>Note that JavaScript strings are immutable, and can’t be spliced.</p>
+<p>注意的是 JavaScript 的字串是不可更改且無法被切片的。</p>
 
         </section>
         <section id="expressions">
-          <h2>Everything is an Expression (at least, as much as possible)</h2>
-<p>You might have noticed how even though we don’t add return statements to CoffeeScript functions, they nonetheless return their final value. The CoffeeScript compiler tries to make sure that all statements in the language can be used as expressions. Watch how the <code>return</code> gets pushed down into each possible branch of execution in the function below.</p>
+          <h2>所有東西都是表達式（差不多啦）</h2>
+<p>你也許會注意到為什麼 CoffeeScript 的函式最終都不用加個回傳陳述式，但函式卻還是會有回傳值。其實 CoffeeScript 會試圖將所有語句視為表達式。看好下面的範例，其函式的任何一項內容都會盡可能地加上回傳陳述式。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="expressions">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2394,8 +2394,8 @@ eldest = 24 > 21 ? "Liz" : "Ike";
   </div>
   
 </aside>
-<p>Even though functions will always return their final value, it’s both possible and encouraged to return early from a function body writing out the explicit return (<code>return value</code>), when you know that you’re done.</p>
-<p>Because variable declarations occur at the top of scope, assignment can be used within expressions, even for variables that haven’t been seen before:</p>
+<p>雖然說函式最終都會自動回傳其值，但我們還是鼓勵你：當函式該結束的時候就自己直接手動加上回傳（<code>return value</code>）陳述式來結束函式。</p>
+<p>對了，連沒有定義過的變數也可以直接當成表達式邊宣告邊使用。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="expressions_assignment">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2426,7 +2426,7 @@ six = (one = 1) + (two = 2) + (three = 3);
   </div>
   
 </aside>
-<p>Things that would otherwise be statements in JavaScript, when used as part of an expression in CoffeeScript, are converted into expressions by wrapping them in a closure. This lets you do useful things, like assign the result of a comprehension to a variable:</p>
+<p>在 JavaScript 必須是陳述式的東西，CoffeeScript 能夠將其以閉包函式包覆著並且當成表達式使用並賦值給某個變數：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="expressions_comprehension">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2477,7 +2477,7 @@ globals = ((function() {
   </div>
   
 </aside>
-<p>As well as silly things, like passing a <code>try</code>/<code>catch</code> statement directly into a function call:</p>
+<p>還有個很有趣的是：像 <code>try</code> 和 <code>catch</code> 可以直接被塞進一個函式呼叫中進行使用。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="expressions_try">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2532,21 +2532,21 @@ alert((function() {
   </div>
   
 </aside>
-<p>There are a handful of statements in JavaScript that can’t be meaningfully converted into expressions, namely <code>break</code>, <code>continue</code>, and <code>return</code>. If you make use of them within a block of code, CoffeeScript won’t try to perform the conversion.</p>
+<p>不過仍有許多無法轉換成表達式的 JavaScript 陳述式（例如：<code>break</code>、<code>continue</code>、<code>return</code>）。所以當你要用上他們當作表達式的時候，CoffeeScript 可沒辦法幫你。</p>
 
         </section>
         <section id="operators">
-          <h2>Operators and Aliases</h2>
-<p>Because the <code>==</code> operator frequently causes undesirable coercion, is intransitive, and has a different meaning than in other languages, CoffeeScript compiles <code>==</code> into <code>===</code>, and <code>!=</code> into <code>!==</code>. In addition, <code>is</code> compiles into <code>===</code>, and <code>isnt</code> into <code>!==</code>.</p>
-<p>You can use <code>not</code> as an alias for <code>!</code>.</p>
-<p>For logic, <code>and</code> compiles to <code>&amp;&amp;</code>, and <code>or</code> into <code>||</code>.</p>
-<p>Instead of a newline or semicolon, <code>then</code> can be used to separate conditions from expressions, in <code>while</code>, <code>if</code>/<code>else</code>, and <code>switch</code>/<code>when</code> statements.</p>
-<p>As in <a href="http://yaml.org/">YAML</a>, <code>on</code> and <code>yes</code> are the same as boolean <code>true</code>, while <code>off</code> and <code>no</code> are boolean <code>false</code>.</p>
-<p><code>unless</code> can be used as the inverse of <code>if</code>.</p>
-<p>As a shortcut for <code>this.property</code>, you can use <code>@property</code>.</p>
-<p>You can use <code>in</code> to test for array presence, and <code>of</code> to test for JavaScript object-key presence.</p>
-<p>In a <code>for</code> loop, <code>from</code> compiles to the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">ES2015 <code>of</code></a>. (Yes, it’s unfortunate; the CoffeeScript <code>of</code> predates the ES2015 <code>of</code>.)</p>
-<p>To simplify math expressions, <code>**</code> can be used for exponentiation and <code>//</code> performs floor division. <code>%</code> works just like in JavaScript, while <code>%%</code> provides <a href="https://en.wikipedia.org/wiki/Modulo_operation">“dividend dependent modulo”</a>:</p>
+          <h2>運算子與歧義</h2>
+<p>由於 <code>==</code> 運算符常常發生令人不愉快的小意外、而且和其他語言有著不太ㄧ樣的意思。為此，CoffeeScript 將 <code>==</code> 編譯為 <code>===</code>，而 <code>!=</code> 將會編譯成 <code>!==</code>。額外一點，<code>is</code> 會被編譯成 <code>===</code>，而 <code>isnt</code> 編譯為 <code>!==</code>。</p>
+<p>你可以把 <code>not</code> 當作 <code>!</code> 使用。</p>
+<p>有關邏輯上的運算符，<code>and</code> 會編譯成 <code>&amp;&amp;</code>，而 <code>or</code> 則是 <code>||</code>。</p>
+<p>在 <code>while</code>、<code>if</code>/<code>else</code> 和 <code>switch</code>/<code>when</code> 之中，透過 <code>then</code> 來從表達式中區分條件式，而不是換行或是使用分號。</p>
+<p>和 <a href="http://yaml.org/">YAML</a> 類似，<code>on</code> 和 <code>yes</code> 會被視為布林值的 <code>true</code>，而 <code>off</code> 和 <code>no</code> 會被當作 <code>false</code> 處理。</p>
+<p><code>unless</code> 簡單說就是和 <code>if</code> 相反。</p>
+<p>你能夠用 <code>@property</code> 當作 <code>this.property</code> 的縮寫。</p>
+<p>你可以用 <code>in</code> 來測試陣列裡是否有某個值，然後 <code>of</code> 來測試物件中是否有某個屬性。</p>
+<p>在 <code>for</code> 迴圈裡，<code>from</code> 會被編譯成 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">ES2015 的 <code>of</code></a>。（對，很不幸地；當初設計 CoffeeScript 時的 <code>of</code> 跟 ES2015 的 <code>of</code> 名稱相衝。）</p>
+<p>欲簡化數學表達式，<code>**</code> 可以用來乘冪，而 <code>//</code> 用來整除。<code>%</code> 跟 JavaScript 的沒差異，不過 <code>%%</code> 則提供了<a href="https://en.wikipedia.org/wiki/Modulo_operation">「模除」</a>功能：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="modulo">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2582,7 +2582,7 @@ tabs.selectTabAtIndex(modulo(tabs.currentIndex - count, tabs.length));
   </div>
   
 </aside>
-<p>All together now:</p>
+<p>總而言之，就是這樣：</p>
 <table>
 <thead>
 <tr>
@@ -2637,7 +2637,7 @@ tabs.selectTabAtIndex(modulo(tabs.currentIndex - count, tabs.length));
 </tr>
 <tr>
 <td><code>a ** b</code></td>
-<td><code>a ** b</code></td>
+<td><code>Math.pow(a, b)</code></td>
 </tr>
 <tr>
 <td><code>a // b</code></td>
@@ -2733,9 +2733,9 @@ print(inspect(`My name is ${this.name}`));
 
         </section>
         <section id="existential-operator">
-          <h2>The Existential Operator</h2>
-<p>It’s a little difficult to check for the existence of a variable in JavaScript. <code>if (variable) …</code> comes close, but fails for zero, the empty string, and false (to name just the most common cases). CoffeeScript’s existential operator <code>?</code> returns true unless a variable is <code>null</code> or <code>undefined</code> or undeclared, which makes it analogous to Ruby’s <code>nil?</code>.</p>
-<p>It can also be used for safer conditional assignment than the JavaScript pattern <code>a = a || value</code> provides, for cases where you may be handling numbers or strings.</p>
+          <h2>存在運算子</h2>
+<p>在 JavaScript 要檢查一個變數是否存在其實有點小聒噪。<code>if (變數) ...</code> 什麼的，然後就跟一些資料型態有關，像是：零值、空字串、假值（有很多不同的檢測方式）。所以 CoffeeScript 的 <code>?</code> 存在運算子就這樣產生了。除非一個變數是 <code>null</code> 或者 <code>undefined</code> 甚至尚未定義，否則都會回傳 <code>true</code>。這有點像是 Ruby 的 <code>nil?</code> 用法。</p>
+<p>這個方式也能夠被用在 JavaScript 中類似 <code>a = a || value</code> 的場景作為更安全的條件式比較，不然通常來說都需要額外檢查數值或字串實在是有點麻煩。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="existence">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2796,7 +2796,7 @@ footprints = typeof yeti !== "undefined" && yeti !== null ? yeti : "bear";
   </div>
   
 </aside>
-<p>Note that if the compiler knows that <code>a</code> is in scope and therefore declared, <code>a?</code> compiles to <code>a != null</code>, <em>not</em> <code>a !== null</code>. The <code>!=</code> makes a loose comparison to <code>null</code>, which does double duty also comparing against <code>undefined</code>. The reverse also holds for <code>not a?</code> or <code>unless a?</code>.</p>
+<p>不過要注意的是：當編譯器得知 <code>a</code> 已經在有效範圍中被定義時，<code>a?</code> 會被編譯成 <code>a != null</code> <em>而不是</em> <code>a !== null</code>。因為 <code>!=</code> 能夠以較寬鬆的方式檢查該變數是否與 <code>null</code> 相符，這同時也能夠雙重保障該變數並不是一個 <code>undefined</code>。這個道理同樣適用於 <code>not a?</code> 和 <code>unless a?</code> 語法。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="existence_declared">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2832,7 +2832,7 @@ if (major == null) {
   </div>
   
 </aside>
-<p>If a variable might be undeclared, the compiler does a thorough check. This is what JavaScript coders <em>should</em> be typing when they want to check if a mystery variable exists.</p>
+<p>當一個變數可能不會被定義時，JavaScript 工程師 <em>應該</em> 要寫得像下面一樣來檢查該變數到底存不存在。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="existence_undeclared">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2860,7 +2860,7 @@ if (typeof window !== "undefined" && window !== null) {
   </div>
   
 </aside>
-<p>The accessor variant of the existential operator <code>?.</code> can be used to soak up null references in a chain of properties. Use it instead of the dot accessor <code>.</code> in cases where the base value may be <code>null</code> or <code>undefined</code>. If all of the properties exist then you’ll get the expected result, if the chain is broken, <code>undefined</code> is returned instead of the <code>TypeError</code> that would be raised otherwise.</p>
+<p>存在運算子 <code>?.</code> 也可以用於一個可能是空值物件的方法鏈中。如果想要避免呼叫到 <code>null</code> 或 <code>undefined</code> 物件方法就可以透過 <code>?.</code> 來取代普通的 <code>.</code> 作為串連符號。當連結鏈因為前一個物件不存在而錯誤時，就會回傳一個·<code>undefined</code> 而不是發生 <code>TypeError</code> 錯誤。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="soaks">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2882,42 +2882,42 @@ zip = typeof lottery.drawWinner === "function" ? (ref = lottery.drawWinner().add
   </div>
   
 </aside>
-<p>For completeness:</p>
+<p>具體來說：</p>
 <table>
 <thead>
 <tr>
-<th>Example</th>
-<th>Definition</th>
+<th>範例</th>
+<th>定義</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>a?</code></td>
-<td>tests that <code>a</code> is in scope and <code>a != null</code></td>
+<td>確保 <code>a</code> 處於有效範圍中並且 <code>a != null</code></td>
 </tr>
 <tr>
 <td><code>a ? b</code></td>
-<td>returns <code>a</code> if <code>a</code> is in scope and <code>a != null</code>; otherwise, <code>b</code></td>
+<td>如果 <code>a</code> 存在且 <code>a != null</code> 的話則回傳 <code>a</code>；否則就回傳 <code>b</code></td>
 </tr>
 <tr>
-<td><code>a?.b</code> or <code>a?['b']</code></td>
-<td>returns <code>a.b</code> if <code>a</code> is in scope and <code>a != null</code>; otherwise, <code>undefined</code></td>
+<td><code>a?.b</code> 或 <code>a?['b']</code></td>
+<td>如果 <code>a</code> 存在且 <code>a != null</code> 的話就回傳 <code>a.b</code>；否則就回傳 <code>undefined</code></td>
 </tr>
 <tr>
-<td><code>a?(b, c)</code> or <code>a? b, c</code> </td>
-<td>returns the result of calling <code>a</code> (with arguments <code>b</code> and <code>c</code>) if <code>a</code> is in scope and callable; otherwise, <code>undefined</code></td>
+<td><code>a?(b, c)</code> 或 <code>a? b, c</code> </td>
+<td>如果 <code>a</code> 存在並且是可供呼叫的話則將參數 <code>b</code> 和 <code>c</code> 傳入並呼叫；否則回傳 <code>undefined</code></td>
 </tr>
 <tr>
 <td><code>a ?= b</code></td>
-<td>assigns the value of <code>b</code> to <code>a</code> if <code>a</code> is not in scope or if <code>a == null</code>; produces the new value of <code>a</code></td>
+<td>如果 <code>a</code> 不存在於有效範圍內或者 <code>a == null</code> 的話就將 <code>b</code> 的值賦予給 <code>a</code>；簡單說就是不存在就定義 <code>a</code> 變數</td>
 </tr>
 </tbody>
 </table>
 
         </section>
         <section id="chaining">
-          <h2>Chaining Function Calls</h2>
-<p>Leading <code>.</code> closes all open calls, allowing for simpler chaining syntax.</p>
+          <h2>函式呼叫鏈</h2>
+<p>以 <code>.</code> 開頭能讓你用更簡單的方式串連並呼叫多個函式。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="chaining">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2952,8 +2952,8 @@ zip = typeof lottery.drawWinner === "function" ? (ref = lottery.drawWinner().add
 
         </section>
         <section id="destructuring">
-          <h2>Destructuring Assignment</h2>
-<p>Just like JavaScript (since ES2015), CoffeeScript has destructuring assignment syntax. When you assign an array or object literal to a value, CoffeeScript breaks up and matches both sides against each other, assigning the values on the right to the variables on the left. In the simplest case, it can be used for parallel assignment:</p>
+          <h2>解構賦值</h2>
+<p>和 JavaScript（從 ES2015 開始）一樣的是，CoffeeScript 也支援解構賦值語法。當你試圖賦予一個陣列或物件某個值時，CoffeeScript 會試圖拆解值的內容，並且將右側的值賦予到左側。最直接的範例莫過於此：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="parallel_assignment">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -2998,7 +2998,7 @@ theSwitch = 0;
   </div>
   
 </aside>
-<p>But it’s also helpful for dealing with functions that return multiple values.</p>
+<p>想要重新命名函式回傳的多值內容也可以變得很簡單。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="multiple_return_values">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3047,7 +3047,7 @@ weatherReport = function(location) {
   </div>
   
 </aside>
-<p>Destructuring assignment can be used with any depth of array and object nesting, to help pull out deeply nested properties.</p>
+<p>解構賦值不僅支援單層，還支援巢狀式的結構。這讓你能夠在解構極具深度的物件內容時得心應手。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="object_extraction">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3134,7 +3134,7 @@ futurists = {
   </div>
   
 </aside>
-<p>Destructuring assignment can even be combined with splats.</p>
+<p>然後你也可以在解構賦值時用上展開語法。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="patterns_and_splats">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3175,7 +3175,7 @@ ref = tag.split(""), [open, ...contents] = ref, [close] = splice.call(contents, 
   </div>
   
 </aside>
-<p>Expansion can be used to retrieve elements from the end of an array without having to assign the rest of its values. It works in function parameter lists as well.</p>
+<p>展開語法也可以省略變數名稱，這樣就可以在解構陣列的時候只取得起首和尾部的元素。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="expansion">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3218,7 +3218,7 @@ ref = text.split(" "), [first] = ref, [last] = slice.call(ref, -1);
   </div>
   
 </aside>
-<p>Destructuring assignment is also useful when combined with class constructors to assign properties to your instance from an options object passed to the constructor.</p>
+<p>初始化一個類別的時候，其建構子也能用上解構賦值來直接將接收到的選項解構成類別中的選項並保存。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="constructor_destructuring">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3277,13 +3277,13 @@ tim = new Person({
   </div>
   
 </aside>
-<p>The above example also demonstrates that if properties are missing in the destructured object or array, you can, just like in JavaScript, provide defaults. Note though that unlike with the existential operator, the default is only applied with the value is missing or <code>undefined</code>—<a href="#breaking-changes-default-values">passing <code>null</code> will set a value of <code>null</code></a>, not the default.</p>
+<p>上面的範例同時也展示了：當解構的物件中缺少了某個屬性的時候，要如何自動補上預設值。不過有點該注意的是：預設值只會在屬性是 <code>undefined</code> 或者是無定義的時候才會套用─當該屬性為<a href="#breaking-changes-default-values"><code>null</code> 的時候則其值會保留為 <code>null</code></a>，而非採用預設值。</p>
 
         </section>
         <section id="fat-arrow">
-          <h2>Bound (Fat Arrow) Functions</h2>
-<p>In JavaScript, the <code>this</code> keyword is dynamically scoped to mean the object that the current function is attached to. If you pass a function as a callback or attach it to a different object, the original value of <code>this</code> will be lost. If you’re not familiar with this behavior, <a href="https://web.archive.org/web/20150316122013/http://www.digital-web.com/articles/scope_in_javascript">this Digital Web article</a> gives a good overview of the quirks.</p>
-<p>The fat arrow <code>=&gt;</code> can be used to both define a function, and to bind it to the current value of <code>this</code>, right on the spot. This is helpful when using callback-based libraries like Prototype or jQuery, for creating iterator functions to pass to <code>each</code>, or event-handler functions to use with <code>on</code>. Functions created with the fat arrow are able to access properties of the <code>this</code> where they’re defined.</p>
+          <h2>有界（胖箭頭）函式</h2>
+<p>在 JavaScript 中，<code>this</code> 關鍵字會以動態的方式而指向到不同的物件或函式。當你試圖將一個函式當作回呼函式傳入到不同的物件或有效範圍時，原本的 <code>this</code> 會因此而異動。如果你對此狀況不太清楚，可以參考這份<a href="https://web.archive.org/web/20150316122013/http://www.digital-web.com/articles/scope_in_javascript">數位內容</a>來稍微理解一下大概發生了什麼事情。</p>
+<p>胖箭頭 <code>=&gt;</code> 可以用來定義一個函式並且將其 <code>this</code> 固定住。當設計一個像 Prototype 或 jQuery 那樣基於回呼函式的函式庫時，這種做法會十分有用。而且將函式傳入進一個 <code>each</code> 疊代器或者像事件監聽器 <code>on</code> 的時候都能確保這個函式內的 <code>this</code> 都指向原本的地方。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="fat_arrow">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3327,13 +3327,13 @@ Account = function(customer, cart) {
   </div>
   
 </aside>
-<p>If we had used <code>-&gt;</code> in the callback above, <code>@customer</code> would have referred to the undefined “customer” property of the DOM element, and trying to call <code>purchase()</code> on it would have raised an exception.</p>
-<p>The fat arrow was one of the most popular features of CoffeeScript, and ES2015 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">adopted it</a>; so CoffeeScript 2 compiles <code>=&gt;</code> to ES <code>=&gt;</code>.</p>
+<p>如果我們在上述範例中使用 <code>-&gt;</code> 來定義函式，<code>@customer</code> 會被指向到 DOM 中的 <code>customer</code> 屬性且該屬性會找不到。這個時候還會試圖呼叫不存在的 <code>purchase()</code> 函式而導致錯誤。</p>
+<p>胖箭頭可以說是 CoffeeScript 中最多人使用的功能之一，而 ES2015 也在<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">之後加入</a>了這項功能；所以現在 CoffeeScript 2 會將 <code>=&gt;</code> 編譯成 ES 的 <code>=&gt;</code>。</p>
 
         </section>
         <section id="generators">
-          <h2>Generator Functions</h2>
-<p>CoffeeScript supports ES2015 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">generator functions</a> through the <code>yield</code> keyword. There’s no <code>function*(){}</code> nonsense — a generator in CoffeeScript is simply a function that yields.</p>
+          <h2>產生器函式</h2>
+<p>CoffeeScript 能夠以 <code>yield</code> 關鍵字使用 ES2015 的 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">產生器函式</a>，而不是使用 <code>function*(){}</code> 這種沒意義的東西－因為在 CoffeeScript 裡，有產生（<code>yield</code>）關鍵字的函式就是產生器函式。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="generators">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3396,9 +3396,9 @@ window.ps || (window.ps = perfectSquares());
   </div>
   
 </aside>
-<p><code>yield*</code> is called <code>yield from</code>, and <code>yield return</code> may be used if you need to force a generator that doesn’t yield.</p>
+<p><code>yield*</code> 被稱為 <code>yield from</code>，而當你想建立一個不會產生的產生器函式時，用上 <code>yield return</code> 就可以了。</p>
 <div id="generator-iteration" class="bookmark"></div>
-<p>You can iterate over a generator function using <code>for…from</code>.</p>
+<p>你可以透過 <code>for...from</code>方法來遍歷一個產生器函式。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="generator_iteration">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3496,9 +3496,9 @@ getFibonacciNumbers = function(length) {
 
         </section>
         <section id="async-functions">
-          <h2>Async Functions</h2>
-<p>ES2017’s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async functions</a> are supported through the <code>await</code> keyword. Like with generators, there’s no need for an <code>async</code> keyword; an async function in CoffeeScript is simply a function that awaits.</p>
-<p>Similar to how <code>yield return</code> forces a generator, <code>await return</code> may be used to force a function to be async.</p>
+          <h2>非同步函式</h2>
+<p>ES2017 的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">非同步函式</a> 現在能夠透過 <code>await</code> 關鍵字進行使用了。就像產生器函式那樣，不需要額外使用 <code>async</code> 關鍵字；非同步函式在 CoffeeScript 中寫起來就像一般的函式。</p>
+<p><code>yield return</code> 可以強迫函式成為一個產生器函式，而 <code>await return</code> 則能夠強迫讓一個函式成為非同步函式。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="async">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3610,8 +3610,8 @@ countdown(3);
 
         </section>
         <section id="classes">
-          <h2>Classes</h2>
-<p>CoffeeScript 1 provided the <code>class</code> and <code>extends</code> keywords as syntactic sugar for working with prototypal functions. With ES2015, JavaScript has adopted those keywords; so CoffeeScript 2 compiles its <code>class</code> and <code>extends</code> keywords to ES2015 classes.</p>
+          <h2>類別</h2>
+<p>CoffeeScript 1 提供了 <code>class</code> 和 <code>extends</code> 關鍵字來作為原型鏈函式的語法糖。不過在 ES2015 的時候，JavaScript 已經官方地支援了這些關鍵字；所以 CoffeeScript 2 現在會將 <code>class</code> 和 <code>extends</code> 關鍵字直接編譯成 ES2015 類別。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="classes">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3748,7 +3748,7 @@ tom.move();
   </div>
   
 </aside>
-<p>Static methods can be defined using <code>@</code> before the method name:</p>
+<p>在方法前新增 <code>@</code> 符號可以定義成靜態方法：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="static">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3827,12 +3827,12 @@ Teenager = class Teenager {
   </div>
   
 </aside>
-<p>Finally, class definitions are blocks of executable code, which make for interesting metaprogramming possibilities. In the context of a class definition, <code>this</code> is the class object itself; therefore, you can assign static properties by using <code>@property: value</code>.</p>
+<p>最後，類別的定義區塊能夠擺放程式碼，這讓你有更大的自由度在設計一個類別上。在這個區塊中 <code>this</code> 會指向到類別自身；所以你就可以透過像 <code>@屬性: 值</code> 的方式來定義類別的屬性內容。</p>
 
         </section>
         <section id="prototypal-inheritance">
-          <h2>Prototypal Inheritance</h2>
-<p>In addition to supporting ES2015 classes, CoffeeScript provides a shortcut for working with prototypes. The <code>::</code> operator gives you quick access to an object’s prototype:</p>
+          <h2>原型鏈繼承</h2>
+<p>除了支援 ES2015 的類別用法外，CoffeeScript 還讓你能夠有更簡單的方式和原型鏈互動。以 <code>::</code> 運算子你可以快速地修改一個物件的原型：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="prototypes">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3868,9 +3868,9 @@ Teenager = class Teenager {
 
         </section>
         <section id="switch">
-          <h2>Switch/When/Else</h2>
-<p><code>switch</code> statements in JavaScript are a bit awkward. You need to remember to <code>break</code> at the end of every <code>case</code> statement to avoid accidentally falling through to the default case. CoffeeScript prevents accidental fall-through, and can convert the <code>switch</code> into a returnable, assignable expression. The format is: <code>switch</code> condition, <code>when</code> clauses, <code>else</code> the default case.</p>
-<p>As in Ruby, <code>switch</code> statements in CoffeeScript can take multiple values for each <code>when</code> clause. If any of the values match, the clause runs.</p>
+          <h2>選擇／當／不然</h2>
+<p><code>switch</code> 陳述式在 JavaScript 不得不說是有點尷尬。因為你必須在每個 <code>case</code> 條件分句裡的最後加上 <code>break</code> 來避免整個程式直接執行到最後一個條件分句。CoffeeScript 決定解決這個窘境，並且允許 <code>switch</code> 作為回傳的表達式。其格式為：<code>switch</code> 作主體、<code>when</code> 為條件分句、<code>else</code> 則是預設的處理方法。</p>
+<p>就和 Ruby 的寫法差不多，CoffeeScript 的 <code>switch</code> 陳述式的單個 <code>when</code> 條件分句可以用上多個值。如果符合其中一個值則執行該條件分句的程式碼。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="switch">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -3950,7 +3950,7 @@ Teenager = class Teenager {
   </div>
   
 </aside>
-<p><code>switch</code> statements can also be used without a control expression, turning them in to a cleaner alternative to <code>if</code>/<code>else</code> chains.</p>
+<p><code>switch</code> 也能夠直接當作值使用，就像更簡潔的 <code>if / else</code> 條件鏈。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="switch_with_no_expression">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4023,8 +4023,8 @@ grade = (function() {
 
         </section>
         <section id="try">
-          <h2>Try/Catch/Finally</h2>
-<p><code>try</code> expressions have the same semantics as <code>try</code> statements in JavaScript, though in CoffeeScript, you may omit <em>both</em> the catch and finally parts. The catch part may also omit the error parameter if it is not needed.</p>
+          <h2>嘗試／捕捉／終於</h2>
+<p><code>try</code> 表達式與 JavaScript 的 <code>try</code> 不盡相同。不過在 CoffeeScript 中，你可以 <em>省略</em> catch 和 finally 的部分。在可能的時候 catch 會自動省略不必要的接收參數。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="try">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4077,8 +4077,8 @@ try {
 
         </section>
         <section id="comparisons">
-          <h2>Chained Comparisons</h2>
-<p>CoffeeScript borrows <a href="https://docs.python.org/3/reference/expressions.html#not-in">chained comparisons</a> from Python — making it easy to test if a value falls within a certain range.</p>
+          <h2>比較鏈</h2>
+<p>CoffeeScript 從 <a href="https://docs.python.org/3/reference/expressions.html#not-in">Python 的</a>比較鏈借了點東西來—這讓你能夠更簡單的測試某個值是否落在指定範圍中。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="comparisons">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4120,8 +4120,8 @@ healthy = (200 > cholesterol && cholesterol > 60);
 
         </section>
         <section id="regexes">
-          <h2>Block Regular Expressions</h2>
-<p>Similar to block strings and comments, CoffeeScript supports block regexes — extended regular expressions that ignore internal whitespace and can contain comments and interpolation. Modeled after Perl’s <code>/x</code> modifier, CoffeeScript’s block regexes are delimited by <code>///</code> and go a long way towards making complex regular expressions readable. To quote from the CoffeeScript source:</p>
+          <h2>正規表達式區塊</h2>
+<p>和字串、註釋區塊相同的是，CoffeeScript 支援正規表達式區塊－這能夠忽略部分的空白並且讓你可以在正規表達式的規則中安插註釋。這個功能的靈感來自於 Perl 的 <code>/x</code> 修飾子，但 CoffeeScript 的正規表達式區塊是以 <code>///</code> 作為開頭與結尾，這樣令正規表達式比較好閱讀。讓我們來實際在 CoffeeScript 操演一遍：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="heregexes">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4162,8 +4162,8 @@ NUMBER = /^0b[01]+|^0o[0-7]+|^0x[\da-f]+|^\d*\.?\d+(?:e[+-]?\d+)?/i; // binary
 
         </section>
         <section id="tagged-template-literals">
-          <h2>Tagged Template Literals</h2>
-<p>CoffeeScript supports <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals">ES2015 tagged template literals</a>, which enable customized string interpolation. If you immediately prefix a string with a function name (no space between the two), CoffeeScript will output this “function plus string” combination as an ES2015 tagged template literal, which will <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals">behave accordingly</a>: the function is called, with the parameters being the input text and expression parts that make up the interpolated string. The function can then assemble these parts into an output string, providing custom string interpolation.</p>
+          <h2>模板字符串</h2>
+<p>CoffeeScript 支援 <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals">ES2015 的模板字符串</a>，這讓你能夠編輯、更改字串插值的內容。如果你在字串前直接寫上一個函式名稱（中間沒有空格）的話，CoffeeScript 就會直接將其輸出為 ES2015 的模板字符串，而<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals">這會造成</a>：字串內的插值都會變成參數傳遞至該函式，並且以該函式所回傳的值作為實際插值內容。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="tagged_template_literals">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4227,8 +4227,8 @@ greet = function(name, adjective) {
 
         </section>
         <section id="modules">
-          <h2>Modules</h2>
-<p>ES2015 modules are supported in CoffeeScript, with very similar <code>import</code> and <code>export</code> syntax:</p>
+          <h2>模組系統</h2>
+<p>CoffeeScript 支援 ES2015 的模塊，其 <code>import</code> 和 <code>export</code> 的使用方法都非常相似：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="modules">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4409,13 +4409,13 @@ export {
   
 </aside>
 <div id="modules-note" class="bookmark"></div>
-<p>Note that the CoffeeScript compiler <strong>does not resolve modules</strong>; writing an <code>import</code> or <code>export</code> statement in CoffeeScript will produce an <code>import</code> or <code>export</code> statement in the resulting output. It is your responsibility to <a href="#transpilation">transpile</a> this ES2015 syntax into code that will work in your target runtimes.</p>
-<p>Also note that any file with an <code>import</code> or <code>export</code> statement will be output without a <a href="#lexical-scope">top-level function safety wrapper</a>; in other words, importing or exporting modules will automatically trigger <a href="#usage">bare</a> mode for that file. This is because per the ES2015 spec, <code>import</code> or <code>export</code> statements must occur at the topmost scope.</p>
+<p>不過要注意的是 CoffeeScript 編譯器並不會幫你<strong>解析相關模組</strong>；在 CoffeeScript 裡撰寫 <code>import</code> 或 <code>export</code> 只會產生有關 <code>import</code> 和 <code>export</code> 的結果。你需要自行結合相關的轉譯介面或建置工具，例如 <a href="https://github.com/google/traceur-compiler">Traceur Compiler</a>、<a href="http://babeljs.io/">Babel</a> 或 <a href="https://github.com/rollup/rollup">Rollup</a> 來將 ES2015 的模塊用法轉譯成真的引用相關模塊的程式碼。</p>
+<p>還有一點，那就是任何有使用到 <code>import</code> 或 <code>export</code> 的檔案都會自動移除<a href="#lexical-scope">安全作用域</a>，這原本能確保每個檔案擁有自己的作用域而不會和其他檔案相衝；換句話說，只要在程式碼裡有輸入或輸出的用法，就會觸發<a href="#usage">暴露</a>模式。因為 ES2015 的規範強迫 <code>import</code> 或 <code>export</code> 必須在最頂域中宣告。</p>
 
         </section>
         <section id="embedded">
-          <h2>Embedded JavaScript</h2>
-<p>Hopefully, you’ll never need to use it, but if you ever need to intersperse snippets of JavaScript within your CoffeeScript, you can use backticks to pass it straight through.</p>
+          <h2>嵌入式 JavaScript</h2>
+<p>希望你永遠也不會用到這功能，倘若真有那麼一天，你需要在 CoffeeScript 裡插入原生 JavaScript 用法的話，你可以使用重音符包住那部份的程式碼。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="embedded">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4454,8 +4454,8 @@ hi = function() {
   </div>
   
 </aside>
-<p>Escape backticks with backslashes: <code>\`​</code> becomes <code>`​</code>.</p>
-<p>Escape backslashes before backticks with more backslashes: <code>\\\`​</code> becomes <code>\`​</code>.</p>
+<p>透過反斜線脫逸重音符像這樣：<code>\`​</code> 就會輸出成 <code>`​</code>。</p>
+<p>脫逸重音符之前的反斜線會需要更多反斜線：<code>\\\`​</code> 則會輸出為 <code>\`​</code>。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="embedded_escaped">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4494,7 +4494,7 @@ markdown = function () {
   </div>
   
 </aside>
-<p>You can also embed blocks of JavaScript using triple backticks. That’s easier than escaping backticks, if you need them inside your JavaScript block.</p>
+<p>你也能透過三個重音符來建立嵌入區塊。這樣你就不用整天脫逸重音符。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="embedded_block">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4543,9 +4543,9 @@ function time() {
         </section>
         <section id="jsx">
           <h2>JSX</h2>
-<p><a href="https://facebook.github.io/react/docs/introducing-jsx.html">JSX</a> is JavaScript containing interspersed XML elements. While conceived for <a href="https://facebook.github.io/react/">React</a>, it is not specific to any particular library or framework.</p>
-<p>CoffeeScript supports interspersed XML elements, without the need for separate plugins or special settings. The XML elements will be compiled as such, outputting JSX that could be parsed like any normal JSX file, for example by <a href="https://babeljs.io/docs/plugins/transform-react-jsx/">Babel with the React JSX transform</a>. CoffeeScript does <em>not</em> output <code>React.createElement</code> calls or any code specific to React or any other framework. It is up to you to attach another step in your build chain to convert this JSX to whatever function calls you wish the XML elements to compile to.</p>
-<p>Just like in JSX and HTML, denote XML tags using <code>&lt;</code> and <code>&gt;</code>. You can interpolate CoffeeScript code inside a tag using <code>{</code> and <code>}</code>. To avoid compiler errors, when using <code>&lt;</code> and <code>&gt;</code> to mean “less than” or “greater than,” you should wrap the operators in spaces to distinguish them from XML tags. So <code>i &lt; len</code>, not <code>i&lt;len</code>. The compiler tries to be forgiving when it can be sure what you intend, but always putting spaces around the “less than” and “greater than” operators will remove ambiguity.</p>
+<p><a href="https://facebook.github.io/react/docs/introducing-jsx.html">JSX</a> 是能夠帶有類 XML 元素結構的 JavaScript。雖然初期是為了 <a href="https://facebook.github.io/react/">React</a> 所設計的，但這並不是一個框架或者函式庫。</p>
+<p>CoffeeScript 不需要任何的額外擴充套件或設定，就能夠支援類 XML 元素。XML 元素會被編譯並輸出成一般的 JSX 結果，就像 <a href="https://babeljs.io/docs/plugins/transform-react-jsx/">Babel 與 React JSX 的轉化</a>。不過 CoffeeScript 並 <em>不會</em> 輸出用以呼叫 <code>React.createElement</code> 的函式，亦不會有任何與 React 和其他框架有關的程式碼。這部分取決於你的建置鏈要如何轉譯這份 JSX。</p>
+<p>就像 JSX 和 HTML 那樣，你可以使用 <code>&lt;</code> 與 <code>&gt;</code> 符號。你也能在 <code>{</code> 和 <code>}</code> 標籤中使用 CoffeeScript。為了避免編譯器錯誤，當 <code>&lt;</code> 和 <code>&gt;</code> 是用作「小於」或「大於」符號時，你應該透過空白來避免它們被誤認為 XML 標籤。所以你該使用 <code>i &lt; len</code> 而不是 <code>i&lt;len</code>。雖然說編譯器會盡可能地猜測你真正的意圖，但在使用「小於」和「大於」的符號時加上空白還是會令人更安心些。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="jsx">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4625,13 +4625,13 @@ renderStarRating = function({rating, maxStars}) {
   </div>
   
 </aside>
-<p>Older plugins or forks of CoffeeScript supported JSX syntax and referred to it as CSX or CJSX. They also often used a <code>.cjsx</code> file extension, but this is no longer necessary; regular <code>.coffee</code> will do.</p>
+<p>舊的擴充套件或 CoffeeScript 的衍生分歧使用 JSX 語法時通常是 <code>.csjx</code> 檔案，但這已經不需要了；一般的 <code>.coffee</code> 就可以正常運作。</p>
 
         </section>
       </section>
       <section id="type-annotations">
-        <h2>Type Annotations</h2>
-<p>Static type checking can be achieved in CoffeeScript by using <a href="https://flow.org/">Flow</a>’s <a href="https://flow.org/en/docs/types/comments/">Comment Types syntax</a>:</p>
+        <h2>型態註解</h2>
+<p>你能夠在 CoffeeScript 中以 <a href="https://flow.org/">Flow</a> 的<a href="https://flow.org/en/docs/types/comments/">註釋型態標記</a>來撰寫型態檢查：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="type_annotations">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4687,35 +4687,35 @@ fn = function(str/*: string */, obj/*: Obj */)/*: string */ {
   </div>
   
 </aside>
-<p>CoffeeScript does not do any type checking itself; the JavaScript output you see above needs to get passed to Flow for it to validate your code. We expect most people will use a <a href="#es2015plus-output">build tool</a> for this, but here’s how to do it the simplest way possible using the <a href="#cli">CoffeeScript</a> and <a href="https://flow.org/en/docs/usage/">Flow</a> command-line tools, assuming you’ve already <a href="https://flow.org/en/docs/install/">installed Flow</a> and the <a href="#installation">latest CoffeeScript</a> in your project folder:</p>
+<p>CoffeeScript 本身並不會對此有所檢查；在上述所看到的 JavaScript 需要額外透過 Flow 來進行型態驗證。雖然大多數的人都會透過<a href="#es2015plus-output">建置工具</a>來執行此功能，但以 <a href="#cli">CoffeeScript</a> 和 <a href="https://flow.org/en/docs/usage/">Flow</a> 的終端機工具來執行相關的檢查也許是個更簡單的方法。假設你<a href="https://flow.org/en/docs/install/">已經安裝 Flow</a> 還有<a href="#installation">最新的 CoffeeScript</a>，那麼你就可以直接在專案的資料夾執行：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-bash">coffee --bare --no-header --compile app.coffee &amp;&amp; npm run flow
 </code></pre>
-</blockquote><p><code>--bare</code> and <code>--no-header</code> are important because Flow requires the first line of the file to be the comment <code>// @flow</code>. If you configure your build chain to compile CoffeeScript and pass the result to Flow in-memory, you can get better performance than this example; and a proper build tool should be able to watch your CoffeeScript files and recompile and type-check them for you on save.</p>
-<p>If you know of another way to achieve static type checking with CoffeeScript, please <a href="https://github.com/jashkenas/coffeescript/issues/new">create an issue</a> and let us know.</p>
+</blockquote><p><code>--bare</code> 還有 <code>--no-header</code> 是很重要的參數！因為 Flow 要求檔案的第一行必須要是 <code>// @flow</code> 註解。在建置工具鏈中讓 CoffeeScript 的編譯結果透過記憶體直接傳遞給 Flow 可以有比起這段指令有更快的效能；一個標準的建置工具鏈要能夠監聽 CoffeeScript 的檔案，並且在你儲存檔案時，自動重新編譯然後透過 Flow 來進行型態檢查。</p>
+<p>對於 CoffeeScript 和型態檢查的整合如果你有其他的方式，請<a href="https://github.com/jashkenas/coffeescript/issues/new">建立新的 Issue</a> 來讓我們知道。</p>
 
       </section>
       <section id="literate">
-        <h2>Literate CoffeeScript</h2>
-<p>Besides being used as an ordinary programming language, CoffeeScript may also be written in “literate” mode. If you name your file with a <code>.litcoffee</code> extension, you can write it as a Markdown document — a document that also happens to be executable CoffeeScript code. The compiler will treat any indented blocks (Markdown’s way of indicating source code) as executable code, and ignore the rest as comments. Code blocks must also be separated from comments by at least one blank line.</p>
-<p>Just for kicks, a little bit of the compiler is currently implemented in this fashion: See it <a href="https://gist.github.com/jashkenas/3fc3c1a8b1009c00d9df">as a document</a>, <a href="https://raw.githubusercontent.com/jashkenas/coffeescript/master/src/scope.litcoffee">raw</a>, and <a href="http://cl.ly/LxEu">properly highlighted in a text editor</a>.</p>
-<p>A few caveats:</p>
+        <h2>文學式 CoffeeScript</h2>
+<p>除了以普通的方式將 CoffeeScript 當作程式語言看待，CoffeeScript 還能夠用另一種很優雅的「文學」模式進行撰寫。如果你將檔案副檔名命名為 <code>.litcoffee</code> 的話，你就能夠撰寫出基於 Markdown 格式的文件－而這文件中的 CoffeeScript 程式碼同時也能夠被執行。編譯器會試圖將縮排區塊（Markdown 的程式碼區塊格式）當作可供執行的程式碼，並且忽略其他文字部分。程式碼區塊與正常的段落文字需要相隔至少一行。</p>
+<p>讓你用不同角度看看這有多炫砲：以<a href="https://gist.github.com/jashkenas/3fc3c1a8b1009c00d9df">文件的方式觀看</a>、<a href="https://raw.githubusercontent.com/jashkenas/coffeescript/master/src/scope.litcoffee">原生內容</a>、而且還能<a href="http://cl.ly/LxEu">在編輯器中正常渲染定義顏色</a>。</p>
+<p>這裡有幾點該注意：</p>
 <ul>
-<li>Code blocks need to maintain consistent indentation relative to each other. When the compiler parses your Literate CoffeeScript file, it first discards all the non-code block lines and then parses the remainder as a regular CoffeeScript file. Therefore the code blocks need to be written as if the comment lines don’t exist, with consistent indentation (including whether they are indented with tabs or spaces).</li>
-<li>Along those lines, code blocks within list items or blockquotes are not treated as executable code. Since list items and blockquotes imply their own indentation, it would be ambiguous how to treat indentation between successive code blocks when some are within these other blocks and some are not.</li>
-<li>List items can be at most only one paragraph long. The second paragraph of a list item would be indented after a blank line, and therefore indistinguishable from a code block.</li>
+<li>程式碼區塊需要注意其縮排。當編譯器解析你的文學式 CoffeeScript 檔案時，首先會刪除所有非程式碼區塊的文字，然後將剩下的部分當作一般的 CoffeeScript 檔案處理。所以這就表示你需要好好地注意程式碼區塊的縮排（無論是 Tab 或空白）。</li>
+<li>清單項目和引用區塊內的程式碼不會被當作可供執行的程式碼內容。因為清單和引用區塊有自己的縮排格式，這會影響程式碼原本的縮排而導致無法執行或是誤判。</li>
+<li>清單項目只能有一個段落。因為第二行段落通常會換行而其縮排會被當作是程式碼區塊而難以區分。</li>
 </ul>
 
       </section>
       <section id="source-maps">
-        <h2>Source Maps</h2>
-<p>CoffeeScript includes support for generating source maps, a way to tell your JavaScript engine what part of your CoffeeScript program matches up with the code being evaluated. Browsers that support it can automatically use source maps to show your original source code in the debugger. To generate source maps alongside your JavaScript files, pass the <code>--map</code> or <code>-m</code> flag to the compiler.</p>
-<p>For a full introduction to source maps, how they work, and how to hook them up in your browser, read the <a href="https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">HTML5 Tutorial</a>.</p>
+        <h2>原始碼映射表</h2>
+<p>CoffeeScript 有內建產生原始碼映射表的功能，這能讓你的 JavaScript 引擎得知其執行的語句與原本 CoffeeScript 中的哪行程式碼相符。通常瀏覽器都會自動比對原始碼映射表。使用編譯器時追加 <code>--map</code> 或 <code>-m</code> 選項就能夠在編譯 JavaScript 結果時一同輸出相對應的原始碼映射表。</p>
+<p>有關原始碼映射表的運作原理、如何在瀏覽器中使用，請閱讀 <a href="https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">HTML5 的教學</a>。</p>
 
       </section>
       <section id="cake">
-        <h2>Cake, and Cakefiles</h2>
-<p>CoffeeScript includes a (very) simple build system similar to <a href="http://www.gnu.org/software/make/">Make</a> and <a href="http://rake.rubyforge.org/">Rake</a>. Naturally, it’s called Cake, and is used for the tasks that build and test the CoffeeScript language itself. Tasks are defined in a file named <code>Cakefile</code>, and can be invoked by running <code>cake [task]</code> from within the directory. To print a list of all the tasks and options, just type <code>cake</code>.</p>
-<p>Task definitions are written in CoffeeScript, so you can put arbitrary code in your Cakefile. Define a task with a name, a long description, and the function to invoke when the task is run. If your task takes a command-line option, you can define the option with short and long flags, and it will be made available in the <code>options</code> object. Here’s a task that uses the Node.js API to rebuild CoffeeScript’s parser:</p>
+        <h2>Cake 與 Cakefiles</h2>
+<p>CoffeeScript 內建了一個和 <a href="http://www.gnu.org/software/make/">Make</a> 與 <a href="http://rake.rubyforge.org/">Rake</a> 非常相似的簡易建置系統。我們稱其為 Cake，這能用來建置並且測試 CoffeeScript 相關的程式。工作程序會被定義在一個名為 <code>Cakefile</code> 的檔案中，並且能在相同目錄下以 <code>cake [工作程序名稱]</code> 來執行。若要輸出一份可用的工作程序與選項列表，只要打上 <code>cake</code> 指令就可以了。</p>
+<p>工作程序是以 CoffeeScript 來撰寫的，所以你能在 Cakefile 中隨心所欲地用上 CoffeeScript 程式碼。工作程序以一個名稱、說明、與回呼函式組成。而工作程序也能夠從指令列接收額外的選項值，並且在回呼函式中以 <code>options</code> 物件來取得其內容。下面範例重現了如何以 Node.js API 來建立一個 CoffeeScript 解析器：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="cake_tasks">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4773,136 +4773,136 @@ task('build:parser', 'rebuild the Jison parser', function(options) {
   </div>
   
 </aside>
-<p>If you need to invoke one task before another — for example, running <code>build</code> before <code>test</code>, you can use the <code>invoke</code> function: <code>invoke 'build'</code>. Cake tasks are a minimal way to expose your CoffeeScript functions to the command line, so <a href="/v2/annotated-source/cake.html">don’t expect any fanciness built-in</a>. If you need dependencies, or async callbacks, it’s best to put them in your code itself — not the cake task.</p>
+<p>如果你希望在執行某個工作程序之前先呼叫另一個程序－例如在 <code>build</code> 之前先 <code>test</code> 的話，就能夠用上 <code>invoke</code> 函式：<code>invoke 'build'</code>。Cake 工作程序是以輕量化的方式將 CoffeeScript 程式暴露到指令列使用，所以<a href="/v2/annotated-source/cake.html">別期望能有太多的功能</a>。如果你需要一些相依性套件或非同步回呼函式，你最好還是乖乖的寫成程式而不是 Cake 工作程序。</p>
 
       </section>
       <section id="scripts">
-        <h2><code>&quot;text/coffeescript&quot;</code> Script Tags</h2>
-<p>While it’s not recommended for serious use, CoffeeScripts may be included directly within the browser using <code>&lt;script type=&quot;text/coffeescript&quot;&gt;</code> tags. The source includes a compressed and minified version of the compiler (<a href="/v2/browser-compiler/coffeescript.js">Download current version here, 51k when gzipped</a>) as <code>docs/v2/browser-compiler/coffeescript.js</code>. Include this file on a page with inline CoffeeScript tags, and it will compile and evaluate them in order.</p>
-<p>The usual caveats about CoffeeScript apply — your inline scripts will run within a closure wrapper, so if you want to expose global variables or functions, attach them to the <code>window</code> object.</p>
+        <h2><code>&quot;text/coffeescript&quot;</code> 腳本標籤</h2>
+<p>瀏覽器能夠透過網頁中的 <code>&lt;script type=&quot;text/coffeescript&quot;&gt;</code> 腳本標籤來執行 CoffeeScript 程式碼，雖然是不建議將這種方式用於正式場合啦。不過真要這樣做的話，你能夠在這裡<a href="/v2/browser-compiler/coffeescript.js">下載最新版本、51 KB 檔案大小（被壓縮）</a> 的 <code>docs/v2/browser-compiler/coffeescript.js</code>。在頁面上引用這個檔案，就能夠執行 CoffeeScript 腳本標籤的程式碼。</p>
+<p>不過有個注意事項：你的腳本會被包覆在一個有效範圍保護函式裡，如果你想要暴露全域變數或函式的話，記得將其賦予到 <code>window</code> 物件作為屬性。</p>
 
       </section>
       <section id="resources">
-        <h2>Resources</h2>
+        <h2>資源</h2>
 <ul>
-<li><a href="https://github.com/jashkenas/coffeescript/">CoffeeScript on GitHub</a></li>
-<li><a href="https://github.com/jashkenas/coffeescript/issues">CoffeeScript Issues</a><br>
-Bug reports, feature proposals, and ideas for changes to the language belong here.</li>
-<li><a href="https://groups.google.com/forum/#!forum/coffeescript">CoffeeScript Google Group</a><br>
-If you’d like to ask a question, the mailing list is a good place to get help.</li>
-<li><a href="https://github.com/jashkenas/coffeescript/wiki">The CoffeeScript Wiki</a><br>
-If you’ve ever learned a neat CoffeeScript tip or trick, or ran into a gotcha — share it on the wiki. The wiki also serves as a directory of handy <a href="https://github.com/jashkenas/coffeescript/wiki/Text-editor-plugins">text editor extensions</a>, <a href="https://github.com/jashkenas/coffeescript/wiki/Web-framework-plugins">web framework plugins</a>, and general <a href="https://github.com/jashkenas/coffeescript/wiki/Build-tools">CoffeeScript build tools</a>.</li>
-<li><a href="https://github.com/jashkenas/coffeescript/wiki/FAQ">The FAQ</a><br>
-Perhaps your CoffeeScript-related question has been asked before. Check the FAQ first.</li>
+<li><a href="https://github.com/jashkenas/coffeescript/">CoffeeScript 的 GitHub</a></li>
+<li><a href="https://github.com/jashkenas/coffeescript/issues">CoffeeScript 錯誤回報</a><br>
+一個讓你能回報錯誤、提供新功能、想法的地方。</li>
+<li><a href="https://groups.google.com/forum/#!forum/coffeescript">CoffeeScript Google 群組</a><br>
+如果你想問些問題，這個群組通常是個好場所。</li>
+<li><a href="https://github.com/jashkenas/coffeescript/wiki">CoffeeScript 的維基資料</a><br>
+如果你學到了不少 CoffeeScript 的精髓或新奇使用方式、功能－你就可以將其經驗分享到維基。維基資料裡也有<a href="https://github.com/jashkenas/coffeescript/wiki/Text-editor-plugins">文字編輯器擴充套件</a>、<a href="https://github.com/jashkenas/coffeescript/wiki/Web-framework-plugins">網站框架套件</a>、<a href="https://github.com/jashkenas/coffeescript/wiki/Build-tools">CoffeeScript 建置工具</a>的相關清單。</li>
+<li><a href="https://github.com/jashkenas/coffeescript/wiki/FAQ">問與答</a><br>
+也許你正準備要問的 CoffeeScript 問題已經在這裡解答過了。先從問與答找看看吧。</li>
 <li><a href="http://js2.coffee/">JS2Coffee</a><br>
-Is a very well done reverse JavaScript-to-CoffeeScript compiler. It’s not going to be perfect (infer what your JavaScript classes are, when you need bound functions, and so on…) — but it’s a great starting point for converting simple scripts.</li>
-<li><a href="https://github.com/jashkenas/coffeescript/tree/master/documentation/site">High-Rez Logo</a><br>
-The CoffeeScript logo is available in SVG for use in presentations.</li>
+這是個非常不錯的 JavaScript 轉 CoffeeScript 輔助網站。雖然不是很完美（例如出來的結果還是有點機器化）－不過當你要開始打造一些小程式的時候，這也許能派上用場。</li>
+<li><a href="https://github.com/jashkenas/coffeescript/tree/master/documentation/site">高畫質 Logo</a><br>
+CoffeeScript 的向量圖形 Logo，讓你能用於簡報上。</li>
 </ul>
 
         <section id="books">
-          <h2>Books</h2>
-<p>There are a number of excellent resources to help you get started with CoffeeScript, some of which are freely available online.</p>
+          <h2>書籍</h2>
+<p>這裡有些不錯的書籍能夠協助你在撰寫 CoffeeScript 時更加地得心應手，其中不少是能夠免費線上閱讀的。</p>
 <ul>
-<li><a href="http://arcturo.github.io/library/coffeescript/">The Little Book on CoffeeScript</a> is a brief 5-chapter introduction to CoffeeScript, written with great clarity and precision by <a href="http://alexmaccaw.co.uk/">Alex MacCaw</a>.</li>
-<li><a href="http://autotelicum.github.io/Smooth-CoffeeScript/">Smooth CoffeeScript</a> is a reimagination of the excellent book <a href="http://eloquentjavascript.net/">Eloquent JavaScript</a>, as if it had been written in CoffeeScript instead. Covers language features as well as the functional and object oriented programming styles. By <a href="https://github.com/autotelicum">E. Hoigaard</a>.</li>
-<li><a href="http://pragprog.com/book/tbcoffee/coffeescript">CoffeeScript: Accelerated JavaScript Development</a> is <a href="http://trevorburnham.com/">Trevor Burnham</a>’s thorough introduction to the language. By the end of the book, you’ll have built a fast-paced multiplayer word game, writing both the client-side and Node.js portions in CoffeeScript.</li>
-<li><a href="https://www.packtpub.com/web-development/coffeescript-programming-jquery-rails-and-nodejs">CoffeeScript Programming with jQuery, Rails, and Node.js</a> is a new book by Michael Erasmus that covers CoffeeScript with an eye towards real-world usage both in the browser (jQuery) and on the server-side (Rails, Node).</li>
-<li><a href="https://leanpub.com/coffeescript-ristretto/read">CoffeeScript Ristretto</a> is a deep dive into CoffeeScript’s semantics from simple functions up through closures, higher-order functions, objects, classes, combinators, and decorators. By <a href="http://braythwayt.com/">Reg Braithwaite</a>.</li>
-<li><a href="https://efendibooks.com/minibooks/testing-with-coffeescript">Testing with CoffeeScript</a> is a succinct and freely downloadable guide to building testable applications with CoffeeScript and Jasmine.</li>
-<li><a href="https://www.packtpub.com/web-development/coffeescript-application-development">CoffeeScript Application Development</a> from Packt, introduces CoffeeScript while walking through the process of building a demonstration web application. A <a href="https://www.packtpub.com/web-development/coffeescript-application-development-cookbook">CoffeeScript Application Development Coookbook</a> with over 90 “recipes” is also available.</li>
-<li><a href="https://www.manning.com/books/coffeescript-in-action">CoffeeScript in Action</a> from Manning Publications, covers CoffeeScript syntax, composition techniques and application development.</li>
-<li><a href="https://www.dpunkt.de/buecher/4021/coffeescript.html">CoffeeScript: Die Alternative zu JavaScript</a> from dpunkt.verlag, is the first CoffeeScript book in Deutsch.</li>
+<li><a href="http://arcturo.github.io/library/coffeescript/">The Little Book on CoffeeScript</a> 是以五個章節所組成的 CoffeeScript 大略講解書籍，由 <a href="http://alexmaccaw.co.uk/">Alex MacCaw</a> 以清晰明確的方式所撰寫而成。</li>
+<li><a href="http://autotelicum.github.io/Smooth-CoffeeScript/">Smooth CoffeeScript</a> 是被 <a href="http://eloquentjavascript.net/">Eloquent JavaScript</a> 所啟發的書，不過是以 CoffeeScript 重新編寫的。其內容提到了函數式、物件導向的程式撰寫風格。由 <a href="https://github.com/autotelicum">E. Hoigaard</a> 編寫。</li>
+<li><a href="http://pragprog.com/book/tbcoffee/coffeescript">CoffeeScript: Accelerated JavaScript Development</a> 會由 <a href="http://trevorburnham.com/">Trevor Burnham</a> 帶領你進入此語言世界。在本書的最後你將能打造出一個多人的文字遊戲，主要以 Node.js 與 CoffeeScript 作成。</li>
+<li><a href="https://www.packtpub.com/web-development/coffeescript-programming-jquery-rails-and-nodejs">CoffeeScript Programming with jQuery, Rails, and Node.js</a> 是本由 Michael Erasmus 以他自己的角度看待 CoffeeScript 並以此打造能夠真實應用於瀏覽器（jQuery）和伺服端（Rails、Node）的相關程式與經驗。</li>
+<li><a href="https://leanpub.com/coffeescript-ristretto/read">CoffeeScript Ristretto</a> 能夠帶領你體會到 CoffeeScript 的簡潔之美與閉包、函式、物件與類別還有組合運算子和修飾子，由 <a href="http://braythwayt.com/">Reg Braithwaite</a> 書寫。</li>
+<li><a href="https://efendibooks.com/minibooks/testing-with-coffeescript">Testing with CoffeeScript</a> 是本能夠協助你建立可供 Jasmine 測試的 CoffeeScript 程式碼免費書籍。</li>
+<li><a href="https://www.packtpub.com/web-development/coffeescript-application-development">CoffeeScript Application Development</a> 來自 Packt 之手，主要能夠帶領你如何以 CoffeeScript 打造網頁應用程式。然後這裡還有本 <a href="https://www.packtpub.com/web-development/coffeescript-application-development-cookbook">CoffeeScript Application Development Coookbook</a>，裡面超過 90 種「食譜」可供參閱。</li>
+<li><a href="https://www.manning.com/books/coffeescript-in-action">CoffeeScript in Action</a> 由 Manning Publications 撰寫，主要敘述 CoffeeScript 的語法還有一些用於應用程式開發的技術手法。</li>
+<li><a href="https://www.dpunkt.de/buecher/4021/coffeescript.html">CoffeeScript: Die Alternative zu JavaScript</a> 的撰書者是 dpunkt.verlag，而是 CoffeeScript 的第一本德語書籍。</li>
 </ul>
 
         </section>
         <section id="screencasts">
-          <h2>Screencasts</h2>
+          <h2>影片教學</h2>
 <ul>
-<li><a href="http://coffeescript.codeschool.com/">A Sip of CoffeeScript</a> is a <a href="https://www.codeschool.com">Code School Course</a> which combines 6 screencasts with in-browser coding to make learning fun. The first level is free to try out.</li>
-<li><a href="https://www.pluralsight.com/courses/meet-coffeescript">Meet CoffeeScript</a> is a 75-minute long screencast by PeepCode, now <a href="https://www.pluralsight.com/">PluralSight</a>. Highly memorable for its animations which demonstrate transforming CoffeeScript into the equivalent JS.</li>
-<li>If you’re looking for less of a time commitment, RailsCasts’ <a href="http://railscasts.com/episodes/267-coffeescript-basics">CoffeeScript Basics</a> should have you covered, hitting all of the important notes about CoffeeScript in 11 minutes.</li>
+<li><a href="http://coffeescript.codeschool.com/">A Sip of CoffeeScript</a> 由 <a href="https://www.codeschool.com">Code School Course</a> 建立並且匯集了六部有關 CoffeeScript 的影片。第一部影片是免費觀賞的。</li>
+<li><a href="https://www.pluralsight.com/courses/meet-coffeescript">Meet CoffeeScript</a> 是個有 75 分鐘長的螢幕錄製影片，由 PeepCode 錄製（現在改名為：<a href="https://www.pluralsight.com/">PluralSight</a>）。這能夠完美地將 JavaScript 的觀念帶入到 CoffeeScript 程式碼中。</li>
+<li>如果你不想花上太多時間，RailsCasts 的 <a href="http://railscasts.com/episodes/267-coffeescript-basics">CoffeeScript Basics</a> 也許能夠幫你一把，這讓你在 11 分鐘內可以搞懂 CoffeeScript 不少重要的東西。</li>
 </ul>
 
         </section>
         <section id="examples">
-          <h2>Examples</h2>
-<p>The <a href="https://github.com/trending?l=coffeescript&amp;since=monthly">best list of open-source CoffeeScript examples</a> can be found on GitHub. But just to throw out a few more:</p>
+          <h2>範例</h2>
+<p>在 GitHub 上有<a href="https://github.com/trending?l=coffeescript&amp;since=monthly">不少的開放原始碼 CoffeeScript 範例</a>，這裡找出幾個還不錯的讓你看看：</p>
 <ul>
-<li><strong>GitHub</strong>’s <a href="https://hubot.github.com/">Hubot</a>, a friendly IRC robot that can perform any number of useful and useless tasks.</li>
-<li><strong>sstephenson</strong>’s <a href="http://pow.cx/">Pow</a>, a zero-configuration Rack server, with comprehensive annotated source.</li>
-<li><strong>technoweenie</strong>’s <a href="https://github.com/technoweenie/coffee-resque">Coffee-Resque</a>, a port of <a href="https://github.com/defunkt/resque">Resque</a> for Node.js.</li>
-<li><strong>stephank</strong>’s <a href="https://github.com/stephank/orona">Orona</a>, a remake of the Bolo tank game for modern browsers.</li>
-<li><strong>GitHub</strong>’s <a href="https://atom.io/">Atom</a>, a hackable text editor built on web technologies.</li>
-<li><strong>Basecamp</strong>’s <a href="https://trix-editor.org/">Trix</a>, a rich text editor for web apps.</li>
+<li><strong>GitHub</strong> 的 <a href="https://hubot.github.com/">Hubot</a> 是位很友善的 IRC 機器人，他能做的事情處於很有用與很無用之間。</li>
+<li><strong>sstephenson</strong> 的 <a href="http://pow.cx/">Pow</a> 是不需要設置的 Rack 伺服器，原始碼亦有完美的註釋。</li>
+<li><strong>technoweenie</strong> 的 <a href="https://github.com/technoweenie/coffee-resque">Coffee-Resque</a> 是個 <a href="https://github.com/defunkt/resque">Resque</a> 專案的 Node.js 重寫版本。</li>
+<li><strong>stephank</strong> 的 <a href="https://github.com/stephank/orona">Orona</a> 是 Bolo 坦克遊戲，不過此版本重寫給現代瀏覽器執行。</li>
+<li><strong>GitHub</strong> 的 <a href="https://atom.io/">Atom</a> 是個多功能的文字編輯器，其核心由多項網頁技術組成。</li>
+<li><strong>Basecamp</strong> 的 <a href="https://trix-editor.org/">Trix</a> 是個能夠撰寫網頁應用程式的豐富文字編輯器。</li>
 </ul>
 
         </section>
         <section id="chat">
-          <h2>Web Chat (IRC)</h2>
-<p>Quick help and advice can often be found in the CoffeeScript IRC room <code>#coffeescript</code> on <code>irc.freenode.net</code>, which you can <a href="http://webchat.freenode.net/?channels=coffeescript">join via your web browser</a>.</p>
+          <h2>網路聊天（IRC）</h2>
+<p>以<a href="http://webchat.freenode.net/?channels=coffeescript">網頁瀏覽器拜訪這裡</a>你就能透過 <code>irc.freenode.net</code> 直接加入 CoffeeScript 的 IRC 聊天室 <code>#coffeescript</code> 並取得相關的幫助與建議。</p>
 
         </section>
         <section id="annotated-source">
-          <h2>Annotated Source</h2>
-<p>You can browse the CoffeeScript 2.3.1 source in readable, annotated form <a href="annotated-source/">here</a>. You can also jump directly to a particular source file:</p>
+          <h2>已註解原始碼</h2>
+<p>你能夠從<a href="annotated-source/">這裡</a>以符合人體工學的方式一覽 CoffeeScript 2.3.1 的原始碼。你也能從這裡直接查看指定的原始碼檔案：</p>
 <ul>
-<li><a href="annotated-source/grammar.html">Grammar Rules — src/grammar</a></li>
-<li><a href="annotated-source/lexer.html">Lexing Tokens — src/lexer</a></li>
-<li><a href="annotated-source/rewriter.html">The Rewriter — src/rewriter</a></li>
-<li><a href="annotated-source/nodes.html">The Syntax Tree — src/nodes</a></li>
-<li><a href="annotated-source/scope.html">Lexical Scope — src/scope</a></li>
-<li><a href="annotated-source/helpers.html">Helpers &amp; Utility Functions — src/helpers</a></li>
-<li><a href="annotated-source/coffeescript.html">The CoffeeScript Module — src/coffeescript</a></li>
+<li><a href="annotated-source/grammar.html">文法規則 — src/grammar</a></li>
+<li><a href="annotated-source/lexer.html">詞語解析 — src/lexer</a></li>
+<li><a href="annotated-source/rewriter.html">覆寫器 — src/rewriter</a></li>
+<li><a href="annotated-source/nodes.html">語法樹 — src/nodes</a></li>
+<li><a href="annotated-source/scope.html">解析作用域 — src/scope</a></li>
+<li><a href="annotated-source/helpers.html">輔助 &amp; 工具函式 — src/helpers</a></li>
+<li><a href="annotated-source/coffeescript.html">CoffeeScript 模塊 — src/coffeescript</a></li>
 <li><a href="annotated-source/cake.html">Cake &amp; Cakefiles — src/cake</a></li>
-<li><a href="annotated-source/command.html">“coffee” Command-Line Utility — src/command</a></li>
-<li><a href="annotated-source/optparse.html">Option Parsing — src/optparse</a></li>
-<li><a href="annotated-source/repl.html">Interactive REPL — src/repl</a></li>
-<li><a href="annotated-source/sourcemap.html">Source Maps — src/sourcemap</a></li>
+<li><a href="annotated-source/command.html">“coffee“ 終端機工具 — src/command</a></li>
+<li><a href="annotated-source/optparse.html">選項解析 — src/optparse</a></li>
+<li><a href="annotated-source/repl.html">回饋式 REPL — src/repl</a></li>
+<li><a href="annotated-source/sourcemap.html">原始碼映照 — src/sourcemap</a></li>
 </ul>
 
         </section>
         <section id="contributing">
-          <h2>Contributing</h2>
-<p>Contributions are welcome! Feel free to fork <a href="https://github.com/jashkenas/coffeescript">the repo</a> and submit a pull request.</p>
-<p><a href="#unsupported">Some features of ECMAScript are intentionally unsupported</a>. Please review both the open and closed <a href="https://github.com/jashkenas/coffeescript/issues">issues on GitHub</a> to see if the feature you’re looking for has already been discussed. As a general rule, we don’t support ECMAScript syntax for features that aren’t yet finalized (at Stage 4 in the proposal approval process).</p>
-<p>For more resources on adding to CoffeeScript, please see <a href="https://github.com/jashkenas/coffeescript/wiki/%5BHowto%5D-Hacking-on-the-CoffeeScript-Compiler">the Wiki</a>, especially <a href="https://github.com/jashkenas/coffeescript/wiki/%5BHowTo%5D-How-parsing-works">How The Parser Works</a>.</p>
-<p>There are several things you can do to increase your odds of having your pull request accepted:</p>
+          <h2>貢獻</h2>
+<p>我們最喜歡貢獻了！隨你所意的分歧<a href="https://github.com/jashkenas/coffeescript">這個原始碼倉庫</a>並且建立合併請求吧。</p>
+<p>不過<a href="#unsupported">有些 ECMAScript 功能是刻意不支援的</a>。請確定你想發送的功能在事前是不是<a href="https://github.com/jashkenas/coffeescript/issues">已經被討論過</a>了。我們遵循一項規則：不要支援任何沒有被正式化的 ECMAScript 語法（在審核階段 4 之前）。</p>
+<p>有關更多如何追加功能至 CoffeeScript 的資訊，請查看<a href="https://github.com/jashkenas/coffeescript/wiki/%5BHowto%5D-Hacking-on-the-CoffeeScript-Compiler">維基資料</a>，尤其是關於<a href="https://github.com/jashkenas/coffeescript/wiki/%5BHowTo%5D-How-parsing-works">解析器是如何運作的</a>那篇文章。</p>
+<p>這裡有幾件事情能夠讓你的合併請求提高被接受的機率：</p>
 <ul>
-<li>Create tests! Any pull request should probably include basic tests to verify you didn’t break anything, or future changes won’t break your code.</li>
-<li>Follow the style of the rest of the CoffeeScript codebase.</li>
-<li>Ensure any ECMAScript syntax is mature (at Stage 4), with no further potential changes.</li>
-<li>Add only features that have broad utility, rather than a feature aimed at a specific use case or framework.</li>
+<li>建立測試！任何合併請求都應該要有基本的測試來確認這項變更沒有破壞主程式、或者未來的異動不會破壞你所寫的程式。</li>
+<li>遵循其他人的 CoffeeScript 撰寫風範。</li>
+<li>確定 ECMAScript 語法是穩定且正式的（處於審核階段 4），而且未來不會有任何異動。</li>
+<li>追加的功能是基於大眾，而不是只為特定用法或框架所設計的。</li>
 </ul>
-<p>Of course, it’s entirely possible that you have a great addition, but it doesn’t fit within these constraints. Feel free to roll your own solution; you will have <a href="https://github.com/jashkenas/coffeescript/wiki/In-The-Wild">plenty of company</a>.</p>
+<p>當然你可能會做出上述清單以外的事情。不過那當然不止你一位，其實野外也有不少的<a href="https://github.com/jashkenas/coffeescript/wiki/In-The-Wild">探險家</a>。</p>
 
         </section>
       </section>
       <section id="unsupported">
-        <h2>Unsupported ECMAScript Features</h2>
-<p>There are a few ECMAScript features that CoffeeScript intentionally doesn’t support.</p>
+        <h2>不支援的 ECMAScript 功能</h2>
+<p>有些 ECMAScript 的功能是 CoffeeScript 刻意不支援的。</p>
 
         <section id="unsupported-let-const">
-          <h3><code>let</code> and <code>const</code>: block-scoped and reassignment-protected variables</h3>
-<p>When CoffeeScript was designed, <code>var</code> was <a href="https://github.com/jashkenas/coffeescript/issues/238#issuecomment-153502">intentionally omitted</a>. This was to spare developers the mental housekeeping of needing to worry about variable <em>declaration</em> (<code>var foo</code>) as opposed to variable <em>assignment</em> (<code>foo = 1</code>). The CoffeeScript compiler automatically takes care of declaration for you, by generating <code>var</code> statements at the top of every function scope. This makes it impossible to accidentally declare a global variable.</p>
-<p><code>let</code> and <code>const</code> add a useful ability to JavaScript in that you can use them to declare variables within a <em>block</em> scope, for example within an <code>if</code> statement body or a <code>for</code> loop body, whereas <code>var</code> always declares variables in the scope of an entire function. When CoffeeScript 2 was designed, there was much discussion of whether this functionality was useful enough to outweigh the simplicity offered by never needing to consider variable declaration in CoffeeScript. In the end, it was decided that the simplicity was more valued. In CoffeeScript there remains only one type of variable.</p>
-<p>Keep in mind that <code>const</code> only protects you from <em>reassigning</em> a variable; it doesn’t prevent the variable’s value from changing, the way constants usually do in other languages:</p>
+          <h3><code>let</code> 與 <code>const</code>：最小區塊有效範圍與重新賦值保護</h3>
+<p>當初設計 CoffeeScript 的時候，<code>var</code> 用法是很明顯地<a href="https://github.com/jashkenas/coffeescript/issues/238#issuecomment-153502">被忽略的</a>。這讓開發者不需要搞得像整天在做家事一樣，煩惱變數該在何時 <em>定義</em>（<code>var foo</code>）。不過也因為 CoffeeScript 會自動產生 <code>var</code> 陳述式來幫你照料變數的定義，也就不會不小心定義到一個全域變數。</p>
+<p><code>let</code> 與 <code>const</code> 的出現讓你能在 JavaScript 中以 <em>區塊</em> 作為有效範圍來定義變數的生命，例如說其定義的範圍只會在 <code>if</code> 陳述式裡或 <code>for</code> 迴圈區塊中，而 <code>var</code> 的有效範圍通常會大到一整個函式。起初 CoffeeScript 2 社群也不斷地在討論這個問題，例如：是否有必要追加更多的有效範圍定義方式。最終，我們決定繼續簡化這項功能，讓開發者更著重於程式上。所以 CoffeeScript 仍然只有一種變數有效範圍。</p>
+<p>要注意的是 <code>const</code> 雖然能夠預防你重新賦值；但他卻沒有預防你更改變數的內容，這和其他程式語言倒是不太一樣：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-js"><span class="keyword">const</span> obj = {<span class="attr">foo</span>: <span class="string">'bar'</span>};
-obj.foo = <span class="string">'baz'</span>; <span class="comment">// Allowed!</span>
-obj = {}; <span class="comment">// Throws error</span>
+obj.foo = <span class="string">'baz'</span>; <span class="comment">// 你竟然可以這樣做！</span>
+obj = {}; <span class="comment">// 會拋出錯誤</span>
 </code></pre>
 </blockquote>
         </section>
         <section id="unsupported-named-functions">
-          <h3>Named functions and function declarations</h3>
-<p>Newcomers to CoffeeScript often wonder how to generate the JavaScript <code>function foo() {}</code>, as opposed to the <code>foo = function() {}</code> that CoffeeScript produces. The first form is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function declaration</a>, and the second is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">function expression</a>. As stated above, in CoffeeScript <a href="#expressions">everything is an expression</a>, so naturally we favor the expression form. Supporting only one variant helps avoid confusing bugs that can arise from the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function#Function_declaration_hoisting">subtle differences between the two forms</a>.</p>
-<p>Technically, <code>foo = function() {}</code> is creating an anonymous function that gets assigned to a variable named <code>foo</code>. Some very early versions of CoffeeScript named this function, e.g. <code>foo = function foo() {}</code>, but this was dropped because of compatibility issues with Internet Explorer. For a while this annoyed people, as these functions would be unnamed in stack traces; but modern JavaScript runtimes <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name">infer the names of such anonymous functions</a> from the names of the variables to which they’re assigned. Given that this is the case, it’s simplest to just preserve the current behavior.</p>
+          <h3>命名函式與函式定義</h3>
+<p>不少新人常常會很好奇為什麼 CoffeeScript 產生的 JavaScript 函式都是 <code>foo = function() {}</code> 而不是 <code>function foo() {}</code>。前者其實稱作<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">函式表達式</a>，而後者則是<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">函式定義</a>。就和上面所說的一樣：在 CoffeeScript 裡的<a href="#expressions">所有東西都是表達式</a>，所以我們自然而然地就採用了表達式做為定義方法。而只支援其中一種方式也能夠避免這<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function#Function_declaration_hoisting">兩者同時存在所可能產生的錯誤</a>。</p>
+<p>據理來說，<code>foo = function() {}</code> 是建立一個匿名函式然後將其賦予到名為 <code>foo</code> 的變數。較早期的 CoffeeScript 採用的是賦予命名函式 <code>foo = function foo() {}</code>，不過因為在 Internet Explorer 上有些相容性問題所以被拋棄了。在那之後不少開發者抱怨這很難在開發的時候追蹤堆疊樹；不過現在的 JavaScript 執行時態（Runtime）已經夠聰明懂的如何<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name">判別匿名函式的指向位址</a>。基於這個問題被解決了，我們決定就這樣原封不動地保持現有行為。</p>
 
         </section>
         <section id="unsupported-get-set">
-          <h3><code>get</code> and <code>set</code> keyword shorthand syntax</h3>
-<p><code>get</code> and <code>set</code>, as keywords preceding functions or class methods, are intentionally unimplemented in CoffeeScript.</p>
-<p>This is to avoid grammatical ambiguity, since in CoffeeScript such a construct looks identical to a function call (e.g. <code>get(function foo() {})</code>); and because there is an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">alternate syntax</a> that is slightly more verbose but just as effective:</p>
+          <h3><code>get</code> 與 <code>set</code> 關鍵字縮寫語法</h3>
+<p>用於類別和函式的 <code>get</code> 與 <code>set</code> 關鍵字目前尚未在 CoffeeScript 中實作。</p>
+<p>這主要是為了避免和現有的其他寫法發生衝突，因為 CoffeeScript 裡若要加上類似的前輟關鍵字則會被當成函式呼叫（例如：<code>get(function foo() {})</code>）；不過目前有<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">另一種寫法</a>，雖然看起來稍微聒噪了些但還是夠用的：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="get_set">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -4977,12 +4977,12 @@ Object.defineProperty(screen, 'height', {
         </section>
       </section>
       <section id="breaking-changes">
-        <h2>Breaking Changes From CoffeeScript 1.x to 2</h2>
-<p>CoffeeScript 2 aims to output as much idiomatic ES2015+ syntax as possible with as few breaking changes from CoffeeScript 1.x as possible. Some breaking changes, unfortunately, were unavoidable.</p>
+        <h2>從 CoffeeScript 1.x 升級到 2 時的不相容差異</h2>
+<p>CoffeeScript 2 瞄準的是支援更多的 ES2015+ 語法並減少可能會破壞 CoffeeScript 1.x 版本程式碼的異動。可惜有些破壞還是無法避免的。</p>
 
         <section id="breaking-changes-fat-arrow">
-          <h3>Bound (fat arrow) functions</h3>
-<p>In CoffeeScript 1.x, <code>=&gt;</code> compiled to a regular <code>function</code> but with references to <code>this</code>/<code>@</code> rewritten to use the outer scope’s <code>this</code>, or with the inner function bound to the outer scope via <code>.bind</code> (hence the name “bound function”). In CoffeeScript 2, <code>=&gt;</code> compiles to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">ES2015’s <code>=&gt;</code></a>, which behaves slightly differently. The largest difference is that in ES2015, <code>=&gt;</code> functions lack an <code>arguments</code> object:</p>
+          <h3>有界（胖箭頭）函式</h3>
+<p>在 CoffeeScript 1.x 版本中的 <code>=&gt;</code> 符號會被轉換成標準的 <code>function</code>，但是其中的 <code>this</code>、<code>@</code> 會被覆寫成父有效範圍的 <code>this</code> 或是以 <code>.bind</code> 函式來綁定相關界線（所以也叫「有界函式」）。但在 CoffeeScript 2 有了大改變，現在的 <code>=&gt;</code> 會被編譯成 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">ES2015 的 <code>=&gt;</code></a>，所以這和以前有非常大的不同。最主要的衝擊莫過於 ES2015 的 <code>=&gt;</code> 函式不會有 <code>arguments</code> 物件。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="breaking_change_fat_arrow">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -5040,8 +5040,8 @@ outer(1, 2); // Returns '' in CoffeeScript 1.x, '1, 2' in CoffeeScript 2
 
         </section>
         <section id="breaking-changes-default-values">
-          <h3>Default values for function parameters and destructured elements</h3>
-<p>Per the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">ES2015 spec regarding function default parameters</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values">destructuring default values</a>, default values are only applied when a value is missing or <code>undefined</code>. In CoffeeScript 1.x, the default value would be applied in those cases but also if the  value was <code>null</code>.</p>
+          <h3>函式參數與物件解構預設值</h3>
+<p>依據 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">ES2015 的函式參數預設值規範</a>還有<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values">物件解構預設值</a>的相關文件表示：某個變數為 <code>undefined</code> 或完全沒有設置的時候才能夠以預設值作為內容。但是在 CoffeeScript 1.x 版本中，只要變數的值為 <code>null</code> 就會採用預設值。</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="breaking_change_function_parameter_default_values">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -5129,12 +5129,12 @@ a; // Equals 1 in CoffeeScript 1.x, null in CoffeeScript 2
 
         </section>
         <section id="breaking-changes-bound-generator-functions">
-          <h3>Bound generator functions</h3>
-<p>Bound generator functions, a.k.a. generator arrow functions, <a href="http://stackoverflow.com/questions/27661306/can-i-use-es6s-arrow-function-syntax-with-generators-arrow-notation">aren’t allowed in ECMAScript</a>. You can write <code>function*</code> or <code>=&gt;</code>, but not both. Therefore, CoffeeScript code like this:</p>
+          <h3>有界產生器函式</h3>
+<p>有界產生器函式，簡單說就是：「產生器箭頭函式」在目前是<a href="http://stackoverflow.com/questions/27661306/can-i-use-es6s-arrow-function-syntax-with-generators-arrow-notation">不被 ECMAScript 允許</a>的。你能夠寫成 <code>function*</code> 但卻不能用上 <code>=&gt;</code> 符號，所以如果你的程式碼看起來像這樣：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-coffee"><span class="function"><span class="title">f</span> = =&gt;</span> <span class="keyword">yield</span> <span class="keyword">this</span>
-<span class="comment"># Throws a compiler error</span>
+<span class="comment"># 會發生編譯器錯誤</span>
 </code></pre>
-</blockquote><p>Needs to be rewritten the old-fashioned way:</p>
+</blockquote><p>則必須以更「古老」的方式撰寫：</p>
 <aside class="code-example container-fluid bg-ribbed-dark" data-example="breaking_change_bound_generator_function">
   <div class="row">
     <div class="col-md-6 coffeescript-input-column">
@@ -5169,33 +5169,33 @@ f = function*() {
 
         </section>
         <section id="breaking-changes-classes">
-          <h3>Classes are compiled to ES2015 classes</h3>
-<p>ES2015 classes and their methods have some restrictions beyond those on regular functions.</p>
-<p>Class constructors can’t be invoked without <code>new</code>:</p>
+          <h3>類別被編譯成 ES2015 型態</h3>
+<p>ES2015 的類別有著一些先天上的限制。</p>
+<p>例如說類別的建構子如果沒有 <code>new</code> 的話就不能正常執行：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-coffee">(<span class="class"><span class="keyword">class</span>)()</span>
-<span class="comment"># Throws a TypeError at runtime</span>
+<span class="comment"># 會在執行時態拋出 TypeError 異常</span>
 </code></pre>
-</blockquote><p>ES2015 classes don’t allow bound (fat arrow) methods. The CoffeeScript compiler goes through some contortions to preserve support for them, but one thing that can’t be accommodated is calling a bound method before it is bound:</p>
+</blockquote><p>ES2015 類別中無法用上有界（胖箭頭）函式。話雖如此 CoffeeScript 還是盡可能地越過一些障礙來支援這項功能，但還是有些缺點：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-coffee"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span>
   constructor: <span class="function">-&gt;</span>
-    @onClick()      <span class="comment"># This works</span>
+    @onClick()      <span class="comment"># 這可以正常使用</span>
     clickHandler = @onClick
-    clickHandler()  <span class="comment"># This throws a runtime error</span>
+    clickHandler()  <span class="comment"># 這會拋出執行時態錯誤</span>
 
 <span class="class"><span class="keyword">class</span> <span class="title">Component</span> <span class="keyword">extends</span> <span class="title">Base</span></span>
   onClick: <span class="function">=&gt;</span>
     <span class="built_in">console</span>.log <span class="string">'Clicked!'</span>, @
 </code></pre>
-</blockquote><p>Class methods can’t be used with <code>new</code> (uncommon):</p>
+</blockquote><p>類別方法不能直接透過 <code>new</code> 使用（雖然這很罕見）：</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-coffee"><span class="class"><span class="keyword">class</span> <span class="title">Namespace</span></span>
   @Klass = <span class="function">-&gt;</span>
-<span class="keyword">new</span> Namespace.Klass  <span class="comment"># Throws a TypeError at runtime</span>
+<span class="keyword">new</span> Namespace.Klass  <span class="comment"># 會在執行時態拋出 TypeError 錯誤</span>
 </code></pre>
-</blockquote><p>Due to the hoisting required to compile to ES2015 classes, dynamic keys in class methods can’t use values from the executable class body unless the methods are assigned in prototype style.</p>
+</blockquote><p>由於 ES2015 的類別的先天限制問題，類別中不能有動態方法名稱；除非其動態方法是賦予到類別的原型鏈底下。</p>
 <blockquote class="uneditable-code-block"><pre><code class="language-coffee"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>
   name = <span class="string">'method'</span>
-  <span class="string">"<span class="subst">#{name}</span>"</span>: <span class="function">-&gt;</span>   <span class="comment"># This method will be named 'undefined'</span>
-  @::[name] = <span class="function">-&gt;</span>  <span class="comment"># This will work; assigns to `A.prototype.method`</span>
+  <span class="string">"<span class="subst">#{name}</span>"</span>: <span class="function">-&gt;</span>   <span class="comment"># 這個方法會被命名為 'undefined'</span>
+  @::[name] = <span class="function">-&gt;</span>  <span class="comment"># 這可以正常使用；會被賦予到 `A.prototype.method`</span>
 </code></pre>
 </blockquote>
         </section>
@@ -5521,7 +5521,7 @@ x = <span class="number">2</span> + <span class="number">2</span>
         </section>
       </section>
       <section id="changelog">
-        <h2>Changelog</h2>
+        <h2>變更日誌</h2>
 
         <section id="2.3.1">
           <h3><a href="https://github.com/jashkenas/coffeescript/compare/2.3.0...2.3.1">2.3.1</a>

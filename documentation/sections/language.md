@@ -1,10 +1,10 @@
-## Language Reference
+## 語言概要
 
-_This reference is structured so that it can be read from top to bottom, if you like. Later sections use ideas and syntax previously introduced. Familiarity with JavaScript is assumed. In all of the following examples, the source CoffeeScript is provided on the left, and the direct compilation into JavaScript is on the right._
+_這份概要的組成結構讓你能夠從上閱讀至下逐一學習，而後續的章節都會基於先前所提到的觀念。在接下來的範例中，左側的區塊是 CoffeeScript 原始碼，而右側則是編譯後的 JavaScript 程式碼。_
 
-_Many of the examples can be run (where it makes sense) by pressing the_ <small>▶</small> _button on the right. The CoffeeScript on the left is editable, and the JavaScript will update as you edit._
+_多數的範例都可以透過按下右方的_ <small>▶</small> _按鈕來執行。左側的 CoffeeScript 都是可以即時編輯的。當然，右側的 JavaScript 也會依照你的編輯做即時更新。_
 
-First, the basics: CoffeeScript uses significant whitespace to delimit blocks of code. You don’t need to use semicolons `;` to terminate expressions, ending the line will do just as well (although semicolons can still be used to fit multiple expressions onto a single line). Instead of using curly braces `{ }` to surround blocks of code in [functions](#literals), [if-statements](#conditionals), [switch](#switch), and [try/catch](#try), use indentation.
+首先你要知道的是：CoffeeScript 使用空格來作為判斷程式碼區塊的依據。你不需要透過 `;` 分號來結束表達式或斷句（雖然有時候要將多行表達式縮成一行時會用上）。比起用上 `{ }` 花括號來包覆[函式](#literals)、[條件式](#conditionals)、[選擇](#switch)、[嘗試／捕捉](#try)區塊，你真正該用的是空白縮排。
 
-You don’t need to use parentheses to invoke a function if you’re passing arguments. The implicit call wraps forward to the end of the line or block expression.<br>
+當你正要傳遞參數到函式的時候不一定需要括號，下面這個寫法會不斷地幫你自動包覆變數。<br>
 `console.log sys.inspect object` → `console.log(sys.inspect(object));`

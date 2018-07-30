@@ -1,8 +1,8 @@
-## If, Else, Unless, and Conditional Assignment
+## 如果、否則、除非和條件式
 
-`if`/`else` statements can be written without the use of parentheses and curly brackets. As with functions and other block expressions, multi-line conditionals are delimited by indentation. There’s also a handy postfix form, with the `if` or `unless` at the end.
+`if`/`else` 陳述式撰寫的時候可以省略花括號和弧形括號。就像函式跟其他的區塊表達式一樣，只要是單行以上的條件式內容都是用對齊來搞定。順帶一提的是：你能夠把 `if` 跟 `unless` 放在最後面以便符合英文的文法。
 
-CoffeeScript can compile `if` statements into JavaScript expressions, using the ternary operator when possible, and closure wrapping otherwise. There is no explicit ternary statement in CoffeeScript — you simply use a regular `if` statement on a single line.
+CoffeeScript 可以將 `if` 陳述式轉換成 JavaScript 的表達式，並在可以的時候轉換成三元運算子（Ternary），不然就以正常的花括號包覆處理。不過在 CoffeeScript 中沒有具體的三元運算子用法，使用單行的 `if` 陳述式即可。
 
 ```
 codeFor('conditionals')

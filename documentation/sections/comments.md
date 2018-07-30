@@ -1,9 +1,9 @@
-## Comments
+## 註釋
 
-In CoffeeScript, comments are denoted by the `#` character to the end of a line, or from `###` to the next appearance of `###`. Comments are ignored by the compiler, though the compiler makes its best effort at reinserting your comments into the output JavaScript after compilation.
+在 CoffeeScript 中，註釋以 `#` 符號起首，或者 `###` 到下一個 `###` 符號。註釋會被編譯器忽略，不過要是可以的話，編譯器也會自動幫你把註釋安插到輸出的 JavaScript 並找尋最適合的位置放入。
 
 ```
 codeFor('comment')
 ```
 
-Inline `###` comments make [type annotations](#type-annotations) possible.
+單行的 `###` 註釋讓你能夠使用[型態註解](#type-annotations)功能。

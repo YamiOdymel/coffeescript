@@ -1,17 +1,17 @@
-## Type Annotations
+## 型態註解
 
-Static type checking can be achieved in CoffeeScript by using [Flow](https://flow.org/)’s [Comment Types syntax](https://flow.org/en/docs/types/comments/):
+你能夠在 CoffeeScript 中以 [Flow](https://flow.org/) 的[註釋型態標記](https://flow.org/en/docs/types/comments/)來撰寫型態檢查：
 
 ```
 codeFor('type_annotations')
 ```
 
-CoffeeScript does not do any type checking itself; the JavaScript output you see above needs to get passed to Flow for it to validate your code. We expect most people will use a [build tool](#es2015plus-output) for this, but here’s how to do it the simplest way possible using the [CoffeeScript](#cli) and [Flow](https://flow.org/en/docs/usage/) command-line tools, assuming you’ve already [installed Flow](https://flow.org/en/docs/install/) and the [latest CoffeeScript](#installation) in your project folder:
+CoffeeScript 本身並不會對此有所檢查；在上述所看到的 JavaScript 需要額外透過 Flow 來進行型態驗證。雖然大多數的人都會透過[建置工具](#es2015plus-output)來執行此功能，但以 [CoffeeScript](#cli) 和 [Flow](https://flow.org/en/docs/usage/) 的終端機工具來執行相關的檢查也許是個更簡單的方法。假設你[已經安裝 Flow](https://flow.org/en/docs/install/) 還有[最新的 CoffeeScript](#installation)，那麼你就可以直接在專案的資料夾執行：
 
 ```bash
 coffee --bare --no-header --compile app.coffee && npm run flow
 ```
 
-`--bare` and `--no-header` are important because Flow requires the first line of the file to be the comment `// @flow`. If you configure your build chain to compile CoffeeScript and pass the result to Flow in-memory, you can get better performance than this example; and a proper build tool should be able to watch your CoffeeScript files and recompile and type-check them for you on save.
+`--bare` 還有 `--no-header` 是很重要的參數！因為 Flow 要求檔案的第一行必須要是 `// @flow` 註解。在建置工具鏈中讓 CoffeeScript 的編譯結果透過記憶體直接傳遞給 Flow 可以有比起這段指令有更快的效能；一個標準的建置工具鏈要能夠監聽 CoffeeScript 的檔案，並且在你儲存檔案時，自動重新編譯然後透過 Flow 來進行型態檢查。
 
-If you know of another way to achieve static type checking with CoffeeScript, please [create an issue](https://github.com/jashkenas/coffeescript/issues/new) and let us know.
+對於 CoffeeScript 和型態檢查的整合如果你有其他的方式，請[建立新的 Issue](https://github.com/jashkenas/coffeescript/issues/new) 來讓我們知道。

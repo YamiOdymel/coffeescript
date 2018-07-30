@@ -1,21 +1,21 @@
-## Installation
+## 安裝方法
 
-The command-line version of `coffee` is available as a [Node.js](https://nodejs.org/) utility, requiring Node 6 or later. The [core compiler](/v<%= majorVersion %>/browser-compiler/coffeescript.js) however, does not depend on Node, and can be run in any JavaScript environment, or in the browser (see [Try CoffeeScript](#try)).
+終端機版本的 `coffee` 指令現在需要 [Node.js](https://nodejs.org/) 為輔助工具，且版本需要是 Node 6 或更新的版本。不過[核心編譯器](/v<%= majorVersion %>/browser-compiler/coffeescript.js)則不仰賴 Node。核心可以在任何的 JavaScript 環境中執行，或是直接在網頁瀏覽器中運作（請查看[嘗試 CoffeeScript](#try)）。
 
-To install, first make sure you have a working copy of the latest stable version of [Node.js](https://nodejs.org/). You can then install CoffeeScript globally with [npm](https://www.npmjs.com/):
+欲要進行安裝，須先確保你有安裝最新版的 [Node.js](https://nodejs.org/)。然後你就能夠透過 [npm](https://www.npmjs.com/) 來安裝 CoffeeScript：
 
 ```bash
 npm install --global coffeescript
 ```
 
-This will make the `coffee` and `cake` commands available globally.
+這讓你能夠在全域終端機中使用 `coffee` 和 `cake` 指令。
 
-If you are using CoffeeScript in a project, you should install it locally for that project so that the version of CoffeeScript is tracked as one of your project’s dependencies. Within that project’s folder:
+如果你正打算在專案中使用 CoffeeScript，那麼你應該以下列方式來安裝、並令 CoffeeScript 成為專案中的相依性套件。請在專案資料夾中輸入指令：
 
 ```bash
 npm install --save-dev coffeescript
 ```
 
-The `coffee` and `cake` commands will first look in the current folder to see if CoffeeScript is installed locally, and use that version if so. This allows different versions of CoffeeScript to be installed globally and locally.
+使用 `coffee` 和 `cake` 指令時，會先自動檢查目前資料夾中是否有安裝 CoffeeScript，若有，則使用目前資料夾的版本（若無，則使用全域安裝的版本）。這允許你在不同的專案上使用不同版本的 CoffeeScript 以避免相依性問題。
 
-If you plan to use the `--transpile` option (see [Transpilation](#transpilation)) you will need to also install `babel-core` either globally or locally, depending on whether you are running a globally or locally installed version of CoffeeScript.
+如果你打算使用 `--transpile` 選項（請查看[轉譯介面](#transpilation)章節），你將需要以全域、本地方式安裝 `babel-core`，這取決於你使用的 CoffeeScript 是全域還是目前資料夾中的版本。

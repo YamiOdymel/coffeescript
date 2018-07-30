@@ -1,37 +1,37 @@
-## The Existential Operator
+## 存在運算子
 
-It’s a little difficult to check for the existence of a variable in JavaScript. `if (variable) …` comes close, but fails for zero, the empty string, and false (to name just the most common cases). CoffeeScript’s existential operator `?` returns true unless a variable is `null` or `undefined` or undeclared, which makes it analogous to Ruby’s `nil?`.
+在 JavaScript 要檢查一個變數是否存在其實有點小聒噪。`if (變數) ...` 什麼的，然後就跟一些資料型態有關，像是：零值、空字串、假值（有很多不同的檢測方式）。所以 CoffeeScript 的 `?` 存在運算子就這樣產生了。除非一個變數是 `null` 或者 `undefined` 甚至尚未定義，否則都會回傳 `true`。這有點像是 Ruby 的 `nil?` 用法。
 
-It can also be used for safer conditional assignment than the JavaScript pattern `a = a || value` provides, for cases where you may be handling numbers or strings.
+這個方式也能夠被用在 JavaScript 中類似 `a = a || value` 的場景作為更安全的條件式比較，不然通常來說都需要額外檢查數值或字串實在是有點麻煩。
 
 ```
 codeFor('existence', 'footprints')
 ```
 
-Note that if the compiler knows that `a` is in scope and therefore declared, `a?` compiles to `a != null`, _not_ `a !== null`. The `!=` makes a loose comparison to `null`, which does double duty also comparing against `undefined`. The reverse also holds for `not a?` or `unless a?`.
+不過要注意的是：當編譯器得知 `a` 已經在有效範圍中被定義時，`a?` 會被編譯成 `a != null` _而不是_ `a !== null`。因為 `!=` 能夠以較寬鬆的方式檢查該變數是否與 `null` 相符，這同時也能夠雙重保障該變數並不是一個 `undefined`。這個道理同樣適用於 `not a?` 和 `unless a?` 語法。
 
 ```
 codeFor('existence_declared')
 ```
 
-If a variable might be undeclared, the compiler does a thorough check. This is what JavaScript coders _should_ be typing when they want to check if a mystery variable exists.
+當一個變數可能不會被定義時，JavaScript 工程師 _應該_ 要寫得像下面一樣來檢查該變數到底存不存在。
 
 ```
 codeFor('existence_undeclared')
 ```
 
-The accessor variant of the existential operator `?.` can be used to soak up null references in a chain of properties. Use it instead of the dot accessor `.` in cases where the base value may be `null` or `undefined`. If all of the properties exist then you’ll get the expected result, if the chain is broken, `undefined` is returned instead of the `TypeError` that would be raised otherwise.
+存在運算子 `?.` 也可以用於一個可能是空值物件的方法鏈中。如果想要避免呼叫到 `null` 或 `undefined` 物件方法就可以透過 `?.` 來取代普通的 `.` 作為串連符號。當連結鏈因為前一個物件不存在而錯誤時，就會回傳一個·`undefined` 而不是發生 `TypeError` 錯誤。
 
 ```
 codeFor('soaks')
 ```
 
-For completeness:
+具體來說：
 
-| Example | Definition |
+| 範例 | 定義 |
 | --- | --- |
-| `a?` | tests that `a` is in scope and `a != null` |
-| `a ? b` | returns `a` if `a` is in scope and `a != null`; otherwise, `b` |
-| `a?.b` or `a?['b']` | returns `a.b` if `a` is in scope and `a != null`; otherwise, `undefined` |
-| `a?(b, c)` or `a? b, c`&emsp; | returns the result of calling `a` (with arguments `b` and `c`) if `a` is in scope and callable; otherwise, `undefined` |
-| `a ?= b` | assigns the value of `b` to `a` if `a` is not in scope or if `a == null`; produces the new value of `a` |
+| `a?` | 確保 `a` 處於有效範圍中並且 `a != null` |
+| `a ? b` | 如果 `a` 存在且 `a != null` 的話則回傳 `a`；否則就回傳 `b` |
+| `a?.b` 或 `a?['b']` | 如果 `a` 存在且 `a != null` 的話就回傳 `a.b`；否則就回傳 `undefined` |
+| `a?(b, c)` 或 `a? b, c`&emsp; | 如果 `a` 存在並且是可供呼叫的話則將參數 `b` 和 `c` 傳入並呼叫；否則回傳 `undefined` |
+| `a ?= b` | 如果 `a` 不存在於有效範圍內或者 `a == null` 的話就將 `b` 的值賦予給 `a`；簡單說就是不存在就定義 `a` 變數 |

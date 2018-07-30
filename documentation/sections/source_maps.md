@@ -1,5 +1,5 @@
-## Source Maps
+## 原始碼映射表
 
-CoffeeScript includes support for generating source maps, a way to tell your JavaScript engine what part of your CoffeeScript program matches up with the code being evaluated. Browsers that support it can automatically use source maps to show your original source code in the debugger. To generate source maps alongside your JavaScript files, pass the `--map` or `-m` flag to the compiler.
+CoffeeScript 有內建產生原始碼映射表的功能，這能讓你的 JavaScript 引擎得知其執行的語句與原本 CoffeeScript 中的哪行程式碼相符。通常瀏覽器都會自動比對原始碼映射表。使用編譯器時追加 `--map` 或 `-m` 選項就能夠在編譯 JavaScript 結果時一同輸出相對應的原始碼映射表。
 
-For a full introduction to source maps, how they work, and how to hook them up in your browser, read the [HTML5 Tutorial](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/).
+有關原始碼映射表的運作原理、如何在瀏覽器中使用，請閱讀 [HTML5 的教學](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)。

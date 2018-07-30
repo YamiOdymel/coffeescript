@@ -1,6 +1,6 @@
-## Chaining Function Calls
+## 函式呼叫鏈
 
-Leading `.` closes all open calls, allowing for simpler chaining syntax.
+以 `.` 開頭能讓你用更簡單的方式串連並呼叫多個函式。
 
 ```
 codeFor('chaining')

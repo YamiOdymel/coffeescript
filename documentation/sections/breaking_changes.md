@@ -1,3 +1,3 @@
-## Breaking Changes From CoffeeScript 1.x to 2
+## 從 CoffeeScript 1.x 升級到 2 時的不相容差異
 
-CoffeeScript 2 aims to output as much idiomatic ES2015+ syntax as possible with as few breaking changes from CoffeeScript 1.x as possible. Some breaking changes, unfortunately, were unavoidable.
+CoffeeScript 2 瞄準的是支援更多的 ES2015+ 語法並減少可能會破壞 CoffeeScript 1.x 版本程式碼的異動。可惜有些破壞還是無法避免的。

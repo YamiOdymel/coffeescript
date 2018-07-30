@@ -1,20 +1,20 @@
-## Embedded JavaScript
+## 嵌入式 JavaScript
 
-Hopefully, you’ll never need to use it, but if you ever need to intersperse snippets of JavaScript within your CoffeeScript, you can use backticks to pass it straight through.
+希望你永遠也不會用到這功能，倘若真有那麼一天，你需要在 CoffeeScript 裡插入原生 JavaScript 用法的話，你可以使用重音符包住那部份的程式碼。
 
 ```
 codeFor('embedded', 'hi()')
 ```
 
-Escape backticks with backslashes: `` \`​`` becomes `` `​``.
+透過反斜線脫逸重音符像這樣：`` \`​`` 就會輸出成 `` `​``。
 
-Escape backslashes before backticks with more backslashes: `` \\\`​`` becomes `` \`​``.
+脫逸重音符之前的反斜線會需要更多反斜線：`` \\\`​`` 則會輸出為 `` \`​``。
 
 ```
 codeFor('embedded_escaped', 'markdown()')
 ```
 
-You can also embed blocks of JavaScript using triple backticks. That’s easier than escaping backticks, if you need them inside your JavaScript block.
+你也能透過三個重音符來建立嵌入區塊。這樣你就不用整天脫逸重音符。
 
 ```
 codeFor('embedded_block', 'time()')

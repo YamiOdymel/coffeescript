@@ -1,39 +1,39 @@
-## Destructuring Assignment
+## 解構賦值
 
-Just like JavaScript (since ES2015), CoffeeScript has destructuring assignment syntax. When you assign an array or object literal to a value, CoffeeScript breaks up and matches both sides against each other, assigning the values on the right to the variables on the left. In the simplest case, it can be used for parallel assignment:
+和 JavaScript（從 ES2015 開始）一樣的是，CoffeeScript 也支援解構賦值語法。當你試圖賦予一個陣列或物件某個值時，CoffeeScript 會試圖拆解值的內容，並且將右側的值賦予到左側。最直接的範例莫過於此：
 
 ```
 codeFor('parallel_assignment', 'theBait')
 ```
 
-But it’s also helpful for dealing with functions that return multiple values.
+想要重新命名函式回傳的多值內容也可以變得很簡單。
 
 ```
 codeFor('multiple_return_values', 'forecast')
 ```
 
-Destructuring assignment can be used with any depth of array and object nesting, to help pull out deeply nested properties.
+解構賦值不僅支援單層，還支援巢狀式的結構。這讓你能夠在解構極具深度的物件內容時得心應手。
 
 ```
 codeFor('object_extraction', 'name + "-" + street')
 ```
 
-Destructuring assignment can even be combined with splats.
+然後你也可以在解構賦值時用上展開語法。
 
 ```
 codeFor('patterns_and_splats', 'contents.join("")')
 ```
 
-Expansion can be used to retrieve elements from the end of an array without having to assign the rest of its values. It works in function parameter lists as well.
+展開語法也可以省略變數名稱，這樣就可以在解構陣列的時候只取得起首和尾部的元素。
 
 ```
 codeFor('expansion', 'first + " " + last')
 ```
 
-Destructuring assignment is also useful when combined with class constructors to assign properties to your instance from an options object passed to the constructor.
+初始化一個類別的時候，其建構子也能用上解構賦值來直接將接收到的選項解構成類別中的選項並保存。
 
 ```
 codeFor('constructor_destructuring', 'tim.age + " " + tim.height')
 ```
 
-The above example also demonstrates that if properties are missing in the destructured object or array, you can, just like in JavaScript, provide defaults. Note though that unlike with the existential operator, the default is only applied with the value is missing or `undefined`—[passing `null` will set a value of `null`](#breaking-changes-default-values), not the default.
+上面的範例同時也展示了：當解構的物件中缺少了某個屬性的時候，要如何自動補上預設值。不過有點該注意的是：預設值只會在屬性是 `undefined` 或者是無定義的時候才會套用─當該屬性為[`null` 的時候則其值會保留為 `null`](#breaking-changes-default-values)，而非採用預設值。

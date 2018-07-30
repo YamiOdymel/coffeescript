@@ -1,41 +1,41 @@
-### Classes are compiled to ES2015 classes
+### 類別被編譯成 ES2015 型態
 
-ES2015 classes and their methods have some restrictions beyond those on regular functions.
+ES2015 的類別有著一些先天上的限制。
 
-Class constructors can’t be invoked without `new`:
+例如說類別的建構子如果沒有 `new` 的話就不能正常執行：
 
 ```coffee
 (class)()
-# Throws a TypeError at runtime
+# 會在執行時態拋出 TypeError 異常
 ```
 
-ES2015 classes don’t allow bound (fat arrow) methods. The CoffeeScript compiler goes through some contortions to preserve support for them, but one thing that can’t be accommodated is calling a bound method before it is bound:
+ES2015 類別中無法用上有界（胖箭頭）函式。話雖如此 CoffeeScript 還是盡可能地越過一些障礙來支援這項功能，但還是有些缺點：
 
 ```coffee
 class Base
   constructor: ->
-    @onClick()      # This works
+    @onClick()      # 這可以正常使用
     clickHandler = @onClick
-    clickHandler()  # This throws a runtime error
+    clickHandler()  # 這會拋出執行時態錯誤
 
 class Component extends Base
   onClick: =>
     console.log 'Clicked!', @
 ```
 
-Class methods can’t be used with `new` (uncommon):
+類別方法不能直接透過 `new` 使用（雖然這很罕見）：
 
 ```coffee
 class Namespace
   @Klass = ->
-new Namespace.Klass  # Throws a TypeError at runtime
+new Namespace.Klass  # 會在執行時態拋出 TypeError 錯誤
 ```
 
-Due to the hoisting required to compile to ES2015 classes, dynamic keys in class methods can’t use values from the executable class body unless the methods are assigned in prototype style.
+由於 ES2015 的類別的先天限制問題，類別中不能有動態方法名稱；除非其動態方法是賦予到類別的原型鏈底下。
 
 ```coffee
 class A
   name = 'method'
-  "#{name}": ->   # This method will be named 'undefined'
-  @::[name] = ->  # This will work; assigns to `A.prototype.method`
+  "#{name}": ->   # 這個方法會被命名為 'undefined'
+  @::[name] = ->  # 這可以正常使用；會被賦予到 `A.prototype.method`
 ```

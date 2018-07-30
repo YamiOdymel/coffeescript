@@ -1,13 +1,13 @@
-### Bound generator functions
+### 有界產生器函式
 
-Bound generator functions, a.k.a. generator arrow functions, [aren’t allowed in ECMAScript](http://stackoverflow.com/questions/27661306/can-i-use-es6s-arrow-function-syntax-with-generators-arrow-notation). You can write `function*` or `=>`, but not both. Therefore, CoffeeScript code like this:
+有界產生器函式，簡單說就是：「產生器箭頭函式」在目前是[不被 ECMAScript 允許](http://stackoverflow.com/questions/27661306/can-i-use-es6s-arrow-function-syntax-with-generators-arrow-notation)的。你能夠寫成 `function*` 但卻不能用上 `=>` 符號，所以如果你的程式碼看起來像這樣：
 
 ```coffee
 f = => yield this
-# Throws a compiler error
+# 會發生編譯器錯誤
 ```
 
-Needs to be rewritten the old-fashioned way:
+則必須以更「古老」的方式撰寫：
 
 ```
 codeFor('breaking_change_bound_generator_function')

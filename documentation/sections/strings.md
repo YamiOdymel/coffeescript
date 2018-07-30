@@ -1,21 +1,21 @@
-## Strings
+## 字串
 
-Like JavaScript and many other languages, CoffeeScript supports strings as delimited by the `"` or `'` characters. CoffeeScript also supports string interpolation within `"`-quoted strings, using `#{ … }`. Single-quoted strings are literal. You may even use interpolation in object keys.
+就像 JavaScript 還有其他語言那樣，CoffeeScript 支援以 `"` 或 `'` 符號來定義字串。CoffeeScript 中，你能夠用 `#{ … }` 來在 `"`（雙引號）定義的字串中進行插值。而單引號定義的字串就僅僅是普通的字串而已。在物件的鍵名中你仍可以使用雙引號進行字串插值。
 
 ```
 codeFor('interpolation', 'sentence')
 ```
 
-Multiline strings are allowed in CoffeeScript. Lines are joined by a single space unless they end with a backslash. Indentation is ignored.
+多行字串也能夠在 CoffeeScript 中使用。在文字中插入反斜線（`/`）會移除與下一行銜接的空白間隔。文字的開頭與結尾空白對齊在這個時候會被忽略。
 
 ```
 codeFor('strings', 'mobyDick')
 ```
 
-Block strings, delimited by `"""` or `'''`, can be used to hold formatted or indentation-sensitive text (or, if you just don’t feel like escaping quotes and apostrophes). The indentation level that begins the block is maintained throughout, so you can keep it all aligned with the body of your code.
+透過 `"""` 或 `'''` 建立區塊字串，這很適合用來存放已經格式化過（美化）或者很講究對齊的文字內容（或者你不想整天脫逸雙、單引號）。內容的對齊由區塊字串開始的地方為主。
 
 ```
 codeFor('heredocs', 'html')
 ```
 
-Double-quoted block strings, like other double-quoted strings, allow interpolation.
+雙引號區塊字串就像上面的所有雙引號字串那樣，允許字串插值。

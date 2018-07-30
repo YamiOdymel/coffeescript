@@ -1,10 +1,10 @@
-### Transpilation
+### 轉譯介面
 
-CoffeeScript 2 generates JavaScript that uses the latest, modern syntax. The runtime or browsers where you want your code to run [might not support all of that syntax](#compatibility). In that case, we want to convert modern JavaScript into older JavaScript that will run in older versions of Node or older browsers; for example, `{ a } = obj` into `a = obj.a`. This is done via transpilers like [Babel](http://babeljs.io/), [Bublé](https://buble.surge.sh/) or [Traceur Compiler](https://github.com/google/traceur-compiler).
+CoffeeScript 2 會輸出最新的 JavaScript 語法，但執行緒或瀏覽器[不一定會支援這些用法](#compatibility)。在這種時候我們會希望將現代 JavaScript 程式碼轉譯成較舊的語法，這樣才能夠在過時的 Node 或瀏覽器上執行；例如說：`{ a } = obj` 轉譯成 `a = obj.a`。而這可以透過 [Babel](http://babeljs.io/)、[Bublé](https://buble.surge.sh/) 或 [Traceur Compiler](https://github.com/google/traceur-compiler) 轉譯器達成。
 
-#### Quickstart
+#### 快速開始
 
-From the root of your project:
+先從專案的根目錄開始下手：
 
 ```bash
 npm install --save-dev babel-core babel-preset-env
@@ -12,38 +12,38 @@ echo '{ "presets": ["env"] }' > .babelrc
 coffee --compile --transpile --inline-map some-file.coffee
 ```
 
-#### Transpiling with the CoffeeScript compiler
+#### CoffeeScript 編譯器搭配轉譯介面
 
-To make things easy, CoffeeScript has built-in support for the popular [Babel](http://babeljs.io/) transpiler. You can use it via the `--transpile` command-line option or the `transpile` Node API option. To use either, `babel-core` must be installed in your project:
+為了讓事情更簡單點，CoffeeScript 內建了能夠支援 [Babel](http://babeljs.io/) 轉譯器的功能。你可以透過 `--transpile` 指令列選項或者 Node API 的 `transpile` 選項來使用。要使用這項功能，專案中必須先要有安裝 `babel-core`：
 
 ```bash
 npm install --save-dev babel-core
 ```
 
-Or if you’re running the `coffee` command outside of a project folder, using a globally-installed `coffeescript` module, `babel-core` needs to be installed globally:
+如果你是在專案資料夾外執行 `coffee` 指令的話，可以使用全域安裝的 `coffeescript` 模組。這個時候也就需要全域安裝的 `babel-core` 模組：
 
 ```bash
 npm install --global babel-core
 ```
 
-By default, Babel doesn’t do anything—it doesn’t make assumptions about what you want to transpile to. You need to provide it with a configuration so that it knows what to do. One way to do this is by creating a [`.babelrc` file](https://babeljs.io/docs/usage/babelrc/) in the folder containing the files you’re compiling, or in any parent folder up the path above those files. (Babel supports [other ways](https://babeljs.io/docs/usage/babelrc/), too.) A minimal `.babelrc` file would be just `{ "presets": ["env"] }`. This implies that you have installed [`babel-preset-env`](https://babeljs.io/docs/plugins/preset-env/):
+預設來說，Babel 本身什麼事情也不會做，他也不會鳥你想轉譯成什麼格式的程式碼。為了解決這傲嬌的問題，你必須提供一個設定檔讓他正常運作，而主要的方式就是在欲編譯的檔案資料夾裡建立一個 [`.babelrc` 檔案](https://babeljs.io/docs/usage/babelrc/)（或者父資料夾也行），Babel 也支援[其他方式](https://babeljs.io/docs/usage/babelrc/)就是了。一個最基本的 `.babelrc` 檔案會有 `{ "presets": ["env"] }` 內容。在這之前你必須先安裝最基本的 [`babel-preset-env`](https://babeljs.io/docs/plugins/preset-env/) 配置環境檔案：
 
 ```bash
-npm install --save-dev babel-preset-env  # Or --global for non-project-based usage
+npm install --save-dev babel-preset-env  # 在沒有明顯區分專案的情況下可以用上 --global 選項
 ```
 
-See [Babel’s website to learn about presets and plugins](https://babeljs.io/docs/plugins/) and the multitude of options you have. Another preset you might need is [`transform-react-jsx`](https://babeljs.io/docs/plugins/transform-react-jsx/) if you’re using JSX with React (JSX can also be used with other frameworks).
+拜訪 [Babel 的網站能夠讓你學到關於配置環境檔案和擴充插件](https://babeljs.io/docs/plugins/)的相關知識。當你需要用上 JSX 和 React 時，你會需要 [`transform-react-jsx`](https://babeljs.io/docs/plugins/transform-react-jsx/) 配置環境檔案（雖然 JSX 也可以和其他框架一同使用啦）。
 
-Once you have `babel-core` and `babel-preset-env` (or other presets or plugins) installed, and a `.babelrc` file (or other equivalent) in place, you can use `coffee --transpile` to pipe CoffeeScript’s output through Babel using the options you’ve saved.
+當你有安裝 `babel-core` 和 `babel-preset-env`（或其他配置環境檔案）且已經設定好 `.babelrc`（相關的設置）時，就可以開始使用 `coffee --transpile` 指令來將 CoffeeScript 的輸出結果銜接到 Babel 並以你所設置的選項來進行轉譯。
 
-If you’re using CoffeeScript via the [Node API](nodejs_usage), where you call `CoffeeScript.compile` with a string to be compiled and an `options` object, the `transpile` key of the `options` object should be the Babel options:
+如果你是透過 [Node API](nodejs_usage) 使用 CoffeeScript 的話，則需要在呼叫 `CoffeeScript.compile` 的時候在 `options` 選項物件部分的 `transpile` 屬性設置 Babel 的選項：
 
 ```js
 CoffeeScript.compile(code, {transpile: {presets: ['env']}})
 ```
 
-You can also transpile CoffeeScript’s output without using the `transpile` option, for example as part of a build chain. This lets you use transpilers other than Babel, and it gives you greater control over the process. There are many great task runners for setting up JavaScript build chains, such as [Gulp](http://gulpjs.com/), [Webpack](https://webpack.github.io/), [Grunt](https://gruntjs.com/) and [Broccoli](http://broccolijs.com/).
+將 CoffeeScript 納入建置鏈就能夠不需要用上 `transpile` 設置來轉譯 CoffeeScript 的輸出內容。這讓你能夠使用 Babel 以外的轉譯器，通常要達到這樣的效果可以使用現有的 JavaScript 建置鏈工具。例如：[Gulp](http://gulpjs.com/)、[Webpack](https://webpack.github.io/)、[Grunt](https://gruntjs.com/) 或 [Broccoli](http://broccolijs.com/)。
 
-#### Polyfills
+#### Polyfill
 
-Note that transpiling doesn’t automatically supply [polyfills](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill) for your code. CoffeeScript itself will output [`Array.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) if you use the `in` operator, or destructuring or spread/rest syntax; and [`Function.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) if you use a bound (`=>`) method in a class. Both are supported in Internet Explorer 9+ and all more recent browsers, but you will need to supply polyfills if you need to support Internet Explorer 8 or below and are using features that would cause these methods to be output. You’ll also need to supply polyfills if your own code uses these methods or another method added in recent versions of JavaScript. One polyfill option is [`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/), though there are many [other](https://hackernoon.com/polyfills-everything-you-ever-wanted-to-know-or-maybe-a-bit-less-7c8de164e423) [strategies](https://philipwalton.com/articles/loading-polyfills-only-when-needed/).
+該注意的是轉譯並不會自動幫妳解決某些最根本的 [Polyfills](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill) 相容性問題。CoffeeScript 會在你使用 `in` 語法時自動輸出成 [`Array.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) 或者解構和展開運算符；而在類別中用上胖箭頭（`=>`）時則會輸出成 [`Function.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)。兩者都在 Internet Explorer 9+ 和多數瀏覽器上獲得支援，但是如果你要讓他們在 Internet Explorer 8 或是更舊的瀏覽器中能夠正常執行，就會需要透過 Polyfills 解決這些問題。當你自己在程式中用上類似的語法時，也依然需要這麼做。而有個能解決 Polyfill 的方法就是安裝 [`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/)（雖然還有[其他](https://hackernoon.com/polyfills-everything-you-ever-wanted-to-know-or-maybe-a-bit-less-7c8de164e423)、[不同](https://philipwalton.com/articles/loading-polyfills-only-when-needed/)的方式就是了）。
