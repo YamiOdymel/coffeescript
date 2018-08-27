@@ -1,5 +1,5 @@
 weatherReport = (location) ->
-  # Make an Ajax request to fetch the weather...
+  # 透過 Ajax 請求來取得天氣資料…
   [location, 72, "Mostly Sunny"]
 
 [city, temp, forecast] = weatherReport "Berkeley, CA"

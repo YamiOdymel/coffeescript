@@ -1,20 +1,20 @@
-### Argument parsing and shebang (`#!`) lines
+### 參數解析與井驚嘆號（`#!`）行列
 
-In CoffeeScript 1.x, `--` was required after the path and filename of the script to be run, but before any arguments passed to that script. This convention is now deprecated. So instead of:
-
-```bash
-coffee [options] path/to/script.coffee -- [args]
-```
-
-Now you would just type:
+在 CoffeeScript 1.x 之中，`--` 必須擺放在檔案名稱後面才能夠將 Coffee 腳本作為可執行檔案呼叫，且後面可以擺放欲傳入的參數。不過現在這個方法已經被棄用了，所以比起這麼做：
 
 ```bash
-coffee [options] path/to/script.coffee [args]
+coffee [選項] path/to/script.coffee -- [參數]
 ```
 
-The deprecated version will still work, but it will print a warning before running the script.
+你現在可以直接這樣使用：
 
-On non-Windows platforms, a `.coffee` file can be made executable by adding a shebang (`#!`) line at the top of the file and marking the file as executable. For example:
+```bash
+coffee [選項] path/to/script.coffee [參數]
+```
+
+雖說被棄用的方法一樣可以使用，但是在以該方式執行後會輸出一行警告訊息。
+
+在非 Windows 的平台上，`.coffee` 檔案內的第一行開頭可以加上井驚嘆號（`#!`）來將其檔案作為可執行檔案。例如說：
 
 ```coffee
 #!/usr/bin/env coffee
@@ -23,7 +23,7 @@ x = 2 + 2
 console.log x
 ```
 
-If this were saved as `executable.coffee`, it could be made executable and run:
+如果這個檔案被儲存為 `executable.coffee`，那麼就可以透過下列指令來執行：
 
 ```bash
 ▶ chmod +x ./executable.coffee
@@ -31,4 +31,4 @@ If this were saved as `executable.coffee`, it could be made executable and run:
 4
 ```
 
-In CoffeeScript 1.x, this used to fail when trying to pass arguments to the script. Some users on OS X worked around the problem by using `#!/usr/bin/env coffee --` as the first line of the file. That didn’t work on Linux, however, which cannot parse shebang lines with more than a single argument. While such scripts will still run on OS X, CoffeeScript will now display a warning before compiling or evaluating files that begin with a too-long shebang line. Now that CoffeeScript 2 supports passing arguments without needing `--`, we recommend simply changing the shebang lines in such scripts to just `#!/usr/bin/env coffee`.
+在 CoffeeScript 1.x 中，原本這麼做會無法接收傳入的參數。有些 macOS 的使用者會將 `#!/usr/bin/env coffee --` 作為檔案的開頭來允許腳本接收參數，但這在 Linux 上卻毫無作用；就算能，也無法解析超過一行以上的參數。雖然說現在仍然可以在開頭加上兩個減號，但在 macOS 上執行時，CoffeeScript 會顯示相關的警告訊息。不過好消息是現在已經不需要那兩個 `--` 減號了，所以直接將腳本的開頭改為 `#!/usr/bin/env coffee` 即可。

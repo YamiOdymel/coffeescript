@@ -1,3 +1,3 @@
-### JSX and the `<` and `>` operators
+### JSX 和 `<` 與 `>` 運算子
 
-With the addition of [JSX](#jsx), the `<` and `>` characters serve as both the “less than” and “greater than” operators and as the delimiters for XML tags, like `<div>`. For best results, in general you should always wrap the operators in spaces to distinguish them from XML tags: `i < len`, not `i<len`. The compiler tries to be forgiving when it can be sure what you intend, but always putting spaces around the “less than” and “greater than” operators will remove ambiguity.
+在 [JSX](#jsx) 的用法中，`<` 與 `>` 符號被用來作為「小於」和「大於」，同時也是 XML 標籤（如：`<div>`）的開閉合符號。為了避免編譯器誤認運算子為 XML 符號，當使用其符號作為運算子的時候請寫成：`i < len` 而不是 `i<len`。雖然說編譯器會盡可能地猜測你真正的意圖，但在使用「小於」和「大於」的符號時加上空白還是會令人更安心些。

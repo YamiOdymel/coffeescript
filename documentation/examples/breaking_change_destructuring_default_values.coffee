@@ -1,3 +1,3 @@
 {a = 1} = {a: null}
 
-a  # Equals 1 in CoffeeScript 1.x, null in CoffeeScript 2
+a  # 在 CoffeeScript 1.x 中等於 1，而 CoffeeScript 則是 null

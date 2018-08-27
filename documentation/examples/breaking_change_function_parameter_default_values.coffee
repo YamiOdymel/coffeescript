@@ -1,3 +1,3 @@
 f = (a = 1) -> a
 
-f(null)  # Returns 1 in CoffeeScript 1.x, null in CoffeeScript 2
+f(null)  # 在 CoffeeScript 1.x 中會回傳 1，而 CoffeeScript 2 則是 null

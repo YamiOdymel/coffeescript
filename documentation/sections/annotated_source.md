@@ -8,7 +8,7 @@
 - [語法樹 — src/nodes](annotated-source/nodes.html)
 - [解析作用域 — src/scope](annotated-source/scope.html)
 - [輔助 &amp; 工具函式 — src/helpers](annotated-source/helpers.html)
-- [CoffeeScript 模塊 — src/coffeescript](annotated-source/coffeescript.html)
+- [CoffeeScript 模組 — src/coffeescript](annotated-source/coffeescript.html)
 - [Cake &amp; Cakefiles — src/cake](annotated-source/cake.html)
 - [“coffee“ 終端機工具 — src/command](annotated-source/command.html)
 - [選項解析 — src/optparse](annotated-source/optparse.html)

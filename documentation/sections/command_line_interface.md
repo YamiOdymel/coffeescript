@@ -12,7 +12,7 @@
 | `-o, --output [目錄]` | 將所有編譯的 JavaScript 檔案輸出到指定的資料夾。通常會和 `--compile` 或 `--watch` 一起使用。 |
 | `-w, --watch` | 監聽檔案的變動，當檔案變動時重新執行某個動作。 |
 | `-p, --print` | 將編譯結果直接輸出到 **stdout** 而不是一個檔案。 |
-| `-s, --stdio` | 從 STDIN 接收 CoffeeScript 程式碼並且將編譯結果的JavaScript 輸出至 STDOUT。適合用於和其他程式語言串接的時機。例如：<br>`cat src/cake.coffee | coffee -sc` |
+| `-s, --stdio` | 從 STDIN 接收 CoffeeScript 程式碼並且將編譯結果的 JavaScript 輸出至 STDOUT。適合用於和其他程式語言串接的時機。例如：<br>`cat src/cake.coffee | coffee -sc` |
 | `-l, --literate` | 將程式碼視為文學式 CoffeeScript。你只需要在使用 **stdio** 或者編譯無副檔名的檔案時才需要特別指定此選項。 |
 | `-e, --eval` | 直接從指令列編譯並且輸出一小段 CoffeeScript 程式碼。例如：<br>`coffee -e "console.log num for num in [10..1]"` |
 | `-r, --require [模組名稱]`&emsp; | 在 REPL 或執行帶有 `--eval` 的 CoffeeScript 指令之前，以 `require()` 先載入指定的模組。 |

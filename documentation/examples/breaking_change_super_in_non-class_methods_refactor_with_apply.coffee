@@ -1,4 +1,4 @@
-# Helper functions
+# 輔助函式
 hasProp = {}.hasOwnProperty
 extend = (child, parent) ->
   ctor = ->

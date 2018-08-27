@@ -1,6 +1,6 @@
 ## 類別
 
-CoffeeScript 1 提供了 `class` 和 `extends` 關鍵字來作為原型鏈函式的語法糖。不過在 ES2015 的時候，JavaScript 已經官方地支援了這些關鍵字；所以 CoffeeScript 2 現在會將 `class` 和 `extends` 關鍵字直接編譯成 ES2015 類別。
+CoffeeScript 1 提供了 `class` 和 `extends` 關鍵字來作為原型鏈函式的糖衣語法。不過在 ES2015 的時候，JavaScript 已經官方地支援了這些關鍵字；所以 CoffeeScript 2 現在會將 `class` 和 `extends` 關鍵字直接編譯成 ES2015 類別。
 
 ```
 codeFor('classes', true)

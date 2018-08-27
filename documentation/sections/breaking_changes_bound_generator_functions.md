@@ -1,6 +1,6 @@
 ### 有界產生器函式
 
-有界產生器函式，簡單說就是：「產生器箭頭函式」在目前是[不被 ECMAScript 允許](http://stackoverflow.com/questions/27661306/can-i-use-es6s-arrow-function-syntax-with-generators-arrow-notation)的。你能夠寫成 `function*` 但卻不能用上 `=>` 符號，所以如果你的程式碼看起來像這樣：
+有界產生器函式，簡單說就是：「產生器胖箭頭函式」在目前是[不被 ECMAScript 允許](http://stackoverflow.com/questions/27661306/can-i-use-es6s-arrow-function-syntax-with-generators-arrow-notation)的。你能夠寫成 `function*` 但卻不能用上 `=>` 符號，所以如果你的程式碼看起來像這樣：
 
 ```coffee
 f = => yield this
